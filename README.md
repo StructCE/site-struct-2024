@@ -7,7 +7,7 @@
 
 # Bibliotecas
 - [shadcn](https://ui.shadcn.com/docs)
-- [cloudnary](https://cloudinary.com/)
+- [cloudnary](https://next.cloudinary.dev/)
 - [framer-motion](https://www.framer.com/motion/)
 - [react-email](https://react.email/docs/introduction)
 
