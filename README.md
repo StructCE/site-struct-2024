@@ -6,10 +6,11 @@
 - [tRPC](https://trpc.io)
 
 # Bibliotecas
-- [shadcn](https://ui.shadcn.com/docs)
-- [cloudnary](https://next.cloudinary.dev/)
-- [framer-motion](https://www.framer.com/motion/)
-- [react-email](https://react.email/docs/introduction)
+- [shadcn](https://ui.shadcn.com/docs) -> components
+- [lucide](https://lucide.dev/icons/) -> icons
+- [cloudnary](https://next.cloudinary.dev/) -> imagens
+- [framer-motion](https://www.framer.com/motion/) -> animações
+- [react-email](https://react.email/docs/introduction) -> form
 
 
 ---
