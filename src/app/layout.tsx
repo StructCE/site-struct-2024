@@ -1,13 +1,6 @@
 import "~/styles/globals.css";
 
-import { Montserrat } from "next/font/google";
-
 import { TRPCReactProvider } from "~/trpc/react";
-
-const font = Montserrat({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 export const metadata = {
   title: "Struct - Empresa Junior de Engenharia de Computação",
@@ -22,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${font.variable}`}>
+    <html lang="pt-br">
+      <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
