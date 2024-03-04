@@ -4,60 +4,82 @@ import { Cog, Lightbulb, ScreenShare, Smartphone } from "lucide-react";
 export default function Services() {
   return (
     <>
-      <div className="z-2 m-0 flex h-[650px] w-full items-center justify-center p-0 lg:h-[1000px]">
-        <div>
+      <section className="m-0 flex w-full skew-y-3 items-center justify-center bg-[#0A1D38] p-0 lg:h-[1000px]">
+        <div className="-skew-y-3 py-24">
+          {/* titulo */}
           <div className="flex flex-col items-center justify-center">
-            <h2 className="text-center font-oxanium text-[48px] font-bold leading-[60px]">
+            <h2 className="text-center font-oxanium text-[24px] font-bold leading-[30px] sm:text-[32px] sm:leading-[48px] lg:text-[48px] lg:leading-[60px]">
               <span className="text-[#2DA2FF]">{"{ "}</span>Serviços
               <span className="text-[#2DA2FF]">{" }"}</span>
             </h2>
-            <p className="my-5 w-[96px] border-b-2 border-[#FD8D4B]"></p>
-            <p className="font-nunito text-[16px]">
+            <p className="my-2 w-[32px] border-b-2 border-[#FD8D4B] sm:my-3 sm:w-[64px] lg:my-5 lg:w-[96px]"></p>
+            <p className="font-nunito text-[8px] sm:text-[12px] lg:text-[16px]">
               Conheça como podemos ajudar seu negócio!
             </p>
           </div>
-          <div className="m-8 grid w-[762px] grid-cols-2 gap-8 font-nunito">
-            <div className="h-[252px] w-[365px] rounded-lg bg-[#0A1D38]">
-              <div className="mx-6 mb-2 mt-6 flex text-[32px] font-bold">
-                <ScreenShare size={28} color="#f8f8ff" className="m-2" />
-                <h3>Websites</h3>
+          {/* caixas */}
+          <div className="m-8 grid w-[280px] grid-cols-1 gap-4 font-nunito sm:w-[400px] sm:gap-6 lg:w-[762px] lg:grid-cols-2 lg:gap-8">
+            <div className="h-[165px] w-[280px] rounded-lg bg-[#0E284E] sm:h-[210px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
+              <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
+                <ScreenShare
+                  color="#f8f8ff"
+                  className="mx-1 my-1.5 h-[16px] w-[16px] sm:mx-1.5 sm:my-2 sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-2.5 lg:h-[28px] lg:w-[28px]"
+                />
+                <h3 className="text-[18px] font-bold sm:text-[26px] lg:text-[32px]">
+                  Websites
+                </h3>
               </div>
-              <p className="mx-8 text-sm">
+              <p className="mx-6 text-xs sm:mx-7 sm:text-sm lg:mx-8">
                 Desenvolvemos websites modernos e responsivos que não apenas
                 cativam visualmente, mas também oferecem uma experiência de
                 usuário intuitiva. Criamos sites personalizados que refletem a
                 identidade única de cada cliente.
               </p>
             </div>
-            <div className="h-[252px] w-[365px] rounded-lg bg-[#0A1D38]">
-              <div className="mx-6 mb-2 mt-6 flex text-[32px] font-bold">
-                <Cog size={28} color="#f8f8ff" className="m-2" />
-                <h3>Sistemas Web</h3>
+            <div className="h-[165px] w-[280px] rounded-lg bg-[#0E284E] sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
+              <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
+                <Cog
+                  color="#f8f8ff"
+                  className="mx-1 my-1.5 h-[16px] w-[16px] sm:mx-1.5 sm:my-2 sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-2.5 lg:h-[28px] lg:w-[28px]"
+                />
+                <h3 className="text-[18px] font-bold sm:text-[26px] lg:text-[32px]">
+                  Sistemas Web
+                </h3>
               </div>
-              <p className="mx-8 text-sm">
+              <p className="mx-6 text-xs sm:mx-7 sm:text-sm lg:mx-8">
                 Desenvolvemos sistemas web sob medida para atender às
                 necessidades específicas do seu negócio. Otimize seus processos
                 internos e melhore a eficiência operacional com nossos sistemas
                 web personalizados.
               </p>
             </div>
-            <div className="h-[252px] w-[365px] rounded-lg bg-[#0A1D38]">
-              <div className="mx-6 mb-2 mt-6 flex text-[32px] font-bold">
-                <Smartphone size={28} color="#f8f8ff" className="m-2" />
-                <h3>Aplicativos</h3>
+            <div className="h-[165px] w-[280px] rounded-lg bg-[#0E284E] sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
+              <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
+                <Smartphone
+                  color="#f8f8ff"
+                  className="mx-1 my-1.5 h-[16px] w-[16px] sm:mx-1.5 sm:my-2 sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-2.5 lg:h-[28px] lg:w-[28px]"
+                />
+                <h3 className="text-[18px] font-bold sm:text-[26px] lg:text-[32px]">
+                  Aplicativos
+                </h3>
               </div>
-              <p className="mx-8 text-sm">
+              <p className="mx-6 text-xs sm:mx-7 sm:text-sm lg:mx-8">
                 Desenvolvemos soluções móveis intuitivas e envolventes para iOS
                 e Android. Transformamos conceitos em realidade digital,
                 proporcionando uma experiência única aos usuários.
               </p>
             </div>
-            <div className="h-[252px] w-[365px] rounded-lg bg-[#0A1D38]">
-              <div className="mx-6 mb-2 mt-6 flex text-[32px] font-bold">
-                <Lightbulb size={28} color="#f8f8ff" className="m-2" />
-                <h3>Consultoria</h3>
+            <div className="h-[165px] w-[280px] rounded-lg bg-[#0E284E] sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
+              <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
+                <Lightbulb
+                  color="#f8f8ff"
+                  className="mx-1 my-1.5 h-[16px] w-[16px] sm:mx-1.5 sm:my-2 sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-2.5 lg:h-[28px] lg:w-[28px]"
+                />
+                <h3 className="text-[18px] font-bold sm:text-[26px] lg:text-[32px]">
+                  Consultoria
+                </h3>
               </div>
-              <p className="mx-8 text-sm">
+              <p className="mx-6 text-xs sm:mx-7 sm:text-sm lg:mx-8">
                 Oferecemos orientação especializada em estratégias digitais,
                 arquitetura de informação, e otimização de desempenho. Visamos
                 impulsionar o sucesso do seu empreendimento online, fornecendo
@@ -66,7 +88,7 @@ export default function Services() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
