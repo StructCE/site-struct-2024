@@ -17,30 +17,30 @@ datasource db {
 model Member {
   id                  String                 @id @default(cuid())
   name                String                 @unique
-  directorShips       DirectorShipMember[] 
+  directorships       DirectorshipMember[] 
   projects            ProjectMember[]
 }
 
-model DirectorShip {
+model Directorship {
   id      String   @id @default(cuid())
   name    String   @unique
-  members DirectorShipMember[]
+  members DirectorshipMember[]
 }
 
-model DirectorShipMember {
+model DirectorshipMember {
   id                  String            @id @default(cuid())
   memberId            String
-  directorShipId      String
-  directorShipRoleId  String
-  directorShipRole    DirectorShipRole  @relation(fields: [directorShipRoleId], references: [id])
-  directorShip        DirectorShip      @relation(fields: [directorShipId], references: [id])
+  directorshipId      String
+  directorshipRoleId  String
+  directorshipRole    DirectorshipRole  @relation(fields: [directorshipRoleId], references: [id])
+  directorship        Directorship      @relation(fields: [directorshipId], references: [id])
   member              Member            @relation(fields: [memberId], references: [id])
 }
 
-model DirectorShipRole {
+model DirectorshipRole {
   id                  String @id @default(cuid())
   name                String
-  directorShipMembers DirectorShipMember[]
+  directorshipMembers DirectorshipMember[]
 }
 
 model Project {

@@ -6,11 +6,11 @@ const prisma = new PrismaClient()
 
 const memberDataResSchema = z.object({
   name: z.string(),
-  directorShips: z.object({
+  directorships: z.object({
     create: z.array(
       z.object({
-        directorShipId: z.string(),
-        directorShipRoleId: z.string()
+        directorshipId: z.string(),
+        directorshipRoleId: z.string()
       })
     )
   }),
@@ -27,17 +27,17 @@ const memberDataResSchema = z.object({
 type memberDataResType = z.infer<typeof memberDataResSchema>
 
 async function memberDataFactory(member: dataSchema["Members"][0]): Promise<memberDataResType | ZodError> {
-  const [name, directorShipsData, projectsData] = member;
+  const [name, directorshipsData, projectsData] = member;
 
-  const directorShips = await Promise.all(directorShipsData.map(async directorShip => ({
-    directorShipId: (await prisma.directorShip.findFirst({
+  const directorships = await Promise.all(directorshipsData.map(async directorship => ({
+    directorshipId: (await prisma.directorship.findFirst({
       where: {
-        name: directorShip[0]
+        name: directorship[0]
       }
     }))?.id,
-    directorShipRoleId: (await prisma.directorShipRole.findFirst({
+    directorshipRoleId: (await prisma.directorshipRole.findFirst({
       where: {
-        name: directorShip[1]
+        name: directorship[1]
       }
     }))?.id
   })));
@@ -60,8 +60,8 @@ async function memberDataFactory(member: dataSchema["Members"][0]): Promise<memb
     
   const data = {
     name: name,
-    directorShips: {
-      create: directorShips
+    directorships: {
+      create: directorships
     },
     projects: 
     projects? {create: projects} : undefined
@@ -87,10 +87,10 @@ async function createMembers(members: dataSchema["Members"]) {
   }
 }
 
-async function createDirectorShips(names: dataSchema["DirectorShips"]) {
+async function createDirectorships(names: dataSchema["Directorships"]) {
   for (const name of names) {
     try {
-      const res = await prisma.directorShip.create({
+      const res = await prisma.directorship.create({
         data: {
           name: name
         }
@@ -102,10 +102,10 @@ async function createDirectorShips(names: dataSchema["DirectorShips"]) {
   }
 }
 
-async function createDirectorShipRoles(names: dataSchema["DirectorShipsRoles"]) {
+async function createDirectorshipRoles(names: dataSchema["DirectorshipsRoles"]) {
   for (const name of names) {
     try {
-      const res = await prisma.directorShipRole.create({
+      const res = await prisma.directorshipRole.create({
         data: {
           name: name
         }
@@ -167,8 +167,8 @@ async function createPartners(partners: dataSchema["Partners"]) {
 
 async function main() {  
     await createPartners(data.Partners)
-    await createDirectorShips(data.DirectorShips)
-    await createDirectorShipRoles(data.DirectorShipsRoles)
+    await createDirectorships(data.Directorships)
+    await createDirectorshipRoles(data.DirectorshipsRoles)
     await createProjects(data.Projects)
     await createProjectRoles(data.ProjectsRoles)
     await createMembers(data.Members)

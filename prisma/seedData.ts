@@ -1,7 +1,7 @@
 export type dataSchema = {
     Partners: [string, string][],
-    DirectorShips: string[],
-    DirectorShipsRoles: string[],
+    Directorships: string[],
+    DirectorshipsRoles: string[],
     Projects: [string, string, string][],
     ProjectsRoles: string[],
     Members:[string, [string, string][], [string, string][]?][]
@@ -34,7 +34,7 @@ export const data: dataSchema = {
         "https://aiesec.org.br/"
         ]
     ],
-    DirectorShips: [ // [Diretoria1, Diretoria2, ...]
+    Directorships: [ // [Diretoria1, Diretoria2, ...]
         "Projetos",
         "Gestão de Pessoas",
         "Administração e Finanças",
@@ -43,7 +43,7 @@ export const data: dataSchema = {
         "Presidência",
         "Previdência",
     ],
-    DirectorShipsRoles: [ // [Role1, Role2, ...]
+    DirectorshipsRoles: [ // [Role1, Role2, ...]
         "Diretor",
         "Membro",
         "Presidente",
