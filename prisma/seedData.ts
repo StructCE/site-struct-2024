@@ -8,7 +8,7 @@ export type dataSchema = {
   }
 
 export const data: dataSchema = {
-    Partners:[
+    Partners:[ // [[NomePartner1, LinkPartner1], [NomePartner2, LinkPartner2], ...]
         [
             "UnB",
             "https://www.unb.br"
