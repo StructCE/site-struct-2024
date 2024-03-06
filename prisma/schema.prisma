@@ -17,6 +17,7 @@ datasource db {
 model Member {
   id                  String                 @id @default(cuid())
   name                String                 @unique
+  logoPublicId        String?
   directorships       DirectorshipMember[] 
   projects            ProjectMember[]
 }
@@ -49,6 +50,7 @@ model Project {
   description    String          @db.Text
   link           String          @db.Text
   show           Boolean         @default(true)
+  logoPublicId   String?
   projectMembers ProjectMember[]
 }
 
@@ -73,6 +75,7 @@ model Partner {
   id   String @id @default(cuid())
   name String @unique
   link String
+  logoPublicId String?
 }
 
 // Necessary for Next auth

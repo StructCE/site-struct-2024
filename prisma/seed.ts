@@ -6,6 +6,7 @@ const prisma = new PrismaClient()
 
 const memberDataResSchema = z.object({
   name: z.string(),
+  logoPublicId: z.string().optional(),
   directorships: z.object({
     create: z.array(
       z.object({
@@ -27,7 +28,7 @@ const memberDataResSchema = z.object({
 type memberDataResType = z.infer<typeof memberDataResSchema>
 
 async function memberDataFactory(member: dataSchema["Members"][0]): Promise<memberDataResType | ZodError> {
-  const [name, directorshipsData, projectsData] = member;
+  const [name, directorshipsData, logoPublicId, projectsData] = member;
 
   const directorships = await Promise.all(directorshipsData.map(async directorship => ({
     directorshipId: (await prisma.directorship.findFirst({
@@ -60,6 +61,7 @@ async function memberDataFactory(member: dataSchema["Members"][0]): Promise<memb
     
   const data = {
     name: name,
+    logoPublicId: logoPublicId !== ""? logoPublicId : undefined,
     directorships: {
       create: directorships
     },
@@ -124,7 +126,8 @@ async function createProjects(projects: dataSchema["Projects"]) {
         data: {
           name: project[0],
           description: project[1],
-          link: project[2]
+          link: project[2],
+          logoPublicId: project[3]
         }
       })
       console.log(`Projeto ${project[0]} criado - `+ res)
@@ -155,7 +158,8 @@ async function createPartners(partners: dataSchema["Partners"]) {
       const res = await prisma.partner.create({
         data: {
           name: partner[0],
-          link: partner[1]
+          link: partner[1],
+          logoPublicId: partner[2]
         }
       })
       console.log(`Parceiro ${partner[0]} criado - `+ res)
