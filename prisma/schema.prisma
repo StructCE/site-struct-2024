@@ -49,7 +49,7 @@ model Project {
   name           String          @unique
   description    String          @db.Text
   link           String          @db.Text
-  show           Boolean         @default(true)
+  show           Boolean         @default(false)
   logoPublicId   String?
   projectMembers ProjectMember[]
 }

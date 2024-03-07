@@ -61,7 +61,7 @@ async function memberDataFactory(member: dataSchema["Members"][0]): Promise<memb
     
   const data = {
     name: name,
-    logoPublicId: logoPublicId !== ""? logoPublicId : undefined,
+    logoPublicId: logoPublicId,
     directorships: {
       create: directorships
     },
@@ -127,7 +127,8 @@ async function createProjects(projects: dataSchema["Projects"]) {
           name: project[0],
           description: project[1],
           link: project[2],
-          logoPublicId: project[3]
+          logoPublicId: project[3],
+          show: project[4]
         }
       })
       console.log(`Projeto ${project[0]} criado - `+ res)
