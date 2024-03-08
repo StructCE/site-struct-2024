@@ -1,3 +1,4 @@
+import { CarTaxiFront } from "lucide-react";
 import { z } from "zod";
 import {
   createTRPCRouter,
@@ -8,41 +9,54 @@ import {
 export const projectRouter = createTRPCRouter({
   getAll: publicProcedure.query(async ({ ctx }) => {
     const projects = await ctx.db.project.findMany({
-      where:{
-        show: false
+      where: {
+        show: true
       }
     })
     return projects
   }),
-  
-  getOne: publicProcedure.input(z.object({id: z.string()})).query( async ({ ctx, input }) => {
-    const project = await ctx.db.project.findFirst({
-      where: {
-        id: input.id
+
+  getProjectAndMembers: publicProcedure.input(z.object({id: z.string()})).query(async ({ctx, input}) => {
+    const projectAndMembers = await ctx.db.project.findFirst({
+      where: input,
+      include: {
+        projectMembers: {
+          include: {
+            member: true,
+            role: true,
+          }
+        }
       }
     })
+    const project = {
+      name: projectAndMembers?.name,
+      description: projectAndMembers?.description,
+      link: projectAndMembers?.link,
+      members: projectAndMembers?.projectMembers.map((projectMember) => ({
+        name: projectMember.member.name,
+        logoPublicId: projectMember.member.logoPublicId,
+        role: projectMember.role.name
+      }))
+      }
     return project
   }),
 
-  createProject: protectedProcedure.input(
-    z.object({
-      name: z.string(),
-      description: z.string(),
-      link: z.string(),
-      logoPublicId: z.string().optional()
-    })
-  ).query(async ({ctx, input}) => {
+  createProject: protectedProcedure.input(z.object({
+    name: z.string(),
+    description: z.string(),
+    link: z.string(),
+    logoPublicId: z.string().optional(),
+    show: z.boolean().default(false),
+  })).mutation(async ({ctx, input}) => {
     const project = await ctx.db.project.create({
       data: input
     })
     return project
   }),
 
-  removeProject: protectedProcedure.input(z.object({id:z.string()})).query( async ({ctx, input}) => {
+  removeProject: protectedProcedure.input(z.object({id: z.string()})).mutation(async ({ctx, input}) => {
     const project = await ctx.db.project.delete({
-      where: {
-        id: input.id
-      }
+      where: input
     })
     return project
   }),
@@ -55,13 +69,31 @@ export const projectRouter = createTRPCRouter({
       link: z.string().optional(),
       logoPublicId: z.string().optional(),
     })
-  })).query(async ({ ctx, input }) => {
+  })).mutation(async ({ ctx, input }) => {
     const project = await ctx.db.project.update({
       where: {
         id: input.id
       },
       data: input.data
     })
+    return project
   }),
 
+  addMember: protectedProcedure.input(z.object({
+    projectId: z.string(), 
+    memberId: z.string(), 
+    projectRoleId: z.string()
+  })).mutation(async ({ctx, input}) => {
+    const projectMember = await ctx.db.projectMember.create({
+      data: input
+    })
+    return projectMember
+  }),
+
+  removeMember: protectedProcedure.input(z.object({id: z.string()})).mutation(async ({ctx, input}) => {
+    const projectMember = await ctx.db.projectMember.delete({
+      where: input
+    })
+    return projectMember
+  })
 });
