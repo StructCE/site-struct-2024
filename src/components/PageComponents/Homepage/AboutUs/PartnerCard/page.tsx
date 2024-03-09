@@ -22,8 +22,8 @@ export default function PartnerCard({ images }: Props) {
         <CldImage
           alt={images.alt}
           src={images.url}
-          width={120}
-          height={120}
+          width={112}
+          height={112}
           className="rounded-full"
         ></CldImage>
       </Link>
