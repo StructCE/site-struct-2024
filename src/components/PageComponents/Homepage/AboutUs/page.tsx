@@ -6,7 +6,12 @@ import PartnerCard from "./PartnerCard/page";
 export default function Home() {
   const { data } = api.partner.getAll.useQuery();
 
-  console.log(data);
+  const date = new Date();
+  const YearsActive =
+    (date.getDate() >= 20 && date.getMonth() + 1 === 11) ||
+    date.getMonth() + 1 > 11
+      ? date.getFullYear() - 2014
+      : date.getFullYear() - 2014 - 1;
 
   return (
     <>
@@ -45,7 +50,7 @@ export default function Home() {
                   </p>
                   <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
                     <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
-                      9
+                      {YearsActive}
                     </span>{" "}
                     anos de atividade
                   </p>
