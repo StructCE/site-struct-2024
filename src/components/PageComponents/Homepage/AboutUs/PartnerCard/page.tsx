@@ -17,14 +17,14 @@ export default function PartnerCard({ images }: Props) {
       <Link
         href={images.link}
         target="_blank"
-        className="hover:bg-struct-7-hover size-28 rounded-full bg-struct-7"
+        className="hover:bg-struct-7-hover size-[92px] rounded-full bg-struct-7 sm:size-28"
       >
         <CldImage
           alt={images.alt}
           src={images.url}
           width={112}
           height={112}
-          className="rounded-full"
+          className="h-[92px] w-[92px] rounded-full sm:h-[112px] sm:w-[112px]"
         ></CldImage>
       </Link>
     </>
