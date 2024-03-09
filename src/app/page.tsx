@@ -1,4 +1,5 @@
 "use client";
+import AboutUs from "../components/PageComponents/Homepage/AboutUs/page";
 import Home from "../components/PageComponents/Homepage/Home/page";
 import Services from "../components/PageComponents/Homepage/Services/page";
 
@@ -9,7 +10,7 @@ export default function Homepage() {
         <Home />
         <Services />
         {/* Portfólio */}
-        {/* Sobre nós */}
+        <AboutUs />
         {/* Contato */}
       </div>
     </>
