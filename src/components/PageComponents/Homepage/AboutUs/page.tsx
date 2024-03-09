@@ -10,19 +10,20 @@ export default function Home() {
 
   return (
     <>
-      <section className="m-0 flex h-[650px] w-full skew-y-3 flex-col items-center justify-center gap-9 bg-fundo-2 p-0 font-nunito lg:h-[1000px]">
-        <div className="flex -skew-y-3 flex-col gap-9 py-24">
+      <section className="m-0 flex w-full skew-y-3 flex-col items-center justify-center gap-9 bg-fundo-2 p-0 font-nunito lg:h-[1000px]">
+        <div className="flex -skew-y-3 flex-col gap-9 py-12 sm:py-24">
           {/* Quem Somos */}
           <div className="flex flex-col gap-8">
             <h2 className="text-center font-oxanium text-[24px] font-bold leading-[30px] sm:text-[32px] sm:leading-[48px] lg:text-[48px] lg:leading-[60px]">
               <span className="text-struct-3">{"{ "}</span>Quem Somos
               <span className="text-struct-3">{" }"}</span>
             </h2>
-            <div className="flex w-[1024px] rounded-2xl bg-fundo-3">
+            {/* Caixa Quem Somos */}
+            <div className="flex w-[280px] flex-col rounded-2xl bg-fundo-3 sm:w-[580px] sm:justify-center lg:w-[1024px] lg:flex-row">
               {/* Texto e números */}
-              <div className="m-8 mr-4 w-[523px]">
+              <div className="m-3 mr-4 w-[256px] sm:m-8 sm:w-[523px]">
                 {/* Texto */}
-                <p className="mb-8">
+                <p className="mb-3 text-[8px] sm:mb-8 sm:text-base">
                   A Struct é a Empresa Junior (EJ) do curso Engenharia de
                   Computação da Universidade de Brasília. Desde 2014, buscamos
                   proporcionar soluções com as tecnologias mais atualizadas no
@@ -35,21 +36,21 @@ export default function Home() {
                   uma vivência empresarial aos estudantes.
                 </p>
                 {/* Números */}
-                <div className="flex justify-center gap-8 text-[24px] font-normal">
-                  <p className="flex w-[130px] flex-col text-center">
-                    <span className="font-oxanium text-[96px] font-semibold leading-[90px] text-struct-1">
+                <div className="flex justify-center gap-4 text-[10px] font-normal sm:gap-8 sm:text-[24px]">
+                  <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
+                    <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
                       55
                     </span>{" "}
                     projetos concluídos
                   </p>
-                  <p className="flex w-[130px] flex-col text-center">
-                    <span className="font-oxanium text-[96px] font-semibold leading-[90px] text-struct-1">
+                  <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
+                    <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
                       9
                     </span>{" "}
                     anos de atividade
                   </p>
-                  <p className="flex w-[130px] flex-col text-center">
-                    <span className="font-oxanium text-[96px] font-semibold leading-[90px] text-struct-1">
+                  <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
+                    <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
                       27
                     </span>{" "}
                     membros ativos
@@ -57,28 +58,28 @@ export default function Home() {
                 </div>
               </div>
               {/* MVV */}
-              <div className="m-8 ml-4 w-[405px] rounded-lg px-8 shadow-[0_1px_12px_rgb(8,20,38,0.75)]">
+              <div className="m-3 rounded-lg px-8 shadow-[0_1px_12px_rgb(8,20,38,0.75)] sm:mx-auto sm:mb-6 sm:w-[405px] lg:m-8 lg:ml-4">
                 {/* Título */}
-                <h4 className="mb-2 mt-4 flex justify-center font-oxanium text-[24px] font-bold text-struct-2">
+                <h4 className="mb-2 mt-3 flex justify-center font-oxanium text-[20px] font-bold text-struct-2 sm:mt-4 sm:text-[24px]">
                   MVV
                 </h4>
                 {/* Missão, Valores e Visão */}
-                <div className="grid grid-cols-2 gap-4">
+                <div className="flex flex-col sm:grid sm:grid-cols-2 sm:gap-4">
                   <div>
-                    <div>
-                      <h5 className="font-oxanium text-[22px] font-semibold">
+                    <div className="text-center sm:text-left">
+                      <h5 className="font-oxanium text-[16px] font-semibold sm:text-[22px]">
                         <span className="text-struct-2">M</span>issão
                       </h5>
-                      <p className="text-[12px]">
+                      <p className="text-[10px] sm:text-[12px]">
                         Formar estudantes mais profissionais e mais capacitados
                         por meio da vivência empresarial.
                       </p>
                     </div>
-                    <div className="my-2">
-                      <h5 className="font-oxanium text-[22px] font-semibold">
+                    <div className="my-2 text-center sm:text-left">
+                      <h5 className="font-oxanium text-[16px] font-semibold sm:text-[22px]">
                         <span className="text-struct-2">V</span>isão
                       </h5>
-                      <p className="text-[12px]">
+                      <p className="text-[10px] sm:text-left sm:text-[12px]">
                         Proporcionar os melhores produtos e experiência ao
                         cliente. Fortalecer a representatividade da EC no
                         ambiente acadêmico e no mercado.
@@ -86,33 +87,33 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="px-4">
-                    <div>
-                      <h5 className="font-oxanium text-[22px] font-semibold">
+                    <div className="text-center sm:text-left">
+                      <h5 className="font-oxanium text-[16px] font-semibold sm:text-[22px]">
                         <span className="text-struct-2">V</span>alores
                       </h5>
-                      <div className="flex flex-col gap-2 p-2 font-bold">
+                      <div className="flex flex-col gap-1 p-2 text-[12px] font-bold sm:gap-2 sm:text-[16px]">
                         <p>
-                          <span className="font-oxanium text-struct-2">S</span>
+                          <span className="font-oxanium text-struct-3">S</span>
                           inergia
                         </p>
                         <p>
-                          <span className="font-oxanium text-struct-2">T</span>
+                          <span className="font-oxanium text-struct-3">T</span>
                           ransparência
                         </p>
                         <p>
-                          <span className="font-oxanium text-struct-2">R</span>
+                          <span className="font-oxanium text-struct-3">R</span>
                           espeito
                         </p>
                         <p>
-                          <span className="font-oxanium text-struct-2">U</span>
+                          <span className="font-oxanium text-struct-3">U</span>
                           nião
                         </p>
                         <p>
-                          <span className="font-oxanium text-struct-2">C</span>
+                          <span className="font-oxanium text-struct-3">C</span>
                           ompromisso
                         </p>
                         <p>
-                          <span className="font-oxanium text-struct-2">T</span>
+                          <span className="font-oxanium text-struct-3">T</span>
                           ransformadora
                         </p>
                       </div>
@@ -120,10 +121,10 @@ export default function Home() {
                   </div>
                 </div>
                 {/* Botão */}
-                <div className="m-2 flex items-center justify-center">
+                <div className="m-2 mb-4 flex items-center justify-center">
                   <Link
                     href="/membros"
-                    className="border-b-2 border-struct-3 py-1 font-oxanium text-[24px] font-semibold leading-[20px] text-struct-3"
+                    className="border-b-[1px] border-struct-3 font-oxanium text-[14px] font-semibold leading-[16px] text-struct-3 sm:border-b-2 sm:py-1 sm:text-[24px] sm:leading-[20px]"
                   >
                     conheça nossos membros
                   </Link>
@@ -138,7 +139,7 @@ export default function Home() {
               <span className="text-struct-3">{" }"}</span>
             </h3>
             <div className="flex justify-center">
-              <div className="flex max-w-[272px] flex-wrap gap-4 rounded-xl bg-fundo-3 p-4 sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]">
+              <div className="flex max-w-[256px] flex-wrap gap-6 rounded-xl bg-fundo-3 p-6 sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]">
                 {data?.map((partner) => (
                   <PartnerCard
                     key={partner.id}
