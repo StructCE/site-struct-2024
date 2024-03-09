@@ -5,7 +5,7 @@ import Services from "../components/PageComponents/Homepage/Services/page";
 export default function Homepage() {
   return (
     <>
-      <div className="w-full bg-[#081426] text-[#F8F8FF] selection:bg-[#0A369F]">
+      <div className="bg-fundo-0 text-struct-7 selection:bg-struct-5 w-full">
         <Home />
         <Services />
         {/* Portfólio */}
