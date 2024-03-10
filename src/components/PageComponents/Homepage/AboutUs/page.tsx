@@ -129,7 +129,7 @@ export default function Home() {
                 <div className="m-2 mb-4 flex items-center justify-center">
                   <Link
                     href="/membros"
-                    className="border-b-[1px] border-struct-3 font-oxanium text-[14px] font-semibold leading-[16px] text-struct-3 sm:border-b-2 sm:py-1 sm:text-[24px] sm:leading-[20px]"
+                    className="border-animation border-b-[1px] border-struct-1 font-oxanium text-[14px] font-semibold leading-[16px] text-struct-3 sm:border-b-2 sm:py-1 sm:text-[24px] sm:leading-[20px]"
                   >
                     conheça nossos membros
                   </Link>

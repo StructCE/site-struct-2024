@@ -17,7 +17,7 @@ export default function PartnerCard({ images }: Props) {
       <Link
         href={images.link}
         target="_blank"
-        className="hover:bg-struct-7-hover size-[92px] rounded-full bg-struct-7 sm:size-28"
+        className="delay-50 size-[92px] rounded-full bg-struct-7 transition ease-in-out hover:-translate-y-[3px] sm:size-28"
       >
         <CldImage
           alt={images.alt}
