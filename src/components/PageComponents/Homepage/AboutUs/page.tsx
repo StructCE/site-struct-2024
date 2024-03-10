@@ -6,14 +6,16 @@ import PartnerCard from "./PartnerCard/page";
 export default function Home() {
   const { data } = api.partner.getAll.useQuery();
 
+  const countProjects = api.project.countProjects.useQuery();
+  const countActiveMembers =
+    api.directorship.countDirectiorshipMembers.useQuery();
+
   const date = new Date();
   const YearsActive =
     (date.getDate() >= 20 && date.getMonth() + 1 === 11) ||
     date.getMonth() + 1 > 11
       ? date.getFullYear() - 2014
       : date.getFullYear() - 2014 - 1;
-
-  const countDirMem = api.directorship.countDirectiorshipMembers.useQuery();
 
   return (
     <>
@@ -46,7 +48,7 @@ export default function Home() {
                 <div className="flex justify-center gap-4 text-[10px] font-normal sm:gap-8 sm:text-[24px]">
                   <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
                     <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
-                      55
+                      {countProjects.data}
                     </span>{" "}
                     projetos concluídos
                   </p>
@@ -58,7 +60,7 @@ export default function Home() {
                   </p>
                   <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
                     <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
-                      {countDirMem.data}
+                      {countActiveMembers.data}
                     </span>{" "}
                     membros ativos
                   </p>
