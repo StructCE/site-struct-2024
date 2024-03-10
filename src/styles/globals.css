@@ -25,3 +25,14 @@
 .border-animation:hover::before {
   width: 100%;
 }
+
+@media (max-width: 639px) {
+  .border-animation {
+    border-bottom: 1px solid #2da2ff;
+  }
+
+  .border-animation::before {
+    height: 1px;
+    bottom: -1px;
+  }
+}
