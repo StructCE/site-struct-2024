@@ -21,6 +21,7 @@ export default {
         "fundo-2": "#0A1D38",
         "fundo-3": "#0E284E",
         "fundo-transparente": "#252E3C", // Para aplicar a opacidade correta utilizar "bg-fundo-transparente/60" = 60% da opacidade
+        "struct-7-hover": "#D8D8D8",
       },
     },
   },

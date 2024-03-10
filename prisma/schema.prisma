@@ -15,31 +15,31 @@ datasource db {
 }
 
 model Member {
-  id                  String                 @id @default(cuid())
-  name                String                 @unique
-  logoPublicId        String                 @default("astronautas/astronauta_pc")
-  directorships       DirectorshipMember[] 
-  projects            ProjectMember[]
+  id            String               @id @default(cuid())
+  name          String               @unique
+  logoPublicId  String               @default("astronautas/astronauta_pc")
+  directorships DirectorshipMember[]
+  projects      ProjectMember[]
 }
 
 model Directorship {
-  id      String   @id @default(cuid())
-  name    String   @unique
+  id      String               @id @default(cuid())
+  name    String               @unique
   members DirectorshipMember[]
 }
 
 model DirectorshipMember {
-  id                  String            @id @default(cuid())
-  memberId            String
-  directorshipId      String
-  directorshipRoleId  String
-  directorshipRole    DirectorshipRole  @relation(fields: [directorshipRoleId], references: [id])
-  directorship        Directorship      @relation(fields: [directorshipId], references: [id])
-  member              Member            @relation(fields: [memberId], references: [id])
+  id                 String           @id @default(cuid())
+  memberId           String
+  directorshipId     String
+  directorshipRoleId String
+  directorshipRole   DirectorshipRole @relation(fields: [directorshipRoleId], references: [id])
+  directorship       Directorship     @relation(fields: [directorshipId], references: [id])
+  member             Member           @relation(fields: [memberId], references: [id])
 }
 
 model DirectorshipRole {
-  id                  String @id @default(cuid())
+  id                  String               @id @default(cuid())
   name                String
   directorshipMembers DirectorshipMember[]
 }
@@ -65,17 +65,16 @@ model ProjectMember {
 }
 
 model ProjectRole {
-  id            String          @id @default(cuid())
-  name          String          @default("Desenvolvedor")   @unique
-  members       ProjectMember[]
+  id      String          @id @default(cuid())
+  name    String          @unique @default("Desenvolvedor")
+  members ProjectMember[]
 }
 
-
 model Partner {
-  id   String @id @default(cuid())
-  name String @unique
-  link String
-  logoPublicId String?
+  id           String @id @default(cuid())
+  name         String @unique
+  link         String
+  logoPublicId String
 }
 
 // Necessary for Next auth
