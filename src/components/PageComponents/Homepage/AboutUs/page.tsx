@@ -13,6 +13,8 @@ export default function Home() {
       ? date.getFullYear() - 2014
       : date.getFullYear() - 2014 - 1;
 
+  const countDirMem = api.directorship.countDirectiorshipMembers.useQuery();
+
   return (
     <>
       <section className="m-0 flex w-full skew-y-3 flex-col items-center justify-center gap-9 bg-fundo-2 p-0 font-nunito lg:h-[1000px]">
@@ -56,7 +58,7 @@ export default function Home() {
                   </p>
                   <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
                     <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
-                      27
+                      {countDirMem.data}
                     </span>{" "}
                     membros ativos
                   </p>
