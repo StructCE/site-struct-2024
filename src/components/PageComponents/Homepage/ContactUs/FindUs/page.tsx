@@ -6,7 +6,7 @@ import MapStruct from "./MapStruct/page";
 export default function FindUs() {
   return (
     <>
-      <div className="h-[598px] w-[496px] rounded-lg bg-fundo-2 p-6">
+      <div className="h-[360px] w-[280px] rounded-lg bg-fundo-2 p-6 sm:h-[598px] sm:w-[496px]">
         {/* Título */}
         <h3 className="mb-6 text-center font-oxanium text-[14px] font-bold leading-[18px] sm:text-[32px] sm:leading-[40px]">
           <span className="text-struct-3">{"{ "}</span>Como nos encontrar
@@ -18,28 +18,37 @@ export default function FindUs() {
             <MapStruct />
           </div>
           {/* Redes Sociais */}
-          <div className="relative bottom-12 z-20 mx-auto">
-            <div className="flex justify-center gap-6 rounded-lg bg-fundo-3 p-6">
+          <div className="relative bottom-6 z-20 mx-auto sm:bottom-12">
+            <div className="flex justify-center gap-3 rounded-lg bg-fundo-3 p-3 sm:gap-6 sm:p-6">
               <Link
                 href="https://www.facebook.com/StructUnB"
                 target="_blank"
-                className="rounded-lg bg-fundo-0 p-3"
+                className="rounded-lg bg-fundo-0 p-[6px] sm:p-3"
               >
-                <FaFacebookSquare size={26} color="#f8f8ff" />
+                <FaFacebookSquare
+                  className="size-[16px] sm:size-[26px]"
+                  color="#f8f8ff"
+                />
               </Link>
               <Link
                 href="https://www.linkedin.com/company/struct-ej/"
                 target="_blank"
-                className="rounded-lg bg-fundo-0 p-3"
+                className="rounded-lg bg-fundo-0 p-[6px] sm:p-3"
               >
-                <FaLinkedin size={26} color="#f8f8ff" />
+                <FaLinkedin
+                  color="#f8f8ff"
+                  className="size-[16px] sm:size-[26px]"
+                />
               </Link>
               <Link
                 href="https://www.instagram.com/structunb/"
                 target="_blank"
-                className="rounded-lg bg-fundo-0 p-3"
+                className="rounded-lg bg-fundo-0 p-[6px] sm:p-3"
               >
-                <FaInstagram size={26} color="#f8f8ff" />
+                <FaInstagram
+                  className="size-[16px] sm:size-[26px]"
+                  color="#f8f8ff"
+                />
               </Link>
             </div>
           </div>

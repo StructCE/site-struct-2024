@@ -18,10 +18,7 @@ export default function MapStruct() {
       <MapContainer
         center={positionMap}
         zoom={14}
-        style={{
-          height: "448px",
-          borderRadius: "4px",
-        }}
+        className="h-[256px] rounded-sm sm:h-[448px]"
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -32,7 +29,7 @@ export default function MapStruct() {
           icon={customIcon}
           attribution="Struct - UnB, DF"
         >
-          <Popup className="font-nunito font-bold">
+          <Popup className="font-nunito text-[8px] font-bold sm:text-[12px]">
             Struct - Empresa Júnior de <br></br>Engenharia de Computação
             <br></br>
             <br></br>
