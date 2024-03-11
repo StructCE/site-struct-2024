@@ -1,5 +1,7 @@
+"use client";
 import { MenuIcon } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 import {
   Accordion,
@@ -9,8 +11,21 @@ import {
 } from "~/components/ui/accordion";
 
 export default function Navbar() {
+  const [scrollvalue, setScrollValue] = useState<number>(0);
+  useEffect(() => {
+    function updatescrollvalue() {
+      setScrollValue(window.scrollY);
+    }
+    window.addEventListener("scroll", updatescrollvalue);
+    return () => {
+      window.removeEventListener("scroll", updatescrollvalue);
+    };
+  }, []);
+
   return (
-    <nav className=" fixed z-40 flex w-full  justify-center bg-white/0 py-0.5 sm:py-4">
+    <nav
+      className={`fixed z-40 flex w-full  justify-center bg-white/0 py-0.5 transition-all ease-in sm:py-4 ${scrollvalue > 0 && "bg-[#252E3C]/60 sm:py-2"}`}
+    >
       <ul className="hidden items-center gap-[4vw] text-xl text-[#F8F8FF] sm:flex">
         <li className="text-2xl text-[#F8F8FF] ">
           <span className="text-[#2DA2FF]">{"{"}</span>
@@ -54,7 +69,7 @@ export default function Navbar() {
               <MenuIcon size={42} />
             </AccordionTrigger>
           </div>
-          <AccordionContent className="bg-[hsla (216, 23, 19, 0.6)] -mt-[34px] w-full">
+          <AccordionContent className="-mt-[34px] w-full">
             <ul className="flex flex-col items-center gap-4 py-[34px] text-xl text-[#F8F8FF]">
               <li>
                 <Link className="  " href="">
