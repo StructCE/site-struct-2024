@@ -4,22 +4,22 @@ import { Cog, Lightbulb, ScreenShare, Smartphone } from "lucide-react";
 export default function Services() {
   return (
     <>
-      <section className="m-0 flex w-full skew-y-3 items-center justify-center bg-[#0A1D38] p-0 lg:h-[1000px]">
+      <section className="bg-fundo-2 m-0 flex w-full skew-y-3 items-center justify-center p-0 lg:h-[1000px]">
         <div className="-skew-y-3 py-24">
           {/* titulo */}
           <div className="flex flex-col items-center justify-center">
             <h2 className="text-center font-oxanium text-[24px] font-bold leading-[30px] sm:text-[32px] sm:leading-[48px] lg:text-[48px] lg:leading-[60px]">
-              <span className="text-[#2DA2FF]">{"{ "}</span>Serviços
-              <span className="text-[#2DA2FF]">{" }"}</span>
+              <span className="text-struct-3">{"{ "}</span>Serviços
+              <span className="text-struct-3">{" }"}</span>
             </h2>
-            <p className="my-2 w-[32px] border-b-2 border-[#FD8D4B] sm:my-3 sm:w-[64px] lg:my-5 lg:w-[96px]"></p>
+            <p className="border-struct-1 my-2 w-[32px] border-b-2 sm:my-3 sm:w-[64px] lg:my-5 lg:w-[96px]"></p>
             <p className="font-nunito text-[8px] sm:text-[12px] lg:text-[16px]">
               Conheça como podemos ajudar seu negócio!
             </p>
           </div>
           {/* caixas */}
           <div className="m-8 grid w-[280px] grid-cols-1 gap-4 font-nunito sm:w-[400px] sm:gap-6 lg:w-[762px] lg:grid-cols-2 lg:gap-8">
-            <div className="h-[165px] w-[280px] rounded-lg bg-[#0E284E] sm:h-[210px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
+            <div className="bg-fundo-3 h-[165px] w-[280px] rounded-lg sm:h-[210px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
               <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
                 <ScreenShare
                   color="#f8f8ff"
@@ -36,7 +36,7 @@ export default function Services() {
                 identidade única de cada cliente.
               </p>
             </div>
-            <div className="h-[165px] w-[280px] rounded-lg bg-[#0E284E] sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
+            <div className="bg-fundo-3 h-[165px] w-[280px] rounded-lg sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
               <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
                 <Cog
                   color="#f8f8ff"
@@ -53,7 +53,7 @@ export default function Services() {
                 web personalizados.
               </p>
             </div>
-            <div className="h-[165px] w-[280px] rounded-lg bg-[#0E284E] sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
+            <div className="bg-fundo-3 h-[165px] w-[280px] rounded-lg sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
               <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
                 <Smartphone
                   color="#f8f8ff"
@@ -69,7 +69,7 @@ export default function Services() {
                 proporcionando uma experiência única aos usuários.
               </p>
             </div>
-            <div className="h-[165px] w-[280px] rounded-lg bg-[#0E284E] sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
+            <div className="bg-fundo-3 h-[165px] w-[280px] rounded-lg sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
               <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
                 <Lightbulb
                   color="#f8f8ff"

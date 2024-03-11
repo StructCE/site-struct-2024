@@ -14,7 +14,6 @@
 - [framer-motion](https://www.framer.com/motion/) -> animações
 - [react-email](https://react.email/docs/introduction) -> form
 - [pigeon-maps](https://pigeon-maps.js.org/) -> mapa
-- [react-spinners](https://react-bootstrap.netlify.app/docs/components/spinners/) -> loading spinner
 
 ---
 # Banco de Dados
