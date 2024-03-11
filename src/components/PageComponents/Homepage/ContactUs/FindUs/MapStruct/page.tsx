@@ -20,6 +20,7 @@ export default function MapStruct() {
         zoom={14}
         style={{
           height: "448px",
+          borderRadius: "4px",
         }}
       >
         <TileLayer
