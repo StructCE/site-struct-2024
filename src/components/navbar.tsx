@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed z-40 flex w-full  justify-center bg-white/0 py-0.5 transition-all ease-in sm:py-4 ${scrollvalue > 0 && "bg-[#252E3C]/60 sm:py-2"}`}
+      className={`fixed z-40 flex w-full  justify-center py-0.5 transition-all ease-in sm:py-4 ${scrollvalue > 0 && "bg-[#252E3C]/60 sm:py-2"}`}
     >
       <ul className="hidden items-center gap-[4vw] text-xl text-[#F8F8FF] sm:flex">
         <li className="text-2xl text-[#F8F8FF] ">
