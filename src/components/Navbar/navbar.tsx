@@ -13,7 +13,6 @@ import {
 export default function Navbar() {
   const [scrollvalue, setScrollValue] = useState<number>(0);
   const [navbaropen, setNavbaropen] = useState<boolean>(false);
-  console.log(navbaropen)
   useEffect(() => {
     function updatescrollvalue() {
       setScrollValue(window.scrollY);
