@@ -6,9 +6,9 @@ import MapStruct from "./MapStruct/page";
 export default function FindUs() {
   return (
     <>
-      <div className="h-[360px] w-[280px] rounded-lg bg-fundo-2 p-6 sm:h-[598px] sm:w-[496px]">
+      <div className="h-[346px] w-[280px] rounded-lg bg-fundo-2 p-4 sm:h-[598px] sm:w-[496px] sm:p-6">
         {/* Título */}
-        <h3 className="mb-6 text-center font-oxanium text-[14px] font-bold leading-[18px] sm:text-[32px] sm:leading-[40px]">
+        <h3 className="mb-3 text-center font-oxanium text-[14px] font-bold leading-[18px] sm:mb-6 sm:text-[32px] sm:leading-[40px]">
           <span className="text-struct-3">{"{ "}</span>Como nos encontrar
           <span className="text-struct-3">{" }"}</span>
         </h3>
