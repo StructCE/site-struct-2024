@@ -1,7 +1,7 @@
+import Footer from "~/components/Footer/footer";
+import Navbar from "~/components/Navbar/navbar";
 import "~/styles/globals.css";
-import Navbar from "src/components/navbar";
 import { TRPCReactProvider } from "~/trpc/react";
-import Footer from "~/components/footer";
 
 export const metadata = {
   title: "Struct - Empresa Junior de Engenharia de Computação",
