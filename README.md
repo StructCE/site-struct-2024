@@ -1,44 +1,51 @@
 # Tecnologias
+- [T3 App](https://create.t3.gg/en/introduction)
 - [Next.js](https://nextjs.org)
 - [NextAuth.js](https://next-auth.js.org)
 - [Prisma](https://prisma.io)
 - [Tailwind CSS](https://tailwindcss.com)
 - [tRPC](https://trpc.io)
 
+---
 # Bibliotecas
 - [shadcn](https://ui.shadcn.com/docs) -> components
 - [lucide](https://lucide.dev/icons/) -> icons
 - [cloudnary](https://next.cloudinary.dev/) -> imagens
 - [framer-motion](https://www.framer.com/motion/) -> animações
 - [react-email](https://react.email/docs/introduction) -> form
-
+- [pigeon-maps](https://pigeon-maps.js.org/) -> mapa
 
 ---
-# Create T3 App
+# Banco de Dados
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Estamos usando mysql para banco de dados, o qual necessita de um container Docker para rodar. Assim, vamos instalar primeiramente o Docker:
 
-## What's next? How do I make an app with this?
+```bash
+sudo snap install docker
+```
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+Tendo o Docker instalado na sua máquina, você poderá rodar o arquivo `start-database.sh` que irá criar um container para o nosso banco de dados. Se o container já estiver criado e você quiser iniciar ele, comente no arquivo `.sh` a linha com o comando `docker run ...` e descomente a com o comando `docker start...` e, então, o execute.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+Mas antes certifique-se de que você tem seu arquivo `.env` seguindo o exemplo do `.env.example`. Para a criação de banco de dados é importante essa variável de ambinete:
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+```bash
+DATABASE_URL="mysql://root:password@localhost:3306/site-struct-2024"
+```
 
-## Learn More
+No lugar de password, coloque uma senha aleatória para o seu banco de dados.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## Seed
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+Para rodar a seed, certifique-se de que todas as depêndencias estão instaladas rondado o comando:
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+```bash
+pnpm i
+```
 
-## How do I deploy this?
+Depois, você pode rodar a seed com o comando: 
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+```bash
+pnpm db:seed
+```
+
+Verifique as saídas no terminal, pois avisará caso ocorra algum erro na população do banco de dados.
