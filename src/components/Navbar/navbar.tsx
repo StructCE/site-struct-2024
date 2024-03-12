@@ -25,33 +25,45 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed z-40 flex w-full justify-center items-center transition-all ease-in ${scrollvalue > 0 && "bg-fundo-transparente/60 h-[64px]"} ${scrollvalue == 0 && " h-[96px]"} ${scrollvalue > 0 && navbaropen && "bg-fundo-transparente/0"} `}
+      className={`fixed z-40 flex w-full items-center justify-center transition-all ease-in ${scrollvalue > 0 && "h-[64px] bg-fundo-transparente/80"} ${scrollvalue == 0 && " h-[96px]"} ${scrollvalue > 0 && navbaropen && "bg-fundo-transparente/0"} `}
     >
-      <ul className="hidden items-center gap-[4vw] text-xl text-struct-7 sm:flex font-oxanium font-semibold text-[20px]">
-        <li className="text-[36px] text-struct-7 font-bold">
+      <ul className="hidden items-center gap-[4vw] font-oxanium text-[20px] text-xl font-semibold text-struct-7 sm:flex">
+        <li className="text-[36px] font-bold text-struct-7">
           <Link href="/">
             <span className="text-struct-2">{"{"}</span>
-              struct
+            struct
             <span className="text-struct-2">{"}"}</span>
           </Link>
         </li>
         <li>
-          <Link className="hover:text-struct-1 transition delay-75 ease-in-out" href="#servicos">
+          <Link
+            className="transition delay-75 ease-in-out hover:text-struct-1"
+            href="#servicos"
+          >
             Serviços
           </Link>
         </li>
         <li>
-          <Link className="hover:text-struct-1 transition delay-75 ease-in-out" href="#portfolio">
+          <Link
+            className="transition delay-75 ease-in-out hover:text-struct-1"
+            href="#portfolio"
+          >
             Portifólio
           </Link>
         </li>
         <li>
-          <Link className="hover:text-struct-1 transition delay-75 ease-in-out" href="#sobrenos">
+          <Link
+            className="transition delay-75 ease-in-out hover:text-struct-1"
+            href="#sobrenos"
+          >
             Sobre nós
           </Link>
         </li>
         <li>
-          <Link className="hover:text-struct-1 transition delay-75 ease-in-out" href="#contato">
+          <Link
+            className="transition delay-75 ease-in-out hover:text-struct-1"
+            href="#contato"
+          >
             Contato
           </Link>
         </li>
@@ -63,49 +75,46 @@ export default function Navbar() {
       >
         <AccordionItem className="w-full border-none" value="menu">
           <div className="flex items-center justify-between font-oxanium font-bold">
-            <div className="text-[36px] text-struct-7 ml-6">
+            <div className="ml-6 text-[36px] text-struct-7">
               <Link href="/">
                 <span className="text-struct-2">{"{"}</span>
-                  struct
+                struct
                 <span className="text-struct-2">{"}"}</span>
               </Link>
             </div>
-            <AccordionTrigger className="text-struct-7 mr-6" onClick={() => setNavbaropen(true)}>
+            <AccordionTrigger
+              className="mr-6 text-struct-7"
+              onClick={() => setNavbaropen(true)}
+            >
               <MenuIcon size={42} />
             </AccordionTrigger>
           </div>
           <AccordionContent className="w-full bg-fundo-transparente/60">
-            <ul className="flex flex-col items-center text-[14px] text-struct-7 font-oxanium font-semibold">
-              <li className="text-[28px] text-struct-7 font-bold">
+            <ul className="flex flex-col items-center font-oxanium text-[14px] font-semibold text-struct-7">
+              <li className="text-[28px] font-bold text-struct-7">
                 <Link href="/">
                   <span className="text-struct-2">{"{"}</span>
-                    struct
+                  struct
                   <span className="text-struct-2">{"}"}</span>
                 </Link>
               </li>
               <li className="mt-4">
-                <Link href="#servicos">
-                  Serviços
-                </Link>
+                <Link href="#servicos">Serviços</Link>
               </li>
               <li className="mt-4">
-                <Link href="portfolio">
-                  Portifólio
-                </Link>
+                <Link href="portfolio">Portifólio</Link>
               </li>
               <li className="mt-4">
-                <Link href="#sobrenos">
-                  Sobre nós
-                </Link>
+                <Link href="#sobrenos">Sobre nós</Link>
               </li>
               <li className="mt-4">
-                <Link href="#contato">
-                  Contato
-                </Link>
+                <Link href="#contato">Contato</Link>
               </li>
               <li className="mt-2">
-                <AccordionTrigger className="text-struct-7" onClick={() => setNavbaropen(false)}>
-                </AccordionTrigger>
+                <AccordionTrigger
+                  className="text-struct-7"
+                  onClick={() => setNavbaropen(false)}
+                ></AccordionTrigger>
               </li>
             </ul>
           </AccordionContent>
