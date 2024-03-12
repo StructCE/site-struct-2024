@@ -1,14 +1,13 @@
-"use client";
 import Link from "next/link";
-import { api } from "~/trpc/react";
+import { api } from "~/trpc/server";
 import PartnerCard from "./PartnerCard/page";
 
-export default function Home() {
-  const { data } = api.partner.getAll.useQuery();
+export default async function AboutUs() {
+  const partners = await api.partner.getAll.query();
 
-  const countProjects = api.project.countProjects.useQuery();
+  const countProjects = await api.project.countProjects.query();
   const countActiveMembers =
-    api.directorship.countDirectiorshipMembers.useQuery();
+    await api.directorship.countDirectiorshipMembers.query();
 
   const date = new Date();
   const YearsActive =
@@ -19,7 +18,10 @@ export default function Home() {
 
   return (
     <>
-      <section className="m-0 flex w-full skew-y-3 flex-col items-center justify-center gap-9 bg-fundo-2 p-0 font-nunito lg:h-[1000px]">
+      <section
+        id="sobrenos"
+        className="m-0 flex w-full skew-y-3 flex-col items-center justify-center gap-9 bg-fundo-2 p-0 font-nunito lg:h-[1000px]"
+      >
         <div className="flex -skew-y-3 flex-col gap-9 py-12 sm:py-24">
           {/* Quem Somos */}
           <div className="flex flex-col gap-8">
@@ -48,7 +50,7 @@ export default function Home() {
                 <div className="flex justify-center gap-4 text-[10px] font-normal sm:gap-8 sm:text-[24px]">
                   <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
                     <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
-                      {/* {countProjects.data} */}
+                      {countProjects}
                     </span>{" "}
                     projetos concluídos
                   </p>
@@ -60,7 +62,7 @@ export default function Home() {
                   </p>
                   <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
                     <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
-                      {/* {countActiveMembers.data} */}
+                      {countActiveMembers}
                     </span>{" "}
                     membros ativos
                   </p>
@@ -148,7 +150,7 @@ export default function Home() {
               <span className="text-struct-3">{" }"}</span>
             </h3>
             <div className="flex justify-center">
-              {/* <div className="flex max-w-[256px] flex-wrap gap-6 rounded-xl bg-fundo-3 p-6 sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]">
+              <div className="flex max-w-[256px] flex-wrap gap-6 rounded-xl bg-fundo-3 p-6 sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]">
                 {data?.map((partner) => (
                   <PartnerCard
                     key={partner.id}
@@ -159,7 +161,7 @@ export default function Home() {
                     }}
                   />
                 ))}
-              </div> */}
+              </div>
             </div>
           </div>
         </div>

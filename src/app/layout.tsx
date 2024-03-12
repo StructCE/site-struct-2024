@@ -1,5 +1,6 @@
+import Footer from "~/components/Footer/footer";
+import Navbar from "~/components/Navbar/navbar";
 import "~/styles/globals.css";
-
 import { TRPCReactProvider } from "~/trpc/react";
 
 export const metadata = {
@@ -16,8 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
+      <body className="relative antialiased bg-fundo-0 text-struct-7">
+        <TRPCReactProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </TRPCReactProvider>
       </body>
     </html>
   );

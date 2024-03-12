@@ -4,7 +4,7 @@ import { Cog, Lightbulb, ScreenShare, Smartphone } from "lucide-react";
 export default function Services() {
   return (
     <>
-      <section className="bg-fundo-2 m-0 flex w-full skew-y-3 items-center justify-center p-0 lg:h-[1000px]">
+      <section id="servicos" className="bg-fundo-2 m-0 flex w-full skew-y-3 items-center justify-center p-0 lg:h-[1000px]">
         <div className="-skew-y-3 py-24">
           {/* titulo */}
           <div className="flex flex-col items-center justify-center">

@@ -1,8 +1,9 @@
 "use client";
-import AboutUs from "~/components/PageComponents/Homepage/AboutUs/page";
-import ContactUs from "~/components/PageComponents/Homepage/ContactUs/page";
-import Home from "~/components/PageComponents/Homepage/Home/page";
-import Services from "~/components/PageComponents/Homepage/Services/page";
+import ContactUs from "~/components/PageComponents/Homepage/ContactUs/page
+import AboutUs from "../components/PageComponents/Homepage/AboutUs/page";
+import Home from "../components/PageComponents/Homepage/Home/page";
+import Portfolio from "../components/PageComponents/Homepage/Portfolio/page";
+import Services from "../components/PageComponents/Homepage/Services/page";
 
 export default function Homepage() {
   return (
@@ -10,7 +11,7 @@ export default function Homepage() {
       <div className="w-full bg-fundo-0 text-struct-7 selection:bg-struct-5">
         <Home />
         <Services />
-        {/* Portfólio */}
+        <Portfolio />
         <AboutUs />
         <ContactUs />
       </div>
