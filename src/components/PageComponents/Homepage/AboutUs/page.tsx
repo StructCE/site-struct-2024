@@ -48,7 +48,7 @@ export default function Home() {
                 <div className="flex justify-center gap-4 text-[10px] font-normal sm:gap-8 sm:text-[24px]">
                   <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
                     <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
-                      {countProjects.data}
+                      {/* {countProjects.data} */}
                     </span>{" "}
                     projetos concluídos
                   </p>
@@ -60,7 +60,7 @@ export default function Home() {
                   </p>
                   <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
                     <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
-                      {countActiveMembers.data}
+                      {/* {countActiveMembers.data} */}
                     </span>{" "}
                     membros ativos
                   </p>
@@ -148,7 +148,7 @@ export default function Home() {
               <span className="text-struct-3">{" }"}</span>
             </h3>
             <div className="flex justify-center">
-              <div className="flex max-w-[256px] flex-wrap gap-6 rounded-xl bg-fundo-3 p-6 sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]">
+              {/* <div className="flex max-w-[256px] flex-wrap gap-6 rounded-xl bg-fundo-3 p-6 sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]">
                 {data?.map((partner) => (
                   <PartnerCard
                     key={partner.id}
@@ -159,7 +159,7 @@ export default function Home() {
                     }}
                   />
                 ))}
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

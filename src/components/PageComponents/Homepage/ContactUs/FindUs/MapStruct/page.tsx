@@ -1,57 +1,61 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { Icon } from "leaflet";
-import "leaflet/dist/leaflet.css";
-import { useEffect, useState } from "react";
-import {
-  MapContainer,
-  Marker,
-  Popup,
-  TileLayer,
-  ZoomControl,
-} from "react-leaflet";
-// import { Map, Marker } from "pigeon-maps";
+"use client";
+// import { Icon } from "leaflet";
+// import "leaflet/dist/leaflet.css";
+// import { useEffect, useState } from "react";
+// import {
+//   MapContainer,
+//   Marker,
+//   Popup,
+//   TileLayer,
+//   ZoomControl,
+// } from "react-leaflet";
 
 export default function MapStruct() {
-  const positionMap = { lat: -15.768, lng: -47.872 };
-  const positionMarker = { lat: -15.766, lng: -47.872 };
-  const customIcon = new Icon({
-    iconUrl: "icon_marker.png",
-    iconSize: [30, 30],
-  });
-  const [showZoomControl, setShowZoomControl] = useState<boolean>(true);
+  // const [pinOpen, setPinOpen] = useState(false);
 
-  const [screenSize, setScreenSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
+  // const positionMap = { lat: -15.766, lng: -47.872 };
+  // const positionMarker = { lat: -15.766, lng: -47.872 };
+  // const customIcon = new Icon({
+  //   iconUrl: "icon_marker.png",
+  //   iconSize: [30, 30],
+  // });
 
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (screenSize.width > 640) {
-      setShowZoomControl(true);
-    } else {
-      setShowZoomControl(false);
-    }
-  }, [screenSize.width]);
+  // Código para mostrar os botões de zoom em telas grandes e não mostrar em telas pequenas
+  // const [showZoomControl, setShowZoomControl] = useState<boolean>(true);
+  // const [screenSize, setScreenSize] = useState({
+  //   width: window.innerWidth,
+  //   height: window.innerHeight,
+  // });
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setScreenSize({
+  //       width: window.innerWidth,
+  //       height: window.innerHeight,
+  //     });
+  //   };
+  //   window.addEventListener("resize", handleResize);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
+  // useEffect(() => {
+  //   if (screenSize.width > 640) {
+  //     setShowZoomControl(true);
+  //   } else {
+  //     setShowZoomControl(false);
+  //   }
+  // }, [screenSize.width]);
 
   return (
     <>
+      <iframe
+        className="h-[248px] w-[248px] border-none sm:h-[448px] sm:w-[448px]"
+        loading="lazy"
+        allowFullScreen
+        src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ2eWshbo7WpMRyW_XzFV-Glc&key=AIzaSyBozOnbXY786fwmvQ5hGXw-Onw3YM6VK1w"
+      ></iframe>
       {/* React-Leaflet */}
-      <MapContainer
+      {/* <MapContainer
         center={positionMap}
         zoom={14}
         zoomControl={false}
@@ -74,11 +78,7 @@ export default function MapStruct() {
             UnB - Brasília, DF, 70297-400
           </Popup>
         </Marker>
-      </MapContainer>
-      {/* Pigeon Maps */}
-      {/* <Map height={448} defaultCenter={[-15.766, -47.872]} defaultZoom={15}>
-        <Marker width={30} anchor={[-15.766, -47.872]} color="red" />
-      </Map> */}
+      </MapContainer> */}
     </>
   );
 }
