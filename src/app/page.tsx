@@ -1,3 +1,5 @@
+"use client";
+import ContactUs from "~/components/PageComponents/Homepage/ContactUs/page
 import AboutUs from "../components/PageComponents/Homepage/AboutUs/page";
 import Home from "../components/PageComponents/Homepage/Home/page";
 import Portfolio from "../components/PageComponents/Homepage/Portfolio/page";
@@ -11,7 +13,7 @@ export default function Homepage() {
         <Services />
         <Portfolio />
         <AboutUs />
-        {/* Contato */}
+        <ContactUs />
       </div>
     </>
   );

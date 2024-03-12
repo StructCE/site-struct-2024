@@ -151,7 +151,16 @@ export default async function AboutUs() {
             </h3>
             <div className="flex justify-center">
               <div className="flex max-w-[256px] flex-wrap gap-6 rounded-xl bg-fundo-3 p-6 sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]">
-                <PartnerCard partners={partners} />
+                {data?.map((partner) => (
+                  <PartnerCard
+                    key={partner.id}
+                    images={{
+                      url: partner.logoPublicId,
+                      alt: partner.name,
+                      link: partner.link,
+                    }}
+                  />
+                ))}
               </div>
             </div>
           </div>

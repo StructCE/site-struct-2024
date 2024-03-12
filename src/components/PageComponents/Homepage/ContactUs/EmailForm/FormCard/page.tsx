@@ -1,0 +1,199 @@
+"use client";
+
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+import { Button } from "~/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "~/components/ui/form";
+import { Input } from "~/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "~/components/ui/select";
+import { Textarea } from "~/components/ui/textarea";
+
+const phoneRegex = new RegExp(
+  /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/,
+);
+
+const formEmailSchema = z.object({
+  nome: z
+    .string()
+    .min(2, {
+      message: "Nome deve ter pelo menos 2 caracteres.",
+    })
+    .max(50, {
+      message: "Nome deve ter no máximo 50 caracteres.",
+    }),
+  email: z
+    .string()
+    .min(1, { message: "Digite seu email." })
+    .email("Email não é válido."),
+  telefone: z.string().regex(phoneRegex, "Invalid Number!"),
+  servico: z.string({
+    required_error: "Selecione um tipo de serviço.",
+  }),
+  descricao: z.string().max(167).min(4),
+});
+
+type FormEmailValues = z.infer<typeof formEmailSchema>;
+
+export function FormEmail() {
+  const form = useForm<FormEmailValues>({
+    resolver: zodResolver(formEmailSchema),
+    mode: "onChange",
+  });
+
+  function onSubmit(data: FormEmailValues) {
+    // toast({
+    //   title: "You submitted the following values:",
+    //   description: (
+    //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+    //       <code className="text-white">{JSON.stringify(data, null, 2)}</code>
+    //     </pre>
+    //   ),
+    // });
+    console.log({ data });
+  }
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="font-nunito">
+        <FormField
+          control={form.control}
+          name="nome"
+          render={({ field }) => (
+            <FormItem className="space-y-0 sm:mt-4 sm:space-y-1">
+              <FormLabel className="mb-0 text-[10px] sm:mb-1 sm:text-base">
+                Nome
+              </FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="João Pedro"
+                  className="h-6 space-y-0 border-none bg-fundo-3 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:h-10 sm:px-3 sm:text-sm"
+                  {...field}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem className="mt-1 space-y-0 sm:mt-3 sm:space-y-1">
+              <FormLabel className="text-[10px] sm:text-base">Email</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="joaopedro@gmail.com"
+                  type="email"
+                  className="mt-0 h-6 space-y-0 border-none bg-fundo-3 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:mt-1 sm:h-10 sm:px-3 sm:text-sm"
+                  {...field}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="telefone"
+          render={({ field }) => (
+            <FormItem className="mt-1 space-y-0 sm:mt-3 sm:space-y-1">
+              <FormLabel className="text-[10px] sm:text-base">
+                Telefone
+              </FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="(61) 99999-9999"
+                  type="tel"
+                  className="mt-0 h-6 space-y-0 border-none bg-fundo-3 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:mt-1 sm:h-10 sm:px-3 sm:text-sm"
+                  {...field}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="servico"
+          render={({ field }) => (
+            <FormItem className="mt-1 space-y-0 sm:mt-3 sm:space-y-1">
+              <FormLabel className="text-[10px] sm:text-base">
+                Serviço
+              </FormLabel>
+              <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormControl>
+                  <SelectTrigger className="h-6 border-none bg-fundo-3 px-2 text-[10px] text-struct-7/50 sm:mt-1 sm:h-10 sm:px-3 sm:text-sm">
+                    <SelectValue placeholder="Selecione um tipo de serviço" />
+                  </SelectTrigger>
+                </FormControl>
+                <SelectContent className="border-none bg-fundo-3 font-nunito text-struct-7">
+                  <SelectItem
+                    className="text-[10px] font-semibold hover:font-bold sm:text-sm"
+                    value="website"
+                  >
+                    Website
+                  </SelectItem>
+                  <SelectItem
+                    className="text-[10px] font-semibold hover:font-bold sm:text-sm"
+                    value="servicoweb"
+                  >
+                    Serviço Web
+                  </SelectItem>
+                  <SelectItem
+                    className="text-[10px] font-semibold hover:font-bold sm:text-sm"
+                    value="aplicativo"
+                  >
+                    Aplicativo
+                  </SelectItem>
+                  <SelectItem
+                    className="text-[10px] font-semibold hover:font-bold sm:text-sm"
+                    value="consultoria"
+                  >
+                    Consultoria
+                  </SelectItem>
+                </SelectContent>
+              </Select>
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="descricao"
+          render={({ field }) => (
+            <FormItem className="mt-1 space-y-0 sm:mt-3 sm:space-y-1">
+              <FormLabel className="text-[10px] sm:text-base">
+                Descrição
+              </FormLabel>
+              <FormControl>
+                <Textarea
+                  placeholder="Faça uma breve descrição do seu projeto"
+                  className="mt-1 min-h-[40px] resize-none border-none bg-fundo-3 px-2 text-[10px] text-struct-7 focus:outline-none sm:min-h-[80px] sm:px-3 sm:text-sm"
+                  {...field}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+        <div className="my-3 flex justify-end sm:my-4">
+          <Button
+            type="submit"
+            className="h-6 bg-struct-7 px-3 py-1 font-oxanium text-[12px] font-semibold text-struct-1 hover:bg-struct-7-hover hover:font-bold sm:h-11 sm:rounded-md sm:px-8 sm:text-[20px]"
+          >
+            Enviar
+          </Button>
+        </div>
+      </form>
+    </Form>
+  );
+}
