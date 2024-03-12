@@ -4,35 +4,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.border-animation {
-  position: relative;
-  color: #2da2ff;
-  border-bottom: 2px solid #2da2ff;
-}
-
-.border-animation::before {
-  content: "";
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: #fd8d4b;
-  transition: 0.3s ease-in-out;
-}
-
-.border-animation:hover::before {
-  width: 100%;
-}
-
-@media (max-width: 639px) {
-  .border-animation {
-    border-bottom: 1px solid #2da2ff;
-  }
-
-  .border-animation::before {
-    height: 1px;
-    bottom: -1px;
-  }
-}
