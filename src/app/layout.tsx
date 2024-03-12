@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className="relative antialiased">
+      <body className="relative antialiased bg-fundo-0 text-struct-7">
         <TRPCReactProvider>
           <Navbar />
           {children}
