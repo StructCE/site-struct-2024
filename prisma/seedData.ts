@@ -316,6 +316,11 @@ export const data: dataSchema = {
   Members: [
     // [[NomeMembro1, [[NomeDiretoria1, CargoDiretoria1], [NomeDiretoria2, CargoDiretoria2], ...], LogoMembro1?, [[NomeProjeto1, CargoProjeto1], [NomeProjeto2, CargoProjeto2], ...]?], outros membros...]
     [
+      "Jéssica Leal de Melo",
+      [["Presidência", "Presidente"]],
+      "fotos de perfil/jessica_leal.png",
+    ],
+    [
       "Daniel José de Assumpção",
       [
         ["Gestão de Pessoas", "Diretor"],
@@ -448,11 +453,6 @@ export const data: dataSchema = {
       "Maria Eduarda Araújo Carvalho",
       [["Administração e Finanças", "Membro"]],
       "fotos de perfil/maria_eduarda.jpg",
-    ],
-    [
-      "Jéssica Leal de Melo",
-      [["Presidência", "Presidente"]],
-      "fotos de perfil/jessica_leal.png",
     ],
     [
       "José Luiz Gomes Nogueira",
