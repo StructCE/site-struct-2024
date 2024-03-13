@@ -7,7 +7,7 @@ type Member = {
   role: string
 }
 
-const getColor = (role: string): string => {
+const getColor = (role: string, component:string): string => {
   const roleColors: { [key: string]: string } = {
     "Presidente": "[#FD8D4B]",
     "Assessor": "[#FD8D4B]",
@@ -15,26 +15,26 @@ const getColor = (role: string): string => {
     "Membro": "white"
   };
 
-  return roleColors[role] || "white";
+  const res = `${component}-${roleColors[role]}`
+  return res;
 };
 
 export default function MemberContainer({member}: {member: Member}) {
-  const color = getColor(member.role)
   return (
-    <div className="flex flex-col w-[170px] h-[190px] m-7 items-center" key={member.name}>
+    <div className="flex flex-col w-[170px] h-[190px] m-7 items-center" >
       <CldImage
       width="120"
       height="120"
       src={member.logoPublicId}
       alt="Foto de Membro"
       crop="fill"
-      className={`rounded-full bg-white border-[3px] border-${color}`}
+      className={"rounded-full bg-white border-[3px] "+ getColor(member.role, "border")}
       />
       <div className="m-5 w-full h-fit flex flex-col items-center justify-center">
         <p className="font-nunito text-[16px] text-white text-center">
           {member.name}
         </p>
-        <p className={`font-nunito text-[12px] text-${color} text-center`}>
+        <p className={"font-nunito text-[12px] text-center " + getColor(member.role, "text")}>
           {member.role}
         </p>
       </div>
