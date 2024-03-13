@@ -26,7 +26,7 @@ export default function Services() {
               <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
                 <ScreenShare
                   color="#f8f8ff"
-                  className="mx-1.5 my-1.5 h-[18px] w-[18px] sm:mx-1.5 sm:my-2 sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-2.5 lg:h-[28px] lg:w-[28px]"
+                  className="mx-1.5 my-1.5 h-[18px] w-[18px] sm:mx-1.5 sm:my-2 sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[11px] lg:h-[28px] lg:w-[28px]"
                 />
                 <h3 className="text-[18px] font-bold leading-relaxed sm:text-[26px] lg:text-[32px]">
                   Websites
@@ -43,7 +43,7 @@ export default function Services() {
               <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
                 <Cog
                   color="#f8f8ff"
-                  className="mx-1.5 my-1 h-[18px] w-[18px] sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-2.5 lg:h-[28px] lg:w-[28px]"
+                  className="mx-1.5 my-1 h-[18px] w-[18px] sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[9px] lg:h-[28px] lg:w-[28px]"
                 />
                 <h3 className="text-[18px] font-bold sm:text-[26px] lg:text-[32px]">
                   Sistemas Web
@@ -60,7 +60,7 @@ export default function Services() {
               <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
                 <Smartphone
                   color="#f8f8ff"
-                  className="mx-1.5 my-1 h-[18px] w-[18px] sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-2.5 lg:h-[28px] lg:w-[28px]"
+                  className="mx-1.5 my-1 h-[18px] w-[18px] sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[9px] lg:h-[28px] lg:w-[28px]"
                 />
                 <h3 className="text-[18px] font-bold sm:text-[26px] lg:text-[32px]">
                   Aplicativos
@@ -76,7 +76,7 @@ export default function Services() {
               <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
                 <Lightbulb
                   color="#f8f8ff"
-                  className="mx-1.5 my-1 h-[18px] w-[18px] sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-2.5 lg:h-[28px] lg:w-[28px]"
+                  className="mx-1.5 my-1 h-[18px] w-[18px] sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[9px] lg:h-[28px] lg:w-[28px]"
                 />
                 <h3 className="text-[18px] font-bold sm:text-[26px] lg:text-[32px]">
                   Consultoria
