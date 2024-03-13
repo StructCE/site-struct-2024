@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ProjectContainer({ project }: { project: Project }) {
   return (
-    <div className="relative m-5 items-center justify-center">
+    <div className="relative mx-4 my-2 items-center justify-center sm:m-3 lg:m-5">
       <CldImage
         width="460"
         height="250"
@@ -17,7 +17,7 @@ export default function ProjectContainer({ project }: { project: Project }) {
         target="_blank"
         className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center rounded-[8px] bg-black bg-opacity-50 opacity-0 hover:opacity-100 hover:duration-700"
       >
-        <p className="font-nunito text-3xl max-[420px]:text-[1.5rem]">
+        <p className="font-oxanium text-3xl font-bold max-[420px]:text-[1.5rem]">
           {" "}
           {project.name}{" "}
         </p>
