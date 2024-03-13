@@ -321,7 +321,7 @@ export const data: dataSchema = {
         ["Gestão de Pessoas", "Diretor"],
         ["Presidência", "Assessor"],
       ],
-      "fotos de perfil/danie_jose.png",
+      "fotos de perfil/daniel_jose.png",
     ],
     [
       "Luigi Paschoal Westphal",
