@@ -1,7 +1,7 @@
 "use client";
 import { MenuIcon } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import { Link } from "react-scroll";
 
 import {
   Accordion,
@@ -29,40 +29,64 @@ export default function Navbar() {
     >
       <ul className="hidden items-center gap-[4vw] font-oxanium text-[20px] text-xl font-semibold text-struct-7 sm:flex">
         <li className="text-[36px] font-bold text-struct-7">
-          <Link href="/">
+          <Link
+            to="home"
+            className="cursor-pointer"
+            spy={true}
+            smooth={true}
+            duration={700}
+          >
             <span className="text-struct-2">{"{"}</span>
-            struct
+            <span className="hover:[text-shadow:_0_0_5px_rgb(255_255_255_/_40%)]">
+              struct
+            </span>
             <span className="text-struct-2">{"}"}</span>
           </Link>
         </li>
         <li>
           <Link
-            className="transition delay-75 ease-in-out hover:text-struct-1"
-            href="#servicos"
+            className="cursor-pointer transition delay-75 ease-in hover:text-struct-1"
+            to="servicos"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={700}
           >
             Serviços
           </Link>
         </li>
         <li>
           <Link
-            className="transition delay-75 ease-in-out hover:text-struct-1"
-            href="#portfolio"
+            className="cursor-pointer transition delay-75 ease-in hover:text-struct-1"
+            to="portfolio"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={700}
           >
             Portifólio
           </Link>
         </li>
         <li>
           <Link
-            className="transition delay-75 ease-in-out hover:text-struct-1"
-            href="#sobrenos"
+            className="cursor-pointer transition delay-75 ease-in hover:text-struct-1"
+            to="sobrenos"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={700}
           >
             Sobre nós
           </Link>
         </li>
         <li>
           <Link
-            className="transition delay-75 ease-in-out hover:text-struct-1"
-            href="#contato"
+            className="cursor-pointer transition delay-75 ease-in hover:text-struct-1"
+            to="contato"
+            spy={true}
+            smooth={true}
+            offset={50}
+            duration={700}
           >
             Contato
           </Link>
@@ -76,9 +100,17 @@ export default function Navbar() {
         <AccordionItem className="w-full border-none" value="menu">
           <div className="flex items-center justify-between font-oxanium font-bold">
             <div className="ml-6 text-[36px] text-struct-7">
-              <Link href="/">
+              <Link
+                to="home"
+                className="cursor-pointer"
+                spy={true}
+                smooth={true}
+                duration={700}
+              >
                 <span className="text-struct-2">{"{"}</span>
-                struct
+                <span className="transition delay-75 ease-in-out hover:[text-shadow:_0_0_5px_rgb(255_255_255_/_40%)]">
+                  struct
+                </span>
                 <span className="text-struct-2">{"}"}</span>
               </Link>
             </div>
@@ -92,23 +124,67 @@ export default function Navbar() {
           <AccordionContent className="w-full bg-fundo-transparente/60">
             <ul className="flex flex-col items-center font-oxanium text-[14px] font-semibold text-struct-7">
               <li className="text-[28px] font-bold text-struct-7">
-                <Link href="/">
+                <Link
+                  to="home"
+                  className="cursor-pointer"
+                  spy={true}
+                  smooth={true}
+                  duration={700}
+                >
                   <span className="text-struct-2">{"{"}</span>
-                  struct
+                  <span className="transition delay-75 ease-in-out hover:[text-shadow:_0_0_5px_rgb(255_255_255_/_40%)]">
+                    struct
+                  </span>
                   <span className="text-struct-2">{"}"}</span>
                 </Link>
               </li>
               <li className="mt-4">
-                <Link href="#servicos">Serviços</Link>
+                <Link
+                  className="cursor-pointer transition delay-75 ease-in-out hover:text-struct-1"
+                  to="servicos"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={700}
+                >
+                  Serviços
+                </Link>
               </li>
               <li className="mt-4">
-                <Link href="portfolio">Portifólio</Link>
+                <Link
+                  className="cursor-pointer transition delay-75 ease-in-out hover:text-struct-1"
+                  to="portfolio"
+                  spy={true}
+                  smooth={true}
+                  offset={0}
+                  duration={700}
+                >
+                  Portifólio
+                </Link>
               </li>
               <li className="mt-4">
-                <Link href="#sobrenos">Sobre nós</Link>
+                <Link
+                  className="cursor-pointer transition delay-75 ease-in-out hover:text-struct-1"
+                  to="sobrenos"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={700}
+                >
+                  Sobre nós
+                </Link>
               </li>
               <li className="mt-4">
-                <Link href="#contato">Contato</Link>
+                <Link
+                  className="cursor-pointer transition delay-75 ease-in-out hover:text-struct-1"
+                  to="contato"
+                  spy={true}
+                  smooth={true}
+                  offset={50}
+                  duration={700}
+                >
+                  Contato
+                </Link>
               </li>
               <li className="mt-2">
                 <AccordionTrigger

@@ -1,10 +1,13 @@
-import { api } from "~/trpc/server"
-import ProjectsContainer from "./projectsContainer"
+import { api } from "~/trpc/server";
+import ProjectsContainer from "./projectsContainer";
 
 export default async function Portfolio() {
-  const projects = await api.project.getAll.query()
+  const projects = await api.project.getAll.query();
   return (
-    <section className="py-36 flex w-full h-fit items-center justify-center">
+    <section
+      className="flex h-fit w-full items-center justify-center py-36"
+      id="portfolio"
+    >
       <div>
         {/* titulo */}
         <div className="flex flex-col items-center justify-center">
@@ -18,8 +21,8 @@ export default async function Portfolio() {
           </p>
         </div>
         {/* projetos */}
-        <ProjectsContainer projects={projects}/>
-      </div> 
+        <ProjectsContainer projects={projects} />
+      </div>
     </section>
-  )
+  );
 }
