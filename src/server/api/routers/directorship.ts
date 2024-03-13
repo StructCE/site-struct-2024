@@ -20,7 +20,7 @@ export const directorshipRouter = createTRPCRouter({
         },
       },
     });
-    const res = directorshipsWithMembers
+    let res = directorshipsWithMembers
       .filter(
         (directorshipwithmembers) =>
           directorshipwithmembers.name !== "Previdência",
@@ -33,6 +33,15 @@ export const directorshipRouter = createTRPCRouter({
           role: member.directorshipRole.name,
         })),
       }));
+
+      const presidenceIndex = res.findIndex((element) => element.name === "Presidência")
+      const presidence = res[presidenceIndex]
+      if (presidence){
+        const beforePresidence = res.slice(0, presidenceIndex)
+        const afterPresidence = res.slice(presidenceIndex + 1)
+        res = [presidence, ...beforePresidence, ...afterPresidence]
+      }
+
     return res;
   }),
 
