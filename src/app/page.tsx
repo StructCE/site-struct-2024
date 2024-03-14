@@ -1,8 +1,8 @@
-import ContactUs from "~/components/PageComponents/Homepage/ContactUs/page";
-import AboutUs from "../components/PageComponents/Homepage/AboutUs/page";
-import Home from "../components/PageComponents/Homepage/Home/page";
-import Portfolio from "../components/PageComponents/Homepage/Portfolio/page";
-import Services from "../components/PageComponents/Homepage/Services/page";
+import ContactUs from "~/components/PageComponents/ContactUs/page";
+import AboutUs from "../components/PageComponents/AboutUs/page";
+import Home from "../components/PageComponents/Home/page";
+import Portfolio from "../components/PageComponents/Portfolio/page";
+import Services from "../components/PageComponents/Services/page";
 
 export default function Homepage() {
   return (
