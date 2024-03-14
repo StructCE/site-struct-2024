@@ -2,7 +2,7 @@ import { type Project } from "@prisma/client";
 import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 
-export default function ProjectContainer({ project }: { project: Project }) {
+export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="relative mx-4 my-2 items-center justify-center sm:m-3 lg:m-5">
       <CldImage

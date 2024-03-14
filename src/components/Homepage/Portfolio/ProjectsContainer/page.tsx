@@ -1,7 +1,7 @@
 "use client";
 import { type Project } from "@prisma/client";
 import { motion } from "framer-motion";
-import ProjectContainer from "./projectContainer";
+import ProjectCard from "../ProjectCard/page";
 
 export default function ProjectsContainer({
   projects,
@@ -22,8 +22,8 @@ export default function ProjectsContainer({
               transition={{ duration: 1, delay: 0.1 }}
               className="[--opacity-from:0%][--opacity-to:100%] flex w-full items-center justify-center text-lg [--x-from:50px] [--x-to:0px] max-lg:flex-col"
             >
-              <ProjectContainer project={project} />
-              {nextProject ? <ProjectContainer project={nextProject} /> : null}
+              <ProjectCard project={project} />
+              {nextProject ? <ProjectCard project={nextProject} /> : null}
             </motion.div>
           );
         }

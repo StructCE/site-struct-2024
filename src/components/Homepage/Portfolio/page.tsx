@@ -1,5 +1,5 @@
 import { api } from "~/trpc/server";
-import ProjectsContainer from "./projectsContainer";
+import ProjectsContainer from "./ProjectsContainer/page";
 
 export default async function Portfolio() {
   const projects = await api.project.getAll.query();
