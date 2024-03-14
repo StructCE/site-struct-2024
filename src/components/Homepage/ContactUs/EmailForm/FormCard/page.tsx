@@ -1,9 +1,8 @@
 "use client";
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import toast, { Toaster } from "react-hot-toast";
 import { z } from "zod";
-
 import { Button } from "~/components/ui/button";
 import {
   Form,
@@ -52,22 +51,27 @@ export function FormEmail() {
   const form = useForm<FormEmailValues>({
     resolver: zodResolver(formEmailSchema),
     mode: "onChange",
+    defaultValues: {
+      nome: "",
+      email: "",
+      telefone: "",
+      descricao: "",
+    },
   });
 
   function onSubmit(data: FormEmailValues) {
-    // toast({
-    //   title: "You submitted the following values:",
-    //   description: (
-    //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-    //       <code className="text-white">{JSON.stringify(data, null, 2)}</code>
-    //     </pre>
-    //   ),
-    // });
+    toast.success("Orçamento solicitado!", {
+      style: {
+        color: "#081426",
+        background: "#F8F8FF",
+      },
+    });
     console.log({ data });
   }
 
   return (
     <Form {...form}>
+      <Toaster position="bottom-right" reverseOrder={false} />
       <form onSubmit={form.handleSubmit(onSubmit)} className="font-nunito">
         <FormField
           control={form.control}
@@ -133,32 +137,32 @@ export function FormEmail() {
               </FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
-                  <SelectTrigger className="h-6 border-none bg-fundo-3 px-2 text-[10px] text-struct-7/50 sm:mt-1 sm:h-10 sm:px-3 sm:text-sm">
+                  <SelectTrigger className="h-6 border-none bg-fundo-3 px-2 text-[10px] text-struct-7/80 sm:mt-1 sm:h-10 sm:px-3 sm:text-sm">
                     <SelectValue placeholder="Selecione um tipo de serviço" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent className="border-none bg-fundo-3 font-nunito text-struct-7">
                   <SelectItem
                     className="text-[10px] font-semibold hover:font-bold sm:text-sm"
-                    value="website"
+                    value="Website"
                   >
                     Website
                   </SelectItem>
                   <SelectItem
                     className="text-[10px] font-semibold hover:font-bold sm:text-sm"
-                    value="servicoweb"
+                    value="Servico Web"
                   >
                     Serviço Web
                   </SelectItem>
                   <SelectItem
                     className="text-[10px] font-semibold hover:font-bold sm:text-sm"
-                    value="aplicativo"
+                    value="Aplicativo"
                   >
                     Aplicativo
                   </SelectItem>
                   <SelectItem
                     className="text-[10px] font-semibold hover:font-bold sm:text-sm"
-                    value="consultoria"
+                    value="Consultoria"
                   >
                     Consultoria
                   </SelectItem>
@@ -188,7 +192,7 @@ export function FormEmail() {
         <div className="my-3 flex justify-end sm:my-4">
           <Button
             type="submit"
-            className="h-6 bg-struct-7 px-3 py-1 font-oxanium text-[12px] font-semibold text-struct-1 hover:bg-struct-7-hover hover:font-bold sm:h-11 sm:rounded-md sm:px-8 sm:text-[20px]"
+            className="h-6 bg-struct-7 px-3 py-1 font-oxanium text-[12px] font-semibold text-struct-1 hover:bg-struct-7-hover hover:font-bold active:border-none sm:h-11 sm:rounded-md sm:px-6 sm:text-[20px]"
           >
             Enviar
           </Button>
