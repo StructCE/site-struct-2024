@@ -1,8 +1,8 @@
 "use client";
 import { MenuIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
-
 import {
   Accordion,
   AccordionContent,
@@ -23,6 +23,8 @@ export default function Navbar() {
     };
   }, []);
 
+  const router = useRouter();
+
   return (
     <nav
       className={`fixed z-40 flex w-full items-center justify-center transition-all ease-in ${scrollvalue > 0 && "h-[64px] bg-fundo-transparente/80"} ${scrollvalue == 0 && " h-[96px]"} ${scrollvalue > 0 && navbaropen && "bg-fundo-transparente/0"} `}
@@ -35,6 +37,7 @@ export default function Navbar() {
             spy={true}
             smooth={true}
             duration={700}
+            onClick={() => router.push("/#home")}
           >
             <span className="text-struct-2">{"{"}</span>
             <span className="hover:[text-shadow:_0_0_5px_rgb(255_255_255_/_40%)]">
@@ -51,6 +54,7 @@ export default function Navbar() {
             smooth={true}
             offset={50}
             duration={700}
+            onClick={() => router.push("/#servicos")}
           >
             Serviços
           </Link>
@@ -63,6 +67,7 @@ export default function Navbar() {
             smooth={true}
             offset={0}
             duration={700}
+            onClick={() => router.push("/#portfolio")}
           >
             Portifólio
           </Link>
@@ -75,6 +80,7 @@ export default function Navbar() {
             smooth={true}
             offset={50}
             duration={700}
+            onClick={() => router.push("/#sobrenos")}
           >
             Sobre nós
           </Link>
@@ -87,6 +93,7 @@ export default function Navbar() {
             smooth={true}
             offset={50}
             duration={700}
+            onClick={() => router.push("/#contato")}
           >
             Contato
           </Link>
@@ -106,6 +113,7 @@ export default function Navbar() {
                 spy={true}
                 smooth={true}
                 duration={700}
+                onClick={() => router.push("/#home")}
               >
                 <span className="text-struct-2">{"{"}</span>
                 <span className="transition delay-75 ease-in-out hover:[text-shadow:_0_0_5px_rgb(255_255_255_/_40%)]">
@@ -130,6 +138,7 @@ export default function Navbar() {
                   spy={true}
                   smooth={true}
                   duration={700}
+                  onClick={() => router.push("/#home")}
                 >
                   <span className="text-struct-2">{"{"}</span>
                   <span className="transition delay-75 ease-in-out hover:[text-shadow:_0_0_5px_rgb(255_255_255_/_40%)]">
@@ -146,6 +155,7 @@ export default function Navbar() {
                   smooth={true}
                   offset={50}
                   duration={700}
+                  onClick={() => router.push("/#servicos")}
                 >
                   Serviços
                 </Link>
@@ -158,6 +168,7 @@ export default function Navbar() {
                   smooth={true}
                   offset={0}
                   duration={700}
+                  onClick={() => router.push("/#portfolio")}
                 >
                   Portifólio
                 </Link>
@@ -170,6 +181,7 @@ export default function Navbar() {
                   smooth={true}
                   offset={50}
                   duration={700}
+                  onClick={() => router.push("/#sobrenos")}
                 >
                   Sobre nós
                 </Link>
@@ -182,6 +194,7 @@ export default function Navbar() {
                   smooth={true}
                   offset={50}
                   duration={700}
+                  onClick={() => router.push("/#contato")}
                 >
                   Contato
                 </Link>
