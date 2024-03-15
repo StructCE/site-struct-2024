@@ -17,7 +17,7 @@ export const projectRouter = createTRPCRouter({
   }),
 
   getProjectAndMembers: publicProcedure
-    .input(z.object({ id: z.string() }))
+    .input(z.object({ name: z.string() }))
     .query(async ({ ctx, input }) => {
       const projectAndMembers = await ctx.db.project.findFirst({
         where: input,

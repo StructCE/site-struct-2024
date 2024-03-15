@@ -1,7 +1,7 @@
 "use client"
 import { CldImage } from "next-cloudinary";
 import MemberContainer from "../Members/MemberCard/page";
-
+import Link from "next/link";
 
 type projectWithMembers = {
   name: string | undefined;
@@ -15,7 +15,7 @@ type projectWithMembers = {
   }[] | undefined;
 }
 
-export default async function ProjectsPage( { projectWithMembers }: { projectWithMembers: projectWithMembers }) {
+export default function ProjectsPage( { projectWithMembers }: { projectWithMembers: projectWithMembers }) {
   return (
     <section className="pt-28 flex items-center bg-fundo-0">
       <div className="w-full h-fit flex flex-col items-center justify-center">
@@ -23,21 +23,21 @@ export default async function ProjectsPage( { projectWithMembers }: { projectWit
         <div className="m-10 p-10 gap-7 w-[1280px] bg-fundo-1 flex rounded-[16px] justify-center items-center max-[1440px]:flex-col max-[1440px]:w-[580px] max-[830px]:w-auto max-[830px]:p-7">
           <div className="w-[590px] h-fit flex flex-col max-[1440px]:w-full">
             <p className="text-start font-oxanium font-bold text-[48px] text-struct-3 max-[1440px]:text-[40px] max-[830px]:text-[20px]">
-              {projectWithMembers.name || "Nome do Projeto"}
+              {projectWithMembers.name? projectWithMembers.name : "Nome do Projeto"}
             </p>
             <p className="h-fit text-start font-nunito text-[20px] max-[1440px]:text-[16px] max-[830px]:text-[8px] max-[1440px]:text-justify">
-              {projectWithMembers.description || "Descrição do Projeto"}
+              {projectWithMembers.description? projectWithMembers.description : "Descrição do Projeto"}
             </p>
           </div>
-          <div>
-          <CldImage
-            width="580"
-            height= "320"
-            src={projectWithMembers.logoPublicId || ""}
-            alt="Imagem do Projeto"
-            className="rounded-[8px] bg-struct-7"
-          />
-          </div>
+          <Link href={projectWithMembers.link? projectWithMembers.link : ""} className="hover:shadow-black hover:shadow-2xl">
+            <CldImage
+              width="580"
+              height= "320"
+              src={projectWithMembers.logoPublicId? projectWithMembers.logoPublicId : ""}
+              alt="Imagem do Projeto"
+              className="rounded-[8px] bg-struct-7"
+            />
+          </Link>
         </div>
 
         {/* Members Card */}
@@ -48,7 +48,7 @@ export default async function ProjectsPage( { projectWithMembers }: { projectWit
           <div className="flex flex-wrap h-fit w-[1300px] items-center justify-center max-[1440px]:w-[500px] max-[830px]:w-[280px]">
             {projectWithMembers.members?.map( ( member ) => {
               return (
-                <MemberContainer member={ member } />
+                <MemberContainer key={ member.name } member={ member } />
               )
             })}
           </div>
