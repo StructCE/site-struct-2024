@@ -12,6 +12,8 @@ const borderColors: Record<string, string> = {
   Assessor: "border-struct-1",
   Diretor: "border-struct-3",
   Membro: "border-struct-7",
+  Gerente: "border-struct-3",
+  "Project Owner": "border-struct-1",
 };
 
 const textColors: Record<string, string> = {
@@ -19,6 +21,8 @@ const textColors: Record<string, string> = {
   Assessor: "text-struct-1",
   Diretor: "text-struct-3",
   Membro: "text-struct-7",
+  Gerente: "text-struct-3",
+  "Project Owner": "text-struct-1",
 };
 
 const getColor = (role: string, component: string): string => {
