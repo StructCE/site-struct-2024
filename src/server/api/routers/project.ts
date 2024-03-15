@@ -17,7 +17,7 @@ export const projectRouter = createTRPCRouter({
   }),
 
   getProjectAndMembers: publicProcedure
-    .input(z.object({ id: z.string() }))
+    .input(z.object({ name: z.string() }))
     .query(async ({ ctx, input }) => {
       const projectAndMembers = await ctx.db.project.findFirst({
         where: input,
@@ -34,6 +34,7 @@ export const projectRouter = createTRPCRouter({
         name: projectAndMembers?.name,
         description: projectAndMembers?.description,
         link: projectAndMembers?.link,
+        logoPublicId: projectAndMembers?.logoPublicId,
         members: projectAndMembers?.projectMembers.map((projectMember) => ({
           name: projectMember.member.name,
           logoPublicId: projectMember.member.logoPublicId,

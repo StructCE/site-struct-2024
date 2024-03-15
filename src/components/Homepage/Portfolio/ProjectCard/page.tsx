@@ -13,7 +13,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         className="rounded-[8px]"
       />
       <Link
-        href={`/projects/${project.id}`}
+        href={`/projects/${project.name}`}
         target="_blank"
         className="absolute left-0 top-0 flex h-full w-full flex-col items-center justify-center rounded-[8px] bg-black bg-opacity-50 opacity-0 hover:opacity-100 hover:duration-700"
       >
