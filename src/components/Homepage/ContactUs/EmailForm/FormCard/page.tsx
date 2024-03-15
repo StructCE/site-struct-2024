@@ -1,5 +1,6 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { z } from "zod";
@@ -47,7 +48,13 @@ const formEmailSchema = z.object({
 
 type FormEmailValues = z.infer<typeof formEmailSchema>;
 
-export function FormEmail() {
+function isInputNamedElement(
+  e: Element,
+): e is HTMLInputElement & { name: string } {
+  return "value" in e && "name" in e;
+}
+
+const FormEmail = () => {
   const form = useForm<FormEmailValues>({
     resolver: zodResolver(formEmailSchema),
     mode: "onChange",
@@ -59,20 +66,55 @@ export function FormEmail() {
     },
   });
 
-  function onSubmit(data: FormEmailValues) {
+  const [state, setState] = useState<string>();
+
+  async function handleOnSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
+    e.preventDefault();
+
     toast.success("Orçamento solicitado!", {
       style: {
         color: "#081426",
         background: "#F8F8FF",
       },
     });
-    console.log({ data });
+
+    const formData: Record<string, string> = {};
+
+    Array.from(e.currentTarget.elements)
+      .filter(isInputNamedElement)
+      .forEach((field) => {
+        if (!field.name) return;
+        formData[field.name] = field.value;
+      });
+
+    setState("loading");
+
+    await fetch("/api/email", {
+      method: "POST",
+      body: JSON.stringify({
+        firstName: formData.firstName,
+        email: formData.email,
+      }),
+    });
+
+    setState("ready");
   }
+
+  // async function onSubmit(data: FormEmailValues) {
+  //   await fetch("api/email", {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       nome: "Leo",
+  //     }),
+  //   });
+
+  //   console.log({ data });
+  // }
 
   return (
     <Form {...form}>
       <Toaster position="bottom-right" reverseOrder={false} />
-      <form onSubmit={form.handleSubmit(onSubmit)} className="font-nunito">
+      <form onSubmit={handleOnSubmit} className="font-nunito">
         <FormField
           control={form.control}
           name="nome"
@@ -192,6 +234,7 @@ export function FormEmail() {
         <div className="my-3 flex justify-end sm:my-4">
           <Button
             type="submit"
+            disabled={state === "loading"}
             className="h-6 bg-struct-7 px-3 py-1 font-oxanium text-[12px] font-semibold text-struct-1 hover:bg-struct-7-hover hover:font-bold active:border-none sm:h-11 sm:rounded-md sm:px-6 sm:text-[20px]"
           >
             Enviar
@@ -200,4 +243,5 @@ export function FormEmail() {
       </form>
     </Form>
   );
-}
+};
+export default FormEmail;
