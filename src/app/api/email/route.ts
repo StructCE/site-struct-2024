@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
@@ -12,9 +11,9 @@ export async function POST(request: Request) {
 
   try {
     await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: email,
       to: "sitestruct2024@gmail.com",
-      subject: "hello world",
+      subject: "Orçamento",
       react: PedidoDeOrçamento({
         nome,
       }),
