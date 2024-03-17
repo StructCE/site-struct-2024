@@ -1,4 +1,5 @@
 "use client";
+import { TypeAnimation } from "react-type-animation";
 
 export default function Home() {
   return (
@@ -11,6 +12,14 @@ export default function Home() {
           <h1 className="text-center font-oxanium text-[72px] font-bold leading-[90px] sm:text-[156px] sm:leading-[195px] lg:text-[192px] lg:leading-[240px]">
             {"{struct}"}
           </h1>
+          <TypeAnimation
+            sequence={["{struct}", 1000]}
+            speed={10}
+            wrapper="span"
+            cursor={false}
+            repeat={Infinity}
+            className="ml-2 text-center font-oxanium text-[72px] font-bold leading-[90px] sm:text-[156px] sm:leading-[195px] lg:text-[192px] lg:leading-[240px]"
+          />
           <p className="text-center font-nunito text-[12px] font-bold sm:text-[20px] lg:text-[24px]">
             Atuando no mercado de desenvolvimento web desde 2014.
           </p>
