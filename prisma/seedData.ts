@@ -329,6 +329,68 @@ export const data: dataSchema = {
       "fotos de perfil/daniel_jose.png",
     ],
     [
+      "Guilherme Pereira Sampaio",
+      [["Marketing", "Diretor"]],
+      "fotos de perfil/guilherme_pereira",
+    ],
+    [
+      "Paulo Fernando Vilarim",
+      [["Projetos", "Diretor"]],
+      "fotos de perfil/paulo_fernando.png",
+    ],
+    [
+      "Kaleb Henrique Silva Pereira",
+      [["Comercial", "Diretor"]],
+      "fotos de perfil/kaleb_henrique.png",
+    ],
+    [
+      "Pedro Eduardo Cunha Ximenes",
+      [["Administração e Finanças", "Diretor"]],
+      "fotos de perfil/pedro_ximenes.png",
+    ],
+    [
+      "José Luiz Gomes Nogueira",
+      [["Previdência", "Piloto Aposentado"]],
+      ,
+      [["Quimera", "Project Owner"]],
+    ],
+    [
+      "Arthur Mota Furtado",
+      [["Previdência", "Piloto Aposentado"]],
+      "fotos de perfil/arthur_mota.png",
+      [
+        ["Quimera", "Gerente"],
+        ["Vai de férias", "Gerente"],
+      ],
+    ],
+    [
+      "Pedro Augusto Ramalho Duarte",
+      [["Previdência", "Piloto Aposentado"]],
+      ,
+      [["Quimera", "Gerente"]],
+    ],
+    [
+      "Fernando Sobral Nóbrega",
+      [["Previdência", "Piloto Aposentado"]],
+      ,
+      [["Vai de férias", "Gerente"]],
+    ],
+    [
+      "Guilherme Rodrigues Lodron Pires",
+      [["Previdência", "Piloto Aposentado"]],
+      ,
+      [
+        ["Vai de férias", "Gerente"],
+        ["Vai de férias", "Desenvolvedor"],
+      ],
+    ],
+    [
+      "Arthur Padovesi Piratelli",
+      [["Previdência", "Piloto Aposentado"]],
+      "fotos de perfil/arthur_padovesi.png",
+      [["Mark's Engenharia", "Gerente"]],
+    ],
+    [
       "Luigi Paschoal Westphal",
       [["Gestão de Pessoas", "Membro"]],
       ,
@@ -360,11 +422,6 @@ export const data: dataSchema = {
       "fotos de perfil/weldo_gonçalves",
     ],
     [
-      "Guilherme Pereira Sampaio",
-      [["Marketing", "Diretor"]],
-      "fotos de perfil/guilherme_pereira",
-    ],
-    [
       "Demétrius Mendes Miranda Rocha",
       [["Marketing", "Membro"]],
       "fotos de perfil/demetrius_mendes.jpg",
@@ -378,11 +435,6 @@ export const data: dataSchema = {
       "Willyan Marques de Melo",
       [["Marketing", "Membro"]],
       "fotos de perfil/willyan_marques.jpg",
-    ],
-    [
-      "Paulo Fernando Vilarim",
-      [["Projetos", "Diretor"]],
-      "fotos de perfil/paulo_fernando.png",
     ],
     [
       "Eduardo Pereira Policarpo Ferreira",
@@ -403,11 +455,6 @@ export const data: dataSchema = {
       "Pedro Amorim de Gregori",
       [["Projetos", "Membro"]],
       "fotos de perfil/pedro_amorim.jpg",
-    ],
-    [
-      "Kaleb Henrique Silva Pereira",
-      [["Comercial", "Diretor"]],
-      "fotos de perfil/kaleb_henrique.png",
     ],
     [
       "Adriano Lopes de Sousa",
@@ -435,11 +482,6 @@ export const data: dataSchema = {
       "fotos de perfil/mauro_ribeiro.jpg",
     ],
     [
-      "Pedro Eduardo Cunha Ximenes",
-      [["Administração e Finanças", "Diretor"]],
-      "fotos de perfil/pedro_ximenes.png",
-    ],
-    [
       "Arthur de Sá Antero",
       [["Administração e Finanças", "Membro"]],
       "fotos de perfil/arthur_desa.png",
@@ -453,27 +495,6 @@ export const data: dataSchema = {
       "Maria Eduarda Araújo Carvalho",
       [["Administração e Finanças", "Membro"]],
       "fotos de perfil/maria_eduarda.jpg",
-    ],
-    [
-      "José Luiz Gomes Nogueira",
-      [["Previdência", "Piloto Aposentado"]],
-      ,
-      [["Quimera", "Project Owner"]],
-    ],
-    [
-      "Arthur Mota Furtado",
-      [["Previdência", "Piloto Aposentado"]],
-      "fotos de perfil/arthur_mota.png",
-      [
-        ["Quimera", "Gerente"],
-        ["Vai de férias", "Gerente"],
-      ],
-    ],
-    [
-      "Pedro Augusto Ramalho Duarte",
-      [["Previdência", "Piloto Aposentado"]],
-      ,
-      [["Quimera", "Gerente"]],
     ],
     [
       "Matheus Braga Tourinho",
@@ -509,21 +530,6 @@ export const data: dataSchema = {
       [["Quimera", "Desenvolvedor"]],
     ],
     [
-      "Fernando Sobral Nóbrega",
-      [["Previdência", "Piloto Aposentado"]],
-      ,
-      [["Vai de férias", "Gerente"]],
-    ],
-    [
-      "Guilherme Rodrigues Lodron Pires",
-      [["Previdência", "Piloto Aposentado"]],
-      ,
-      [
-        ["Vai de férias", "Gerente"],
-        ["Vai de férias", "Desenvolvedor"],
-      ],
-    ],
-    [
       "Kayran Vieira de Oliveira",
       [["Previdência", "Piloto Aposentado"]],
       ,
@@ -550,7 +556,7 @@ export const data: dataSchema = {
     [
       "David Gonçalves Mendes",
       [["Previdência", "Piloto Aposentado"]],
-      "fotos de perfil/david_gonçalves.png",
+      "fotos de perfil/david_mendes.png",
       [["Vai de férias", "Desenvolvedor"]],
     ],
     [
@@ -571,12 +577,7 @@ export const data: dataSchema = {
       ,
       [["Vai de férias", "Desenvolvedor"]],
     ],
-    [
-      "Arthur Padovesi Piratelli",
-      [["Previdência", "Piloto Aposentado"]],
-      "fotos de perfil/arthur_padovesi.png",
-      [["Mark's Engenharia", "Gerente"]],
-    ],
+
     [
       "Leonardo Vargas Cabral",
       [["Previdência", "Piloto Aposentado"]],
