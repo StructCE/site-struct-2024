@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="relative mx-4 my-2 items-center justify-center sm:m-3 lg:m-5">
+    <div className="relative mx-4 my-2 items-center justify-center transition delay-75 ease-in hover:scale-[1.02] hover:shadow-[0_0_40px_10px_rgba(0,0,0,0.2)] sm:m-3 lg:m-5">
       <CldImage
         width="460"
         height="250"
