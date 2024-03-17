@@ -5,10 +5,7 @@ export default function ServicesCards() {
     <>
       <div className="h-[165px] w-[280px] rounded-lg bg-fundo-3 sm:h-[210px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
         <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
-          <ScreenShare
-            color="#f8f8ff"
-            className="mx-1.5 my-1.5 h-[18px] w-[18px] sm:mx-1.5 sm:my-2 sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[11px] lg:h-[28px] lg:w-[28px]"
-          />
+          <ScreenShare className="mx-1.5 my-1.5 h-[18px] w-[18px] text-struct-7 transition ease-in-out hover:scale-[1.04] hover:text-struct-1 sm:mx-1.5 sm:my-2 sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[11px] lg:h-[28px] lg:w-[28px]" />
           <h3 className="text-[18px] font-bold leading-relaxed sm:text-[26px] lg:text-[32px]">
             Websites
           </h3>
@@ -22,10 +19,7 @@ export default function ServicesCards() {
       </div>
       <div className="h-[165px] w-[280px] rounded-lg bg-fundo-3 sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
         <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
-          <Cog
-            color="#f8f8ff"
-            className="mx-1.5 my-1 h-[18px] w-[18px] sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[9px] lg:h-[28px] lg:w-[28px]"
-          />
+          <Cog className="mx-1.5 my-1 h-[18px] w-[18px] text-struct-7 transition ease-in-out hover:scale-[1.04] hover:text-struct-1 sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[9px] lg:h-[28px] lg:w-[28px]" />
           <h3 className="text-[18px] font-bold sm:text-[26px] lg:text-[32px]">
             Sistemas Web
           </h3>
@@ -38,10 +32,7 @@ export default function ServicesCards() {
       </div>
       <div className="h-[165px] w-[280px] rounded-lg bg-fundo-3 sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
         <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
-          <Smartphone
-            color="#f8f8ff"
-            className="mx-1.5 my-1 h-[18px] w-[18px] sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[9px] lg:h-[28px] lg:w-[28px]"
-          />
+          <Smartphone className="mx-1.5 my-1 h-[18px] w-[18px] text-struct-7 transition ease-in-out hover:scale-[1.04] hover:text-struct-1 sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[9px] lg:h-[28px] lg:w-[28px]" />
           <h3 className="text-[18px] font-bold sm:text-[26px] lg:text-[32px]">
             Aplicativos
           </h3>
@@ -54,10 +45,7 @@ export default function ServicesCards() {
       </div>
       <div className="h-[165px] w-[280px] rounded-lg bg-fundo-3 sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]">
         <div className="mx-5 mb-1 mt-3 flex sm:mx-5 sm:mb-1.5 sm:mt-5 lg:mx-6 lg:mb-2 lg:mt-6">
-          <Lightbulb
-            color="#f8f8ff"
-            className="mx-1.5 my-1 h-[18px] w-[18px] sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[9px] lg:h-[28px] lg:w-[28px]"
-          />
+          <Lightbulb className="mx-1.5 my-1 h-[18px] w-[18px] text-struct-7 transition ease-in-out hover:scale-[1.04] hover:text-struct-1 sm:mx-1.5 sm:my-[7px] sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[9px] lg:h-[28px] lg:w-[28px]" />
           <h3 className="text-[18px] font-bold sm:text-[26px] lg:text-[32px]">
             Consultoria
           </h3>

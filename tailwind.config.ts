@@ -35,7 +35,7 @@ const config = {
         "fundo-2": "#0A1D38",
         "fundo-3": "#0E284E",
         "fundo-transparente": "#252E3C", // Para aplicar a opacidade correta utilizar "bg-fundo-transparente/60" = 60% da opacidade
-        "struct-7-hover": "#D8D8D8",
+        "struct-7-hover": "#D9D9D9",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

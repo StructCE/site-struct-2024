@@ -25,30 +25,21 @@ export default function FindUs() {
                 target="_blank"
                 className="rounded-lg bg-fundo-0 p-[6px] sm:p-3"
               >
-                <FaFacebookSquare
-                  className="size-[16px] sm:size-[26px]"
-                  color="#f8f8ff"
-                />
+                <FaFacebookSquare className="size-[16px] text-struct-7 transition ease-in-out hover:scale-[1.05] hover:text-struct-1 sm:size-[26px]" />
               </Link>
               <Link
                 href="https://www.linkedin.com/company/struct-ej/"
                 target="_blank"
                 className="rounded-lg bg-fundo-0 p-[6px] sm:p-3"
               >
-                <FaLinkedin
-                  color="#f8f8ff"
-                  className="size-[16px] sm:size-[26px]"
-                />
+                <FaLinkedin className="size-[16px] text-struct-7 transition ease-in-out hover:scale-[1.05] hover:text-struct-1 sm:size-[26px]" />
               </Link>
               <Link
                 href="https://www.instagram.com/structunb/"
                 target="_blank"
                 className="rounded-lg bg-fundo-0 p-[6px] sm:p-3"
               >
-                <FaInstagram
-                  className="size-[16px] sm:size-[26px]"
-                  color="#f8f8ff"
-                />
+                <FaInstagram className="size-[16px] text-struct-7 transition ease-in-out hover:scale-[1.05] hover:text-struct-1 sm:size-[26px]" />
               </Link>
             </div>
           </div>

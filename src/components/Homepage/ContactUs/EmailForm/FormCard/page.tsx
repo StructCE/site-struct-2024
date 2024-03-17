@@ -227,7 +227,7 @@ const FormEmail = () => {
           <Button
             type="submit"
             disabled={loading}
-            className="h-6 bg-struct-7 px-3 py-1 font-oxanium text-[12px] font-semibold text-struct-1 hover:bg-struct-7-hover hover:font-bold active:border-none sm:h-11 sm:rounded-md sm:px-6 sm:text-[20px]"
+            className="h-6 bg-struct-7 px-3 py-1 font-oxanium text-[12px] font-bold text-struct-1 transition ease-in-out hover:bg-struct-7-hover hover:shadow-[0_0_5px_1px_rgba(0,0,0,0.1)] active:border-none sm:h-11 sm:rounded-md sm:px-6 sm:text-[20px]"
           >
             Enviar
           </Button>
