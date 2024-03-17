@@ -1,4 +1,4 @@
-import FormEmail from "./FormCard/formCard2";
+import FormEmail from "./FormCard/page";
 
 export default function EmailForm() {
   return (
