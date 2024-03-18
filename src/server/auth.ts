@@ -5,9 +5,7 @@ import {
   type NextAuthOptions,
 } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import DiscordProvider from "next-auth/providers/discord";
 
-import { env } from "~/env";
 import { db } from "~/server/db";
 
 /**
@@ -48,10 +46,6 @@ export const authOptions: NextAuthOptions = {
   },
   adapter: PrismaAdapter(db),
   providers: [
-    DiscordProvider({
-      clientId: env.DISCORD_CLIENT_ID,
-      clientSecret: env.DISCORD_CLIENT_SECRET,
-    }),
     CredentialsProvider({
       // The name to display on the sign in form (e.g. "Sign in with...")
       type: "credentials",
@@ -81,11 +75,12 @@ export const authOptions: NextAuthOptions = {
         };
         if (email !== "admin@struct.unb.br" || password !== "1234") {
           throw new Error("invalid credentials");
+        } else {
+          return {
+            name: "Admin",
+            email: "admin@struct.unb.br",
+          };
         }
-        return {
-          name: "Admin",
-          email: "admin@struct.unb.br",
-        };
       },
     }),
     /**
@@ -101,7 +96,7 @@ export const authOptions: NextAuthOptions = {
   pages: {
     signIn: "/login",
     signOut: "/dashboard",
-    error: "/login",
+    // error: "/login",
   },
 };
 

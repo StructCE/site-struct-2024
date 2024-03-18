@@ -1,5 +1,5 @@
 import Link from "next/link";
-import LogoutButton from "~/components/Admin/LogoutButton/page";
+import LogoutButton from "~/components/pages/auth/dashboard/signOutButton";
 
 export default function LoginPage() {
   return (

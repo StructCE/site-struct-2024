@@ -7,9 +7,21 @@ import { Label } from "~/components/ui/label";
 
 export default function LoginButton() {
   const [userInfo, setUserInfo] = useState({ email: "", password: "" });
+
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const res = await signIn("credentials", {
+      email: userInfo.email,
+      password: userInfo.password,
+      redirect: false,
+    });
+    console.log(res);
+  };
+
   return (
     <>
-      <form className="mx-6">
+      <form className="mx-6" onSubmit={handleSubmit}>
         <Label className="text-[24px]">Email</Label>
         <Input
           value={userInfo.email}
@@ -31,14 +43,7 @@ export default function LoginButton() {
         ></Input>
         <div className="my-6 flex justify-center">
           <Button
-            onClick={(e) => (
-              e.preventDefault(),
-              signIn("credentials", {
-                email: userInfo.email,
-                password: userInfo.password,
-                redirect: false,
-              })
-            )}
+            type="submit"
             className="bg-struct-7 p-6 font-oxanium text-xl font-bold text-struct-1 hover:scale-[1.02] hover:bg-struct-7-hover"
           >
             Entrar
