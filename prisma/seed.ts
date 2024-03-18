@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-floating-promises */
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 /* eslint-disable @typescript-eslint/no-base-to-string */
@@ -188,6 +189,23 @@ async function createPartners(partners: dataSchema["Partners"]) {
   }
 }
 
+async function createUsers(users: dataSchema["Users"]) {
+  for (const user of users) {
+    try {
+      const res = await prisma.user.create({
+        data: {
+          name: user[0],
+          email: user[1],
+          isAdmin: user[2],
+        },
+      });
+      console.log(`Usuario ${user[0]} criado - ` + res);
+    } catch (e) {
+      console.log(`Erro na criação do usuario ${user[0]} - ` + e);
+    }
+  }
+}
+
 async function main() {
   await createPartners(data.Partners);
   await createDirectorships(data.Directorships);
@@ -195,6 +213,7 @@ async function main() {
   await createProjects(data.Projects);
   await createProjectRoles(data.ProjectsRoles);
   await createMembers(data.Members);
+  await createUsers(data.Users);
   await prisma.$disconnect();
 }
 
