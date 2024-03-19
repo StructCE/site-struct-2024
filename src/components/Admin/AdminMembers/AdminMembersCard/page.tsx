@@ -67,13 +67,13 @@ export default function AdminMemberCard({ member }: { member: Member }) {
             <div className="my-2 flex flex-col justify-center gap-2">
               <Button
                 type="submit"
-                className="h-9 rounded-md border-[3px] border-yellow-300 bg-fundo-0 px-3 font-oxanium text-[16px] font-bold text-struct-7 transition ease-in-out"
+                className="h-9 rounded-md border-[3px] border-yellow-300 bg-fundo-0 px-3 font-oxanium text-[16px] font-bold text-struct-7 transition ease-in-out hover:bg-fundo-2"
               >
                 Editar Membro
               </Button>
               <Button
                 type="submit"
-                className="h-9 rounded-md border-[3px] border-red-600 bg-fundo-0 px-3 font-oxanium text-[16px] font-bold text-struct-7 transition ease-in-out"
+                className="h-9 rounded-md border-[3px] border-red-600 bg-fundo-0 px-3 font-oxanium text-[16px] font-bold text-struct-7 transition ease-in-out hover:bg-fundo-2"
               >
                 Remover Membro
               </Button>

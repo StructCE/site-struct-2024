@@ -7,7 +7,11 @@ export default async function AdminMembersPage() {
   return (
     <section className="relative flex items-center bg-fundo-0">
       <div className="absolute h-2/5 w-full skew-y-3 bg-fundo-1 blur-[200px]"></div>
-      <div className=" relative mx-0 my-24 flex h-fit w-full flex-col items-center justify-center p-0">
+      <div className="relative mx-0 my-20 flex h-fit w-full flex-col items-center justify-center p-0">
+        <h3 className="text-center font-oxanium text-[16px] font-bold leading-[21px] sm:text-[20px] sm:leading-[26px] lg:text-[36px] lg:leading-[44px]">
+          <span className="text-struct-3">{"{ "}</span>Editar/Remover
+          <span className="text-struct-3">{" }"}</span>
+        </h3>
         {directorshipsWithMembers.map((directorshipWithMember) => {
           return (
             <div

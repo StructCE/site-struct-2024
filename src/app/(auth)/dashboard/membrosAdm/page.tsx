@@ -282,10 +282,14 @@ export default async function MembrosAdmin() {
                 </SelectItem>
               </SelectContent>
             </Select>
+            <Input
+              className="mt-4 h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7"
+              placeholder="Foto de perfil (url do Cloudinary)"
+            />
             <div className="my-3 flex justify-center sm:my-4">
               <Button
                 type="submit"
-                className="h-11 rounded-md border-[3px] border-struct-7  bg-fundo-0 px-6 font-oxanium text-[20px] font-bold text-struct-7 transition ease-in-out"
+                className="h-11 rounded-md border-[3px] border-struct-7 bg-fundo-0 px-6 font-oxanium text-[20px] font-bold text-struct-7 transition ease-in-out hover:bg-fundo-2"
               >
                 Criar Membro
               </Button>
