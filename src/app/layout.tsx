@@ -1,5 +1,6 @@
 import Footer from "~/components/Footer/footer";
 import Navbar from "~/components/Navbar/navbar";
+import { AuthProvider } from "~/components/pages/auth/authProvider";
 import "~/styles/globals.css";
 import { TRPCReactProvider } from "~/trpc/react";
 
@@ -17,11 +18,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body className="relative antialiased bg-fundo-0 text-struct-7">
+      <body className="relative bg-fundo-0 text-struct-7 antialiased">
         <TRPCReactProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <AuthProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </AuthProvider>
         </TRPCReactProvider>
       </body>
     </html>

@@ -1,5 +1,6 @@
 "use client";
 import { MenuIcon } from "lucide-react";
+import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Link } from "react-scroll";
@@ -24,6 +25,7 @@ export default function Navbar() {
   }, []);
 
   const router = useRouter();
+  const { data: session } = useSession();
 
   return (
     <nav
@@ -98,6 +100,23 @@ export default function Navbar() {
             Contato
           </Link>
         </li>
+        {session?.user ? (
+          <li>
+            <Link
+              className="cursor-pointer font-bold text-struct-3 transition delay-75 ease-in hover:text-struct-1"
+              to="dashboard"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={700}
+              onClick={() => router.push("/dashboard")}
+            >
+              Admin
+            </Link>
+          </li>
+        ) : (
+          <></>
+        )}
       </ul>
       <Accordion
         className="flex w-full justify-between border-none sm:hidden"
