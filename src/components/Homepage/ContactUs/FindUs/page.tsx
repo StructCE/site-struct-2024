@@ -1,7 +1,6 @@
-// import GoogleMap from "google-map-react";
+"use client";
 import Link from "next/link";
 import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
-import MapStruct from "./MapStruct/page";
 
 export default function FindUs() {
   return (
@@ -15,7 +14,12 @@ export default function FindUs() {
         <div className="flex flex-col justify-center rounded-lg">
           {/* Mapa */}
           <div className="z-10">
-            <MapStruct />
+            <iframe
+              className="h-[248px] w-[248px] border-none sm:h-[448px] sm:w-[448px]"
+              loading="lazy"
+              allowFullScreen
+              src={`https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ2eWshbo7WpMRyW_XzFV-Glc&key=${process.env.MAP_API_KEY}`}
+            ></iframe>
           </div>
           {/* Redes Sociais */}
           <div className="relative bottom-6 z-20 mx-auto sm:bottom-11">
