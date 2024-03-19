@@ -5,7 +5,6 @@ export type dataSchema = {
   Projects: [string, string, string, string?, boolean?][];
   ProjectsRoles: string[];
   Members: [string, [string, string][], string?, [string, string][]?][];
-  Users: [string, string, boolean][];
 };
 
 export const data: dataSchema = {
@@ -682,5 +681,4 @@ export const data: dataSchema = {
       "fotos de perfil/lucas_correa.jpg",
     ],
   ],
-  Users: [["Admin", "admin@struct.unb.br", true]],
 };

@@ -1,8 +1,8 @@
 import { permanentRedirect } from "next/navigation";
-import LoginButton from "~/components/pages/login/signInButton";
+import SignInButton from "~/components/pages/login/signInButton";
 import { getServerAuthSession } from "~/server/auth";
 
-export default async function LoginPage() {
+export default async function SignInPage() {
   const session = await getServerAuthSession();
 
   if (session?.user) {
@@ -17,8 +17,7 @@ export default async function LoginPage() {
             <span className="text-center font-oxanium text-[64px] font-bold sm:text-[128px] lg:text-[172px]">
               {"{admin}"}
             </span>
-            <LoginButton />
-            <p className="text-xl text-struct-7">{session?.user?.email}</p>
+            <SignInButton />
           </div>
         </div>
       </div>

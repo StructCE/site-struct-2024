@@ -15,7 +15,6 @@ export default async function AuthLayout({
 
   return (
     <>
-      <h1>Layout de autenticação</h1>
       <AuthProvider>{children}</AuthProvider>
     </>
   );
