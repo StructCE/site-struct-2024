@@ -34,8 +34,8 @@ model DirectorshipMember {
   directorshipId     String
   directorshipRoleId String
   directorshipRole   DirectorshipRole @relation(fields: [directorshipRoleId], references: [id])
-  directorship       Directorship     @relation(fields: [directorshipId], references: [id])
-  member             Member           @relation(fields: [memberId], references: [id])
+  directorship       Directorship     @relation(fields: [directorshipId], references: [id], onDelete: Cascade)
+  member             Member           @relation(fields: [memberId], references: [id], onDelete: Cascade)
 }
 
 model DirectorshipRole {
@@ -60,8 +60,8 @@ model ProjectMember {
   projectId     String
   projectRoleId String
   role          ProjectRole @relation(fields: [projectRoleId], references: [id])
-  member        Member      @relation(fields: [memberId], references: [id])
-  project       Project     @relation(fields: [projectId], references: [id])
+  member        Member      @relation(fields: [memberId], references: [id], onDelete: Cascade)
+  project       Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
 }
 
 model ProjectRole {
