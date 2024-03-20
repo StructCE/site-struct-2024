@@ -36,6 +36,7 @@ export const projectRouter = createTRPCRouter({
         link: projectAndMembers?.link,
         logoPublicId: projectAndMembers?.logoPublicId,
         members: projectAndMembers?.projectMembers.map((projectMember) => ({
+          id: projectMember.member.id,
           name: projectMember.member.name,
           logoPublicId: projectMember.member.logoPublicId,
           role: projectMember.role.name,

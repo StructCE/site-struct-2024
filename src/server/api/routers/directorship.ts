@@ -28,6 +28,7 @@ export const directorshipRouter = createTRPCRouter({
       .map((directorshipwithmembers) => ({
         name: directorshipwithmembers.name,
         members: directorshipwithmembers.members.map((member) => ({
+          id: member.member.id,
           name: member.member.name,
           logoPublicId: member.member.logoPublicId,
           role: member.directorshipRole.name,
