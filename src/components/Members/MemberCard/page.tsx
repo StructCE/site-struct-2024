@@ -2,6 +2,7 @@
 import { CldImage } from "next-cloudinary";
 
 type Member = {
+  id: string;
   name: string;
   logoPublicId: string;
   role: string;

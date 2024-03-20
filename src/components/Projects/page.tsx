@@ -10,6 +10,7 @@ type projectWithMembers = {
   logoPublicId: string | undefined;
   members:
     | {
+        id: string;
         name: string;
         logoPublicId: string;
         role: string;
