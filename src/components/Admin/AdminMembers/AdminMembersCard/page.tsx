@@ -1,9 +1,12 @@
 "use client";
 import { useSession } from "next-auth/react";
 import { CldImage } from "next-cloudinary";
-import { Button } from "~/components/ui/button";
+import { Toaster } from "react-hot-toast"
+import EditMember from "./editMember";
+import RemoveMember from "./removeMember";
 
 type Member = {
+  id: string;
   name: string;
   logoPublicId: string;
   role: string;
@@ -33,12 +36,10 @@ const getColor = (role: string, component: string): string => {
   if (component === "border") res = borderColors[role];
   return res ?? "";
 };
-
 export default function AdminMemberCard({ member }: { member: Member }) {
   const { data: session } = useSession();
-
   return (
-    <div className="m-12 flex h-[280px] w-[170px] flex-col items-center sm:m-10 sm:my-12">
+    <div className="m-12 flex h-[280px] w-[170px] flex-col items-center sm:m-10 sm:my-12 relative">
       <CldImage
         width="180"
         height="180"
@@ -62,26 +63,17 @@ export default function AdminMemberCard({ member }: { member: Member }) {
         >
           {member.role}
         </p>
-        {session?.user ? (
-          <>
-            <div className="my-2 flex flex-col justify-center gap-2">
-              <Button
-                type="submit"
-                className="h-9 rounded-md border-[3px] border-yellow-300 bg-fundo-0 px-3 font-oxanium text-[16px] font-bold text-struct-7 transition ease-in-out hover:bg-fundo-2"
-              >
-                Editar Membro
-              </Button>
-              <Button
-                type="submit"
-                className="h-9 rounded-md border-[3px] border-red-600 bg-fundo-0 px-3 font-oxanium text-[16px] font-bold text-struct-7 transition ease-in-out hover:bg-fundo-2"
-              >
-                Remover Membro
-              </Button>
-            </div>
-          </>
-        ) : (
-          <></>
-        )}
+        {session?.user? 
+          <div className="absolute w-fit flex justify-center items-center top-36 right-0 gap-2">
+            <Toaster position="bottom-center" reverseOrder={false} />
+            {/* Editar Membro */}
+            <EditMember member={member}/>
+            {/* Remover Membro */}
+            <RemoveMember member={member}/>
+          </div>
+          :
+          null
+      }
       </div>
     </div>
   );
