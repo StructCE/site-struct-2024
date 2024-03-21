@@ -10,7 +10,7 @@ export default function Home() {
       >
         <div className="w-[280px] sm:w-[600px] lg:w-[750px]">
           <TypeAnimation
-            sequence={["", 750, "{struct}"]}
+            sequence={["", 600, "{struct}"]}
             speed={{ type: "keyStrokeDelayInMs", value: 150 }}
             wrapper="h1"
             cursor={false}
@@ -19,7 +19,7 @@ export default function Home() {
           <TypeAnimation
             sequence={[
               "",
-              2700,
+              2550,
               "Atuando no mercado de desenvolvimento web desde 2014.",
             ]}
             speed={{ type: "keyStrokeDelayInMs", value: 40 }}
