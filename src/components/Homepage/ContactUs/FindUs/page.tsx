@@ -11,7 +11,7 @@ export default function FindUs() {
         initial={{ opacity: "var(--opacity-from)", y: "var(--y-from)" }}
         whileInView={{ opacity: "var(--opacity-to)", y: "var(--y-to)" }}
         exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
-        transition={{ duration: 0.6, delay: 0.5 }}
+        transition={{ ease: "easeInOut", duration: 1, delay: 0.3 }}
         viewport={{ once: true }}
         className="h-[332px] w-[280px] rounded-lg bg-fundo-2 p-4 [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] sm:h-[598px] sm:w-[496px] sm:p-6"
       >

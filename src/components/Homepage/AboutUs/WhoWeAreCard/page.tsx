@@ -17,7 +17,7 @@ export default function WhoWeAreCard({
         initial={{ opacity: "var(--opacity-from)", y: "var(--y-from)" }}
         whileInView={{ opacity: "var(--opacity-to)", y: "var(--y-to)" }}
         exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
-        transition={{ duration: 0.6, delay: 0.1 }}
+        transition={{ ease: "easeInOut", duration: 1, delay: 0 }}
         viewport={{ once: true }}
         className=" [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] "
       >
@@ -30,7 +30,7 @@ export default function WhoWeAreCard({
         initial={{ opacity: "var(--opacity-from)", y: "var(--y-from)" }}
         whileInView={{ opacity: "var(--opacity-to)", y: "var(--y-to)" }}
         exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
-        transition={{ duration: 0.6, delay: 0.4 }}
+        transition={{ ease: "easeInOut", duration: 1, delay: 0.2 }}
         viewport={{ once: true }}
         className=" [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] "
       >

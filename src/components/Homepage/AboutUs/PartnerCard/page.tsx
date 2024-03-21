@@ -11,7 +11,7 @@ export default function PartnerCard({ partners }: { partners: Partner[] }) {
         initial={{ opacity: "var(--opacity-from)", y: "var(--y-from)" }}
         whileInView={{ opacity: "var(--opacity-to)", y: "var(--y-to)" }}
         exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
-        transition={{ duration: 0.6, delay: 0.1 }}
+        transition={{ ease: "easeInOut", duration: 1, delay: 0 }}
         viewport={{ once: true }}
         className="[--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px]"
       >
@@ -25,7 +25,7 @@ export default function PartnerCard({ partners }: { partners: Partner[] }) {
           initial={{ opacity: "var(--opacity-from)", y: "var(--y-from)" }}
           whileInView={{ opacity: "var(--opacity-to)", y: "var(--y-to)" }}
           exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ ease: "easeInOut", duration: 1, delay: 0.2 }}
           viewport={{ once: true }}
           className="flex max-w-[256px] flex-wrap gap-6 rounded-xl bg-fundo-3 p-6 [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]"
         >
