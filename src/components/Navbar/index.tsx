@@ -1,7 +1,7 @@
 "use client";
 import { MenuIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-scroll";
 import {
   Accordion,
@@ -9,25 +9,17 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion";
+import { useScrolValue } from "~/hooks/useScrollNavbar";
 
 export default function Navbar() {
-  const [scrollvalue, setScrollValue] = useState<number>(0);
   const [navbaropen, setNavbaropen] = useState<boolean>(false);
-  useEffect(() => {
-    function updatescrollvalue() {
-      setScrollValue(window.scrollY);
-    }
-    window.addEventListener("scroll", updatescrollvalue);
-    return () => {
-      window.removeEventListener("scroll", updatescrollvalue);
-    };
-  }, []);
+  const scrollValue = useScrolValue();
 
   const router = useRouter();
 
   return (
     <nav
-      className={`fixed z-40 flex w-full items-center justify-center transition-all ease-in ${scrollvalue > 80 && "h-[64px] bg-fundo-transparente/80"} ${scrollvalue <= 80 && " h-[96px]"} ${scrollvalue > 80 && navbaropen && "bg-fundo-transparente/0"} `}
+      className={`fixed z-40 flex w-full items-center justify-center transition-all ease-in ${scrollValue > 80 && "h-[64px] bg-fundo-transparente/80"} ${scrollValue <= 80 && " h-[96px]"} ${scrollValue > 80 && navbaropen && "bg-fundo-transparente/0"} `}
     >
       <ul className="hidden items-center gap-[4vw] font-oxanium text-[20px] text-xl font-semibold text-struct-7 sm:flex">
         <li className="text-[36px] font-bold text-struct-7">

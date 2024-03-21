@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { api } from "~/trpc/server";
+import { unstable_noStore as noStore } from "next/cache";
 
 export default async function WhoWeArePage() {
+  noStore();
   const countProjects = await api.project.countProjects.query();
   const countActiveMembers =
     await api.directorship.countDirectiorshipMembers.query();

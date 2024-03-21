@@ -1,8 +1,10 @@
 import { api } from "~/trpc/server";
 import PartnerCard from "./PartnerCard/page";
 import WhoWeArePage from "./WhoWeAreCard/page";
+import { unstable_noStore as noStore } from "next/cache";
 
 export default async function AboutUs() {
+  noStore();
   const partners = await api.partner.getAll.query();
 
   return (

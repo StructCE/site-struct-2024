@@ -385,7 +385,7 @@ export const data: dataSchema = {
       ],
     ],
     [
-      "Arthur Padovesi Piratelli",
+      "Artur Padovesi Piratelli",
       [["Previdência", "Piloto Aposentado"]],
       "fotos de perfil/arthur_padovesi.png",
       [["Mark's Engenharia", "Gerente"]],
@@ -433,18 +433,13 @@ export const data: dataSchema = {
     ],
     [
       "Willyan Marques de Melo",
-      [["Marketing", "Membro"]],
+      [["Projetos", "Membro"]],
       "fotos de perfil/willyan_marques.jpg",
     ],
     [
       "Eduardo Pereira Policarpo Ferreira",
       [["Projetos", "Membro"]],
       "fotos de perfil/eduardo_pereira",
-    ],
-    [
-      "João Pedro Fernandes Santos",
-      [["Projetos", "Membro"]],
-      "fotos de perfil/joao_pedro",
     ],
     [
       "Matheus das Neves Fernandes",
@@ -495,6 +490,11 @@ export const data: dataSchema = {
       "Maria Eduarda Araújo Carvalho",
       [["Administração e Finanças", "Membro"]],
       "fotos de perfil/maria_eduarda.jpg",
+    ],
+    [
+      "João Pedro Fernandes Santos",
+      [["Previdência", "Piloto Aposentado"]],
+      "fotos de perfil/joao_pedro",
     ],
     [
       "Matheus Braga Tourinho",

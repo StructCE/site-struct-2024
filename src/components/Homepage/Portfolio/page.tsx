@@ -1,7 +1,9 @@
 import { api } from "~/trpc/server";
 import ProjectsContainer from "./ProjectsContainer/page";
+import { unstable_noStore as noStore } from "next/cache";
 
 export default async function Portfolio() {
+  noStore();
   const projects = await api.project.getAll.query();
   return (
     <section

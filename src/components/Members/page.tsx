@@ -1,7 +1,9 @@
 import { api } from "~/trpc/server";
 import MemberContainer from "./MemberCard/page";
+import { unstable_noStore as noStore } from "next/cache";
 
 export default async function MembersPage() {
+  noStore();
   const directorshipsWithMembers =
     await api.directorship.getAllWithMembers.query();
   return (

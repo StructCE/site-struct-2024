@@ -1,4 +1,5 @@
 # Tecnologias
+
 - [T3 App](https://create.t3.gg/en/introduction)
 - [Next.js](https://nextjs.org)
 - [NextAuth.js](https://next-auth.js.org)
@@ -7,7 +8,9 @@
 - [tRPC](https://trpc.io)
 
 ---
+
 # Bibliotecas
+
 - [shadcn](https://ui.shadcn.com/docs) -> components
 - [lucide](https://lucide.dev/icons/) -> icons
 - [cloudnary](https://next.cloudinary.dev/) -> imagens
@@ -16,6 +19,7 @@
 - [pigeon-maps](https://pigeon-maps.js.org/) -> mapa
 
 ---
+
 # Banco de Dados
 
 Estamos usando mysql para banco de dados, o qual necessita de um container Docker para rodar. Assim, vamos instalar primeiramente o Docker:
@@ -34,6 +38,12 @@ DATABASE_URL="mysql://root:password@localhost:3306/site-struct-2024"
 
 No lugar de password, coloque uma senha aleatória para o seu banco de dados.
 
+Por fim, empurre o esquema do seu prisma para o banco de dados rodando no container docker com o comando:
+
+```bash
+pnpm db:push
+```
+
 ## Seed
 
 Para rodar a seed, certifique-se de que todas as depêndencias estão instaladas rondado o comando:
@@ -42,7 +52,7 @@ Para rodar a seed, certifique-se de que todas as depêndencias estão instaladas
 pnpm i
 ```
 
-Depois, você pode rodar a seed com o comando: 
+Depois, você pode rodar a seed com o comando:
 
 ```bash
 pnpm db:seed
