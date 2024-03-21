@@ -385,7 +385,7 @@ export const data: dataSchema = {
       ],
     ],
     [
-      "Arthur Padovesi Piratelli",
+      "Artur Padovesi Piratelli",
       [["Previdência", "Piloto Aposentado"]],
       "fotos de perfil/arthur_padovesi.png",
       [["Mark's Engenharia", "Gerente"]],
@@ -433,7 +433,7 @@ export const data: dataSchema = {
     ],
     [
       "Willyan Marques de Melo",
-      [["Marketing", "Membro"]],
+      [["Projetos", "Membro"]],
       "fotos de perfil/willyan_marques.jpg",
     ],
     [
@@ -443,7 +443,7 @@ export const data: dataSchema = {
     ],
     [
       "João Pedro Fernandes Santos",
-      [["Projetos", "Membro"]],
+      [["Projetos", "Piloto Aposentado"]],
       "fotos de perfil/joao_pedro",
     ],
     [
