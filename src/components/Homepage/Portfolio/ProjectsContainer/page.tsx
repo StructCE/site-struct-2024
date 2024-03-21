@@ -24,7 +24,7 @@ export default function ProjectsContainer({
           <span className="text-[#2DA2FF]">{" }"}</span>
         </h2>
         <p className="my-2 w-[32px] border-b-2 border-[#FD8D4B] sm:my-3 sm:w-[64px] lg:my-5 lg:w-[96px]"></p>
-        <p className="font-nunito text-[10px] sm:text-[13px] lg:text-[16px]">
+        <p className="font-nunito text-[12px] sm:text-[14px] lg:text-[16px]">
           Explore alguns dos nossos projetos!
         </p>
       </motion.div>

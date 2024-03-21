@@ -7,7 +7,7 @@ export default async function Portfolio() {
   const projects = await api.project.getAll.query();
   return (
     <section
-      className="flex h-fit w-full items-center justify-center py-36"
+      className="flex h-fit w-full items-center justify-center py-16 sm:py-36"
       id="portfolio"
     >
       <div>
