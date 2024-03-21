@@ -1,6 +1,6 @@
 import { api } from "~/trpc/server";
 import PartnerCard from "./PartnerCard/page";
-import WhoWeAre from "./WhoWeAreCard/page";
+import WhoWeArePage from "./WhoWeAreCard/page";
 
 export default async function AboutUs() {
   const partners = await api.partner.getAll.query();
@@ -20,7 +20,7 @@ export default async function AboutUs() {
             </h2>
             {/* Caixa Quem Somos */}
             <div className="flex w-[280px] flex-col rounded-2xl bg-fundo-3 sm:w-[580px] sm:justify-center lg:w-[1024px] lg:flex-row">
-              <WhoWeAre />
+              <WhoWeArePage />
             </div>
           </div>
           {/* Parceiros */}
@@ -30,9 +30,7 @@ export default async function AboutUs() {
               <span className="text-struct-3">{" }"}</span>
             </h3>
             <div className="flex justify-center">
-              <div className="flex max-w-[256px] flex-wrap gap-6 rounded-xl bg-fundo-3 p-6 sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]">
-                <PartnerCard partners={partners} />
-              </div>
+              <PartnerCard partners={partners} />
             </div>
           </div>
         </div>
