@@ -113,7 +113,7 @@ const FormEmail = () => {
               </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="João Pedro"
+                  placeholder="Digite seu nome"
                   className="h-6 space-y-0 border-none bg-fundo-3 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:h-10 sm:px-3 sm:text-sm"
                   {...field}
                   ref={nameRef}
@@ -130,7 +130,7 @@ const FormEmail = () => {
               <FormLabel className="text-[10px] sm:text-base">Email</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="joaopedro@gmail.com"
+                  placeholder="Digite seu email"
                   type="email"
                   className="mt-0 h-6 space-y-0 border-none bg-fundo-3 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:mt-1 sm:h-10 sm:px-3 sm:text-sm"
                   {...field}
