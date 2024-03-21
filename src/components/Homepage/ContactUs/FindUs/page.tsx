@@ -1,4 +1,5 @@
-// import GoogleMap from "google-map-react";
+"use client";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 import MapStruct from "./MapStruct/page";
@@ -6,7 +7,14 @@ import MapStruct from "./MapStruct/page";
 export default function FindUs() {
   return (
     <>
-      <div className="h-[332px] w-[280px] rounded-lg bg-fundo-2 p-4 sm:h-[598px] sm:w-[496px] sm:p-6">
+      <motion.div
+        initial={{ opacity: "var(--opacity-from)", y: "var(--y-from)" }}
+        whileInView={{ opacity: "var(--opacity-to)", y: "var(--y-to)" }}
+        exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
+        transition={{ duration: 0.6, delay: 0.5 }}
+        viewport={{ once: true }}
+        className="h-[332px] w-[280px] rounded-lg bg-fundo-2 p-4 [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] sm:h-[598px] sm:w-[496px] sm:p-6"
+      >
         {/* Título */}
         <h3 className="mb-3 text-center font-oxanium text-[14px] font-bold leading-[18px] sm:mb-6 sm:text-[32px] sm:leading-[40px]">
           <span className="text-struct-3">{"{ "}</span>Como nos encontrar
@@ -44,7 +52,7 @@ export default function FindUs() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }
