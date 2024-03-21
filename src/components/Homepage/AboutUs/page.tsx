@@ -1,11 +1,22 @@
 import { unstable_noStore as noStore } from "next/cache";
 import { api } from "~/trpc/server";
 import PartnerCard from "./PartnerCard/page";
-import WhoWeArePage from "./WhoWeAreCard/page";
+import WhoWeAreCard from "./WhoWeAreCard/page";
 
 export default async function AboutUs() {
   noStore();
   const partners = await api.partner.getAll.query();
+
+  const countProjects = await api.project.countProjects.query();
+  const countActiveMembers =
+    await api.directorship.countDirectiorshipMembers.query();
+
+  const date = new Date();
+  const yearsActive =
+    (date.getDate() >= 20 && date.getMonth() + 1 === 11) ||
+    date.getMonth() + 1 > 11
+      ? date.getFullYear() - 2014
+      : date.getFullYear() - 2014 - 1;
 
   return (
     <>
@@ -16,14 +27,11 @@ export default async function AboutUs() {
         <div className="flex -skew-y-3 flex-col gap-9 py-12 sm:py-24">
           {/* Quem Somos */}
           <div className="flex flex-col gap-8">
-            <h2 className="text-center font-oxanium text-[24px] font-bold leading-[30px] sm:text-[32px] sm:leading-[48px] lg:text-[48px] lg:leading-[60px]">
-              <span className="text-struct-3">{"{ "}</span>Quem Somos
-              <span className="text-struct-3">{" }"}</span>
-            </h2>
-            {/* Caixa Quem Somos */}
-            <div className="flex w-[280px] flex-col rounded-2xl bg-fundo-3 sm:w-[580px] sm:justify-center lg:w-[1024px] lg:flex-row">
-              <WhoWeArePage />
-            </div>
+            <WhoWeAreCard
+              countProjects={countProjects}
+              yearsActive={yearsActive}
+              countActiveMembers={countActiveMembers}
+            />
           </div>
           {/* Parceiros */}
           <div className="flex flex-col gap-8">
