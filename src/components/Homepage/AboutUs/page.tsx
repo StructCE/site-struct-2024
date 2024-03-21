@@ -1,7 +1,7 @@
+import { unstable_noStore as noStore } from "next/cache";
 import { api } from "~/trpc/server";
 import PartnerCard from "./PartnerCard/page";
 import WhoWeArePage from "./WhoWeAreCard/page";
-import { unstable_noStore as noStore } from "next/cache";
 
 export default async function AboutUs() {
   noStore();
@@ -27,13 +27,7 @@ export default async function AboutUs() {
           </div>
           {/* Parceiros */}
           <div className="flex flex-col gap-8">
-            <h3 className="text-center font-oxanium text-[20px] font-bold leading-[25px] sm:text-[24px] sm:leading-[30px] lg:text-[40px] lg:leading-[50px]">
-              <span className="text-struct-3">{"{ "}</span>Parceiros
-              <span className="text-struct-3">{" }"}</span>
-            </h3>
-            <div className="flex justify-center">
-              <PartnerCard partners={partners} />
-            </div>
+            <PartnerCard partners={partners} />
           </div>
         </div>
       </section>
