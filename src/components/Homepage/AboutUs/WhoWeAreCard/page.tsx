@@ -39,7 +39,7 @@ export default function WhoWeAreCard({
           {/* Texto e números */}
           <div className="m-3 mr-4 w-[256px] sm:m-8 sm:w-[523px]">
             {/* Texto */}
-            <p className="mb-3 text-[8px] sm:mb-8 sm:text-base">
+            <p className="mb-4 text-[10px] sm:mb-8 sm:text-base">
               A Struct é a Empresa Junior (EJ) do curso Engenharia de Computação
               da Universidade de Brasília. Desde 2014, buscamos proporcionar
               soluções com as tecnologias mais atualizadas no mercado, prezando
@@ -85,7 +85,7 @@ export default function WhoWeAreCard({
                   <h5 className="font-oxanium text-[16px] font-semibold sm:text-[22px]">
                     <span className="text-struct-2">M</span>issão
                   </h5>
-                  <p className="text-[10px] sm:text-[12px]">
+                  <p className="text-[11px] sm:text-[12px]">
                     Formar estudantes mais profissionais e mais capacitados por
                     meio da vivência empresarial.
                   </p>
@@ -94,7 +94,7 @@ export default function WhoWeAreCard({
                   <h5 className="font-oxanium text-[16px] font-semibold sm:text-[22px]">
                     <span className="text-struct-2">V</span>isão
                   </h5>
-                  <p className="text-[10px] sm:text-left sm:text-[12px]">
+                  <p className="text-[11px] sm:text-left sm:text-[12px]">
                     Proporcionar os melhores produtos e experiência ao cliente.
                     Fortalecer a representatividade da EC no ambiente acadêmico
                     e no mercado.

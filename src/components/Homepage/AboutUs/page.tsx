@@ -24,7 +24,7 @@ export default async function AboutUs() {
         id="sobrenos"
         className="m-0 flex w-full skew-y-3 flex-col items-center justify-center gap-9 bg-fundo-2 p-0 font-nunito lg:h-[1000px]"
       >
-        <div className="flex -skew-y-3 flex-col gap-9 py-12 sm:py-24">
+        <div className="flex -skew-y-3 flex-col gap-9 py-16 sm:py-24">
           {/* Quem Somos */}
           <div className="flex flex-col gap-8">
             <WhoWeAreCard

@@ -6,8 +6,8 @@ import FindUs from "./FindUs/page";
 export default function ContactUs() {
   return (
     <>
-      <div
-        className="m-0 flex w-full flex-col items-center justify-center gap-8 p-0 lg:h-[1000px]"
+      <section
+        className="m-0 flex w-full flex-col items-center justify-center gap-8 py-16 sm:p-0 sm:py-0 lg:h-[1000px]"
         id="contato"
       >
         <motion.div
@@ -27,7 +27,7 @@ export default function ContactUs() {
           <EmailForm />
           <FindUs />
         </div>
-      </div>
+      </section>
     </>
   );
 }
