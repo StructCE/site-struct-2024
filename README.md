@@ -13,10 +13,12 @@
 
 - [shadcn](https://ui.shadcn.com/docs) -> components
 - [lucide](https://lucide.dev/icons/) -> icons
+- [react-icons/fa](https://react-icons.github.io/react-icons/) -> icons
 - [cloudnary](https://next.cloudinary.dev/) -> imagens
 - [framer-motion](https://www.framer.com/motion/) -> animações
-- [react-email](https://react.email/docs/introduction) -> form
-- [pigeon-maps](https://pigeon-maps.js.org/) -> mapa
+- [react-type-animation](https://react-type-animation.netlify.app/) -> animações
+- [emailjs]([https://react.email/docs/introduction](https://www.emailjs.com/)) -> email form
+- [googlemaps-embed-api](https://developers.google.com/maps/documentation/embed/quickstart) -> mapa
 
 ---
 
