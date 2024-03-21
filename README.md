@@ -17,7 +17,7 @@
 - [cloudnary](https://next.cloudinary.dev/) -> imagens
 - [framer-motion](https://www.framer.com/motion/) -> animações
 - [react-type-animation](https://react-type-animation.netlify.app/) -> animações
-- [emailjs]([https://react.email/docs/introduction](https://www.emailjs.com/)) -> email form
+- [emailjs](https://www.emailjs.com/) -> email form
 - [googlemaps-embed-api](https://developers.google.com/maps/documentation/embed/quickstart) -> mapa
 
 ---
