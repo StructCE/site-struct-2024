@@ -20,7 +20,7 @@ export default function ProjectsContainer({
               whileInView={{ opacity: "var(--opacity-to)", y: "var(--x-to)" }}
               exit={{ opacity: "var(--opacity-from)", y: "var(--x-to)" }}
               transition={{ duration: 1, delay: 0.1 }}
-              className="[--opacity-from:0%][--opacity-to:100%] flex w-full items-center justify-center text-lg [--x-from:50px] [--x-to:0px] max-lg:flex-col"
+              className="flex w-full items-center justify-center text-lg [--opacity-from:0%] [--opacity-to:100%] [--x-from:50px] [--x-to:0px] max-lg:flex-col"
             >
               <ProjectCard project={project} />
               {nextProject ? <ProjectCard project={nextProject} /> : null}
