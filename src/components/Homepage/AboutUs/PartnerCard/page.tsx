@@ -7,11 +7,12 @@ import Link from "next/link";
 export default function PartnerCard({ partners }: { partners: Partner[] }) {
   return (
     <motion.div
-      initial={{ opacity: "var(--opacity-from)", y: "var(--x-from)" }}
-      whileInView={{ opacity: "var(--opacity-to)", y: "var(--x-to)" }}
-      exit={{ opacity: "var(--opacity-from)", y: "var(--x-to)" }}
-      transition={{ duration: 1, delay: 0.1 }}
-      className="flex max-w-[256px] flex-wrap gap-6 rounded-xl bg-fundo-3 p-6 [--opacity-from:0%] [--opacity-to:100%] [--x-from:50px] [--x-to:0px] sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]"
+      initial={{ opacity: "var(--opacity-from)", y: "var(--y-from)" }}
+      whileInView={{ opacity: "var(--opacity-to)", y: "var(--y-to)" }}
+      exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
+      transition={{ duration: 0.6, delay: 0.1 }}
+      viewport={{ once: true }}
+      className="flex max-w-[256px] flex-wrap gap-6 rounded-xl bg-fundo-3 p-6 [--opacity-from:10%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]"
     >
       {partners?.map((partner) => (
         <Link

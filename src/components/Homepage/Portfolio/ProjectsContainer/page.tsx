@@ -16,11 +16,12 @@ export default function ProjectsContainer({
           return (
             <motion.div
               key={project.id}
-              initial={{ opacity: "var(--opacity-from)", y: "var(--x-from)" }}
-              whileInView={{ opacity: "var(--opacity-to)", y: "var(--x-to)" }}
-              exit={{ opacity: "var(--opacity-from)", y: "var(--x-to)" }}
-              transition={{ duration: 1, delay: 0.1 }}
-              className="flex w-full items-center justify-center text-lg [--opacity-from:0%] [--opacity-to:100%] [--x-from:50px] [--x-to:0px] max-lg:flex-col"
+              initial={{ opacity: "var(--opacity-from)", y: "var(--y-from)" }}
+              whileInView={{ opacity: "var(--opacity-to)", y: "var(--y-to)" }}
+              exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              className="flex w-full items-center justify-center text-lg [--opacity-from:10%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] max-lg:flex-col"
             >
               <ProjectCard project={project} />
               {nextProject ? <ProjectCard project={nextProject} /> : null}
