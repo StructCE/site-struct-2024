@@ -442,11 +442,6 @@ export const data: dataSchema = {
       "fotos de perfil/eduardo_pereira",
     ],
     [
-      "João Pedro Fernandes Santos",
-      [["Projetos", "Piloto Aposentado"]],
-      "fotos de perfil/joao_pedro",
-    ],
-    [
       "Matheus das Neves Fernandes",
       [["Projetos", "Membro"]],
       "fotos de perfil/matheus_das_neves",
@@ -495,6 +490,11 @@ export const data: dataSchema = {
       "Maria Eduarda Araújo Carvalho",
       [["Administração e Finanças", "Membro"]],
       "fotos de perfil/maria_eduarda.jpg",
+    ],
+    [
+      "João Pedro Fernandes Santos",
+      [["Previdência", "Piloto Aposentado"]],
+      "fotos de perfil/joao_pedro",
     ],
     [
       "Matheus Braga Tourinho",
