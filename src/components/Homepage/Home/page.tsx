@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <>
       <section
-        className="m-0 flex h-[650px] w-full items-center justify-center p-0 sm:h-[875px] lg:h-[1100px]"
+        className="m-0 flex h-[650px] w-full items-center justify-center p-0 sm:h-[875px] lg:h-[1000px]"
         id="home"
       >
         <div className="w-[280px] sm:w-[600px] lg:w-[750px]">
@@ -32,7 +32,7 @@ export default function Home() {
             wrapper="p"
             repeat={0}
           />
-          <p className="text-[1px] leading-[0px] text-fundo-0 lg:leading-[150px]">
+          <p className="text-[1px] leading-[0px] text-fundo-0 sm:leading-[100px] lg:leading-[250px]">
             .
           </p>
         </div>
