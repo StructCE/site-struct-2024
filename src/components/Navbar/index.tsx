@@ -19,7 +19,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed z-40 flex w-full items-center justify-center transition-all ease-in ${scrollValue > 80 && "h-[64px] bg-fundo-transparente/80"} ${scrollValue <= 80 && " h-[96px]"} ${scrollValue > 80 && navbaropen && "bg-fundo-transparente/0"} `}
+      className={`fixed z-40 flex w-screen items-center justify-center transition-all ease-in ${scrollValue > 80 && "h-[64px] bg-fundo-transparente/80"} ${scrollValue <= 80 && " h-[96px]"} ${scrollValue > 80 && navbaropen && "bg-fundo-transparente/0"} `}
     >
       <ul className="hidden items-center gap-[4vw] font-oxanium text-[20px] text-xl font-semibold text-struct-7 sm:flex">
         <li className="text-[36px] font-bold text-struct-7">
