@@ -1,7 +1,10 @@
 "use client";
+import { motion } from "framer-motion";
 import { MenuIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { LuSun } from "react-icons/lu";
+import { RiMoonClearLine } from "react-icons/ri";
 import { Link } from "react-scroll";
 import {
   Accordion,
@@ -10,12 +13,26 @@ import {
   AccordionTrigger,
 } from "~/components/ui/accordion";
 import { useScrolValue } from "~/hooks/useScrollNavbar";
+import { Button } from "../ui/button";
 
 export default function Navbar() {
   const [navbaropen, setNavbaropen] = useState<boolean>(false);
   const scrollValue = useScrolValue();
-
   const router = useRouter();
+
+  const [theme, setTheme] = useState<string>("dark");
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [theme]);
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   return (
     <nav
@@ -89,6 +106,31 @@ export default function Navbar() {
           >
             Contato
           </Link>
+        </li>
+        <li>
+          <motion.div
+            animate={theme === "dark" ? "moon" : "sun"}
+            variants={{
+              sun: { rotateY: 0, transition: { duration: 0.6 } },
+              moon: { rotateY: 180, transition: { duration: 0.6 } },
+            }}
+          >
+            {theme === "dark" ? (
+              <Button
+                className="cursor-pointer rounded-full bg-fundo-1/25 p-2 transition delay-150 ease-in-out hover:bg-fundo-1/25"
+                onClick={handleThemeSwitch}
+              >
+                <LuSun className="h-[24px] w-[24px] text-struct-7 transition ease-in-out hover:text-struct-1" />
+              </Button>
+            ) : (
+              <Button
+                className="cursor-pointer rounded-full bg-fundo-1/25 p-2 transition delay-150 ease-in-out hover:bg-fundo-1/25"
+                onClick={handleThemeSwitch}
+              >
+                <RiMoonClearLine className="h-[24px] w-[24px] text-struct-7 transition ease-in-out hover:text-struct-2" />
+              </Button>
+            )}
+          </motion.div>
         </li>
       </ul>
       <Accordion
