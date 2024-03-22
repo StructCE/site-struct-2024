@@ -66,9 +66,7 @@ export default function AdminMemberCard({ member }: { member: Member }) {
         {session?.user? 
           <div className="absolute w-fit flex justify-center items-center top-36 right-0 gap-2">
             <Toaster position="bottom-center" reverseOrder={false} />
-            {/* Editar Membro */}
             <EditMember member={member}/>
-            {/* Remover Membro */}
             <RemoveMember member={member}/>
           </div>
           :

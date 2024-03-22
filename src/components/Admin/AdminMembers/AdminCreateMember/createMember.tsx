@@ -94,7 +94,7 @@ export default function CreateMember() {
           <>
         <div className='w-full relative flex flex-col gap-7 items-center justify-center' key={directorshipField.id}>
           {index !== 0?
-          <button type="button" onClick={() => directorshipsRemove(index)} className='absolute right-[550px] w-[50px] h-[50px] bg-fundo-3 rounded-[8px]'> - </button>  
+          <button type="button" onClick={() => directorshipsRemove(index)} className='absolute -left-20 w-[50px] h-[50px] bg-fundo-3 rounded-[8px]'> - </button>  
           :
           <>
           </>
@@ -131,7 +131,7 @@ export default function CreateMember() {
         {projectsFields.map( ( projectField, index ) => (
           <>
         <div className='w-full relative flex flex-col gap-7 items-center justify-center' key={projectField.id}>
-          <button type="button" onClick={() => projectsRemove(index)} className='absolute right-[550px] w-[50px] h-10 bg-fundo-3 rounded-[8px]'> - </button>  
+          <button type="button" onClick={() => projectsRemove(index)} className='absolute -left-20 w-[50px] h-10 bg-fundo-3 rounded-[8px]'> - </button>  
           <Select {...register(`projects.${index}.project`)} onValueChange={(value) => setValue(`projects.${index}.project`, value)}>
             <SelectTrigger className="mt-0 w-full h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70">
               <SelectValue placeholder={`Nome do projeto ${index+1}`} />
