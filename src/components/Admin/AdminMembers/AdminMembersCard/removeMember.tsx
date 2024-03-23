@@ -1,5 +1,5 @@
 "use client"
-import { api } from "~/trpc/react"
+import { api } from "~/trpc/react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -10,8 +10,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "~/components/ui/alert-dialog"
-import toast from "react-hot-toast"
+} from "~/components/ui/alert-dialog";
+import toast from "react-hot-toast";
 import { MdDelete } from "react-icons/md";
 
 type Member = {
@@ -31,13 +31,15 @@ export default function RemoveMember( { member }: { member: Member}) {
         },
       });
     },
-    onError: () => toast.error("Erro", {
-      style: {
-        color: "#081426",
-        background: "#F8F8FF",
-      },
-    })
-  })
+    onError: () => {
+      toast.error("Erro", {
+        style: {
+          color: "#081426",
+          background: "#F8F8FF",
+        },
+      });
+    }
+  });
   return (
     <AlertDialog>
     <AlertDialogTrigger>
@@ -49,7 +51,7 @@ export default function RemoveMember( { member }: { member: Member}) {
       <AlertDialogHeader>
         <AlertDialogTitle>Tem certeza?</AlertDialogTitle>
         <AlertDialogDescription>
-          Essa ação irá deletar todos os dados deste projeto. 
+          Essa ação irá deletar todos os dados deste membro. 
           Peça autorização antes de executar esta ação.
         </AlertDialogDescription>
       </AlertDialogHeader>

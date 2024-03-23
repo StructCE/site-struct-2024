@@ -1,10 +1,10 @@
 "use client"
-import { api } from '~/trpc/react'
+import { api } from '~/trpc/react';
 import { MdEditNote} from "react-icons/md";
-import { z } from 'zod'
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { Input } from "~/components/ui/input"
+import { z } from 'zod';
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { Input } from "~/components/ui/input";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,16 +13,15 @@ import {
   AlertDialogFooter,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "~/components/ui/alert-dialog"
+} from "~/components/ui/alert-dialog";
 import {
   Form,
   FormControl,
   FormField,
   FormItem,
-
   FormMessage,
-} from "~/components/ui/form"
-import toast from "react-hot-toast"
+} from "~/components/ui/form";
+import toast from "react-hot-toast";
 
 type Member = {
   id: string;
@@ -39,7 +38,7 @@ const formSchema = z.object({
   logoPublicId: z.string({
     invalid_type_error: "A descrição do projeto deve ser uma string"
   }).optional(),
-})
+});
 
 export default function EditMember( { member }: { member: Member}) {
   const updateMember = api.member.updateMember.useMutation({
@@ -51,20 +50,22 @@ export default function EditMember( { member }: { member: Member}) {
         },
       });
     },
-    onError: () => toast.error("Erro", {
-      style: {
-        color: "#081426",
-        background: "#F8F8FF",
-      },
-    })
-  })
+    onError: () => {
+      toast.error("Erro", {
+        style: {
+          color: "#081426",
+          background: "#F8F8FF",
+        },
+      })
+    }
+  });
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: member.name,
       logoPublicId: member.logoPublicId,
     }
-  })
+  });
   return (
     <AlertDialog>
       <AlertDialogTrigger>

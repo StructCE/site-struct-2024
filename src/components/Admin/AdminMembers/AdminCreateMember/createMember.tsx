@@ -1,5 +1,5 @@
 "use client"
-import { z } from 'zod'
+import { z } from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useFieldArray } from 'react-hook-form';
 import { api } from '~/trpc/react';
@@ -9,27 +9,39 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "~/components/ui/select"
-import toast from "react-hot-toast"
+} from "~/components/ui/select";
+import toast from "react-hot-toast";
 
 const formSchema = z.object({
-  name: z.string(),
+  name: z.string().min(1, {
+    message: "O nome não pode ser vazio"
+  }),
   logoPublicId: z.string(),
   directorships: z.array(
       z.object({
-        directorship: z.string(),
-        role: z.string()
-      })
-  ),
+        directorship: z.string().min(1, {
+          message: "O nome da diretoria não pode ser vazio"
+        }),
+        role: z.string().min(1, {
+          message: "O nome do cargo de diretoria não pode ser vazio"
+        })
+      }), 
+  ).min(1, {
+    message: "Pelo menos uma diretoria é exigida"
+  }),
   projects: z.array(
     z.object({
-      project: z.string(), 
-      role: z.string()
+      project: z.string().min(1, {
+        message: "O nome do projeto não pode ser vazio"
+      }), 
+      role: z.string().min(1, {
+        message: "O nome do cargo de projeto não pode ser vazio"
+      })
     })
-  ).optional()
-})
+  )
+});
 
-type Form = z.infer<typeof formSchema>
+type Form = z.infer<typeof formSchema>;
 
 export default function CreateMember() {
   const { handleSubmit, control, register, setValue } = useForm<Form>({
@@ -43,7 +55,6 @@ export default function CreateMember() {
     },
     resolver: zodResolver(formSchema)
   });
-
   const {fields: directorshipsFields,
      append: directorshipsAppend,
      remove: directorshipsRemove,
@@ -59,27 +70,33 @@ export default function CreateMember() {
     control,
     name: "projects", 
   });
-  const createMember = api.member.createMember.useMutation()
-  const onSubmit = (values: Form) => {
-    try {
-      console.log(values)
-      createMember.mutate(values)
+  const createMember = api.member.createMember.useMutation({
+    onSuccess: () => {
       toast.success("Membro criado", {
         style: {
           color: "#081426",
           background: "#F8F8FF",
         },
       });
-    } catch (e) {
+    },
+    onError: () => {
       toast.error("Erro", {
         style: {
           color: "#081426",
           background: "#F8F8FF",
         },
       })
-  }
-  }
-  const projects = api.project.getAll.useQuery()
+    }
+  });
+  const onSubmit = (values: Form) => {
+    const res = {
+      ...values,
+      logoPublicId: values.logoPublicId !== ""? values.logoPublicId : undefined,
+      projects: values.projects?.length > 0 ? values.projects : undefined
+    };
+    createMember.mutate(res);  
+  };
+  const projects = api.project.getAll.useQuery();
   return(
     <div className="m-0 flex w-full flex-col items-center justify-center gap-6 pt-40">
       <h2 className="text-center font-oxanium text-[16px] font-bold leading-[22px] sm:text-[24px] sm:leading-[40px] lg:text-[40px] lg:leading-[52px]">
