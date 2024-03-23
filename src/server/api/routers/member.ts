@@ -89,7 +89,7 @@ export const memberRouter = createTRPCRouter({
 
     const data = {
       name: input.name,
-      logoPublicId: input.logoPublicId !== ""? input.logoPublicId : undefined,
+      logoPublicId: input.logoPublicId,
       directorships: {
         create: directorships,
       },
