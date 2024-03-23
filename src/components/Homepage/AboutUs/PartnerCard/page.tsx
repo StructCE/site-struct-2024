@@ -16,8 +16,7 @@ export default function PartnerCard({ partners }: { partners: Partner[] }) {
         className="[--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px]"
       >
         <h3 className="text-center font-oxanium text-[20px] font-bold leading-[25px] sm:text-[24px] sm:leading-[30px] lg:text-[40px] lg:leading-[50px]">
-          <span className="text-struct-3">{"{ "}</span>Parceiros
-          <span className="text-struct-3">{" }"}</span>
+          Parceiros
         </h3>
       </motion.div>
       <div className="flex justify-center">
@@ -27,7 +26,7 @@ export default function PartnerCard({ partners }: { partners: Partner[] }) {
           exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
           transition={{ ease: "easeInOut", duration: 1, delay: 0.2 }}
           viewport={{ once: true }}
-          className="flex max-w-[256px] flex-wrap gap-6 rounded-xl bg-fundo-3 p-6 [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] sm:max-w-[464px] sm:gap-8 sm:p-8 lg:max-w-[896px]"
+          className="flex max-w-[256px] flex-wrap gap-6 rounded-xl px-6 [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] sm:max-w-[464px] sm:gap-8 sm:px-8 lg:max-w-[896px]"
         >
           {partners?.map((partner) => (
             <Link

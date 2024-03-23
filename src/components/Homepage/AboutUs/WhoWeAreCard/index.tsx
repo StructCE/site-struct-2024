@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { CompanyInformationStatistic } from "./CompanyStats";
 
 export default function WhoWeAreCard({
   countProjects,
@@ -22,8 +23,7 @@ export default function WhoWeAreCard({
         className=" [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] "
       >
         <h2 className="text-center font-oxanium text-[24px] font-bold leading-[30px] sm:text-[32px] sm:leading-[48px] lg:text-[48px] lg:leading-[60px]">
-          <span className="text-struct-3">{"{ "}</span>Quem Somos
-          <span className="text-struct-3">{" }"}</span>
+          Quem Somos
         </h2>
       </motion.div>
       <motion.div
@@ -35,7 +35,7 @@ export default function WhoWeAreCard({
         className=" [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] "
       >
         {/* Caixa Quem Somos */}
-        <div className="flex w-[280px] flex-col rounded-2xl bg-fundo-3 sm:w-[580px] sm:justify-center lg:w-[1024px] lg:flex-row">
+        <div className="flex w-[280px] flex-col rounded-2xl bg-fundo-1/50 sm:w-[580px] sm:justify-center lg:w-[1024px] lg:flex-row">
           {/* Texto e números */}
           <div className="m-3 mr-4 w-[256px] sm:m-8 sm:w-[523px]">
             {/* Texto */}
@@ -52,24 +52,9 @@ export default function WhoWeAreCard({
             </p>
             {/* Estatísticas */}
             <div className="flex justify-center gap-4 text-[10px] font-normal sm:gap-8 sm:text-[24px]">
-              <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
-                <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
-                  {countProjects}
-                </span>{" "}
-                projetos concluídos
-              </p>
-              <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
-                <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
-                  {yearsActive}
-                </span>{" "}
-                anos de atividade
-              </p>
-              <p className="flex w-[64px] flex-col text-center sm:w-[130px]">
-                <span className="font-oxanium text-[48px] font-semibold leading-[45px] text-struct-1 sm:text-[96px] sm:leading-[90px]">
-                  {countActiveMembers}
-                </span>{" "}
-                membros ativos
-              </p>
+              <CompanyInformationStatistic statistic={countProjects} />
+              <CompanyInformationStatistic statistic={yearsActive} />
+              <CompanyInformationStatistic statistic={countActiveMembers} />
             </div>
           </div>
           {/* MVV */}
@@ -139,7 +124,7 @@ export default function WhoWeAreCard({
             <div className="m-2 mb-4 flex items-center justify-center">
               <Link
                 href="/members"
-                className="border-animation border-b-[1px] border-struct-1 font-oxanium text-[14px] font-semibold leading-[16px] text-struct-3 sm:border-b-2 sm:py-1 sm:text-[24px] sm:leading-[20px]"
+                className="mt-3 self-start bg-fundo-3 px-2 py-1 font-oxanium text-[12px] font-bold text-struct-7 transition ease-in-out hover:bg-fundo-1 hover:text-struct-1 hover:shadow-[0_0_5px_1px_rgba(0,0,0,0.1)] active:border-none sm:rounded-md sm:px-4 sm:text-[20px]"
               >
                 conheça nossos membros
               </Link>
