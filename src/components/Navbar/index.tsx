@@ -44,7 +44,7 @@ export default function Navbar() {
             to="servicos"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={-100}
             duration={700}
             onClick={() => router.push("/#servicos")}
           >
@@ -57,7 +57,7 @@ export default function Navbar() {
             to="portfolio"
             spy={true}
             smooth={true}
-            offset={0}
+            offset={50}
             duration={700}
             onClick={() => router.push("/#portfolio")}
           >
@@ -70,7 +70,7 @@ export default function Navbar() {
             to="sobrenos"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={-10}
             duration={700}
             onClick={() => router.push("/#sobrenos")}
           >
@@ -83,7 +83,7 @@ export default function Navbar() {
             to="contato"
             spy={true}
             smooth={true}
-            offset={50}
+            offset={100}
             duration={700}
             onClick={() => router.push("/#contato")}
           >
@@ -145,7 +145,7 @@ export default function Navbar() {
                   to="servicos"
                   spy={true}
                   smooth={true}
-                  offset={50}
+                  offset={-100}
                   duration={700}
                   onClick={() => router.push("/#servicos")}
                 >
@@ -158,7 +158,7 @@ export default function Navbar() {
                   to="portfolio"
                   spy={true}
                   smooth={true}
-                  offset={0}
+                  offset={50}
                   duration={700}
                   onClick={() => router.push("/#portfolio")}
                 >
@@ -171,7 +171,7 @@ export default function Navbar() {
                   to="sobrenos"
                   spy={true}
                   smooth={true}
-                  offset={50}
+                  offset={-10}
                   duration={700}
                   onClick={() => router.push("/#sobrenos")}
                 >
@@ -184,7 +184,7 @@ export default function Navbar() {
                   to="contato"
                   spy={true}
                   smooth={true}
-                  offset={50}
+                  offset={100}
                   duration={700}
                   onClick={() => router.push("/#contato")}
                 >
