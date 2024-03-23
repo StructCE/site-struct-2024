@@ -11,14 +11,13 @@ export default function FindUs() {
         initial={{ opacity: "var(--opacity-from)", y: "var(--y-from)" }}
         whileInView={{ opacity: "var(--opacity-to)", y: "var(--y-to)" }}
         exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
-        transition={{ ease: "easeInOut", duration: 1, delay: 0.3 }}
+        transition={{ ease: "easeInOut", duration: 1, delay: 0.4 }}
         viewport={{ once: true }}
-        className="h-[332px] w-[280px] rounded-lg bg-fundo-2 p-4 [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] sm:h-[598px] sm:w-[496px] sm:p-6"
+        className="h-[332px] w-[280px] rounded-lg bg-fundo-0/75 p-4 [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] sm:h-[598px] sm:w-[496px] sm:p-6"
       >
         {/* Título */}
         <h3 className="mb-3 text-center font-oxanium text-[14px] font-bold leading-[18px] sm:mb-6 sm:text-[32px] sm:leading-[40px]">
-          <span className="text-struct-3">{"{ "}</span>Como nos encontrar
-          <span className="text-struct-3">{" }"}</span>
+          Como nos encontrar
         </h3>
         <div className="flex flex-col justify-center rounded-lg">
           {/* Mapa */}
@@ -27,7 +26,7 @@ export default function FindUs() {
           </div>
           {/* Redes Sociais */}
           <div className="relative bottom-6 z-20 mx-auto sm:bottom-11">
-            <div className="flex justify-center gap-3 rounded-lg bg-fundo-3 p-3 sm:gap-5 sm:p-5">
+            <div className="flex justify-center gap-3 rounded-lg bg-fundo-2 p-3 sm:gap-5 sm:p-5">
               <Link
                 href="https://www.facebook.com/StructUnB"
                 target="_blank"

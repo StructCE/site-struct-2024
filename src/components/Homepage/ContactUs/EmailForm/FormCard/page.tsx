@@ -114,7 +114,7 @@ const FormEmail = () => {
               <FormControl>
                 <Input
                   placeholder="Digite seu nome"
-                  className="h-6 space-y-0 border-none bg-fundo-3 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:h-10 sm:px-3 sm:text-sm"
+                  className="h-6 space-y-0 border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:h-10 sm:px-3 sm:text-sm"
                   {...field}
                   ref={nameRef}
                 />
@@ -132,7 +132,7 @@ const FormEmail = () => {
                 <Input
                   placeholder="Digite seu email"
                   type="email"
-                  className="mt-0 h-6 space-y-0 border-none bg-fundo-3 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:mt-1 sm:h-10 sm:px-3 sm:text-sm"
+                  className="mt-0 h-6 space-y-0 border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:mt-1 sm:h-10 sm:px-3 sm:text-sm"
                   {...field}
                   ref={emailRef}
                 />
@@ -152,7 +152,7 @@ const FormEmail = () => {
                 <Input
                   placeholder="(61) 99999-9999"
                   type="tel"
-                  className="mt-0 h-6 space-y-0 border-none bg-fundo-3 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:mt-1 sm:h-10 sm:px-3 sm:text-sm"
+                  className="mt-0 h-6 space-y-0 border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:mt-1 sm:h-10 sm:px-3 sm:text-sm"
                   {...field}
                   ref={telephoneRef}
                 />
@@ -170,11 +170,11 @@ const FormEmail = () => {
               </FormLabel>
               <Select onValueChange={(value) => setService(value)} required>
                 <FormControl>
-                  <SelectTrigger className="h-6 border-none bg-fundo-3 px-2 text-[10px] text-struct-7/80 sm:mt-1 sm:h-10 sm:px-3 sm:text-sm">
+                  <SelectTrigger className="h-6 border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7/80 sm:mt-1 sm:h-10 sm:px-3 sm:text-sm">
                     <SelectValue placeholder="Selecione um tipo de serviço" />
                   </SelectTrigger>
                 </FormControl>
-                <SelectContent className="border-none bg-fundo-3 font-nunito text-struct-7">
+                <SelectContent className="border-none bg-fundo-2/75 font-nunito text-struct-7">
                   <SelectItem
                     className="text-[10px] font-semibold hover:font-bold sm:text-sm"
                     value="Website"
@@ -215,7 +215,7 @@ const FormEmail = () => {
               <FormControl>
                 <Textarea
                   placeholder="Faça uma breve descrição do seu projeto"
-                  className="mt-1 min-h-[40px] resize-none border-none bg-fundo-3 px-2 text-[10px] text-struct-7 focus:outline-none sm:min-h-[80px] sm:px-3 sm:text-sm"
+                  className="mt-1 min-h-[40px] resize-none border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none sm:min-h-[80px] sm:px-3 sm:text-sm"
                   {...field}
                   ref={descriptionRef}
                 />
@@ -227,7 +227,7 @@ const FormEmail = () => {
           <Button
             type="submit"
             disabled={loading}
-            className="h-6 bg-struct-7 px-3 py-1 font-oxanium text-[12px] font-bold text-struct-1 transition ease-in-out hover:scale-[1.02] hover:bg-struct-7-hover active:border-none sm:h-11 sm:rounded-md sm:px-6 sm:text-[20px]"
+            className="h-6 bg-fundo-3 px-3 py-1 font-oxanium text-[12px] font-bold text-struct-7 transition ease-in-out hover:bg-fundo-1 hover:text-struct-1 active:border-none sm:h-11 sm:rounded-md sm:px-6 sm:text-[20px]"
           >
             Enviar
           </Button>
