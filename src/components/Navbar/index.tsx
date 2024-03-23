@@ -9,17 +9,17 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion";
-import { useScrolValue } from "~/hooks/useScrollNavbar";
+import { useScrolProgress } from "~/hooks/useScrollNavbar";
 
 export default function Navbar() {
   const [navbaropen, setNavbaropen] = useState<boolean>(false);
-  const scrollValue = useScrolValue();
+  const scrollProgress = useScrolProgress();
 
   const router = useRouter();
 
   return (
     <nav
-      className={`fixed z-40 flex w-screen items-center justify-center transition-all ease-in ${scrollValue > 80 && "h-[64px] bg-fundo-transparente/80"} ${scrollValue <= 80 && " h-[96px]"} ${scrollValue > 80 && navbaropen && "bg-fundo-transparente/0"} `}
+      className={`fixed z-40 flex w-screen items-center justify-center transition-all ease-in ${scrollProgress > 1 && "h-[72px] bg-fundo-transparente/80 backdrop-blur-sm"} ${scrollProgress <= 1 && " h-[96px]"} ${scrollProgress > 1 && navbaropen && "bg-fundo-transparente/0"}`}
     >
       <ul className="hidden items-center gap-[4vw] font-oxanium text-[20px] text-xl font-semibold text-struct-7 sm:flex">
         <li className="text-[36px] font-bold text-struct-7">
@@ -201,6 +201,12 @@ export default function Navbar() {
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+      {!navbaropen && (
+        <div
+          style={{ width: `${scrollProgress > 1 ? scrollProgress : 0}%` }}
+          className="transition-width absolute bottom-0 left-0 z-50 h-1 w-full bg-struct-7/30 duration-75 ease-in-out"
+        ></div>
+      )}
     </nav>
   );
 }

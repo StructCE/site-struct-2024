@@ -1,18 +1,22 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export function useScrolValue() {
-  const [scrollValue, setScrollValue] = useState<number>(0);
+export function useScrolProgress() {
+  const [scrollProgress, setScrollProgress] = useState<number>(0);
+  function updateScrollProgress() {
+    const scrollValue = window.scrollY;
+    const scrollMax =
+      document.documentElement.scrollHeight - window.innerHeight;
+    const scrollProgress = Number((scrollValue / scrollMax).toFixed(2)) * 100;
+    setScrollProgress(scrollProgress);
+  }
 
   useEffect(() => {
-    function updatescrollvalue() {
-      setScrollValue(window.scrollY);
-    }
-    window.addEventListener("scroll", updatescrollvalue);
+    window.addEventListener("scroll", updateScrollProgress);
     return () => {
-      window.removeEventListener("scroll", updatescrollvalue);
+      window.removeEventListener("scroll", updateScrollProgress);
     };
   }, []);
 
-  return scrollValue;
+  return scrollProgress;
 }
