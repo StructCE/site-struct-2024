@@ -4,8 +4,10 @@ import { useSpringValue } from "~/hooks/useSpringValue";
 
 export function CompanyInformationStatistic({
   statistic,
+  description,
 }: {
   statistic: number;
+  description: string;
 }) {
   const { ref, springValue } = useSpringValue(statistic);
 
@@ -17,7 +19,7 @@ export function CompanyInformationStatistic({
       >
         {springValue}
       </motion.span>{" "}
-      projetos concluídos
+      {description}
     </p>
   );
 }

@@ -52,9 +52,18 @@ export default function WhoWeAreCard({
             </p>
             {/* Estatísticas */}
             <div className="flex justify-center gap-4 text-[10px] font-normal sm:gap-8 sm:text-[24px]">
-              <CompanyInformationStatistic statistic={countProjects} />
-              <CompanyInformationStatistic statistic={yearsActive} />
-              <CompanyInformationStatistic statistic={countActiveMembers} />
+              <CompanyInformationStatistic
+                statistic={countProjects}
+                description="projetos concluidos"
+              />
+              <CompanyInformationStatistic
+                statistic={yearsActive}
+                description="anos de atividade"
+              />
+              <CompanyInformationStatistic
+                statistic={countActiveMembers}
+                description="membros ativos"
+              />
             </div>
           </div>
           {/* MVV */}
