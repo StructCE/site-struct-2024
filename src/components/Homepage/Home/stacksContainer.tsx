@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-// import CloudinaryImg from "~/components/ui/cloudinaryImage";
+import CloudinaryImg from "~/components/ui/cloudinaryImage";
 
 export function StacksContainer({ children }: React.PropsWithChildren) {
   return (
@@ -15,14 +15,22 @@ export function StacksContainer({ children }: React.PropsWithChildren) {
       >
         {children}
       </motion.div>
-      {/* <CloudinaryImg
-        src="light-effect_avcltf"
-        alt="base portal"
-        width={600}
-        height={600}
-        draggable={false}
-        className="absolute top-[280px] select-none "
-      /> */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 100 }}
+        transition={{ ease: "easeInOut", duration: 1, delay: 4.5 }}
+        className="flex w-full flex-col items-center"
+      >
+        <CloudinaryImg
+          src="light-effect_avcltf"
+          alt="base portal"
+          width={600}
+          height={600}
+          draggable={false}
+          quality={100}
+          className="absolute top-[300px] select-none "
+        />
+      </motion.div>
     </div>
   );
 }
