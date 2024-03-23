@@ -20,10 +20,9 @@ export default function ProjectsContainer({
         className="mb-3 flex flex-col items-center justify-center [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px] sm:mb-4"
       >
         <h2 className="text-center font-oxanium text-[24px] font-bold leading-[30px] sm:text-[32px] sm:leading-[48px] lg:text-[48px] lg:leading-[60px]">
-          <span className="text-[#2DA2FF]">{"{ "}</span>Portfólio
-          <span className="text-[#2DA2FF]">{" }"}</span>
+          Portfólio
         </h2>
-        <p className="my-2 w-[32px] border-b-2 border-[#FD8D4B] sm:my-3 sm:w-[64px] lg:my-5 lg:w-[96px]"></p>
+        <p className="my-1 w-[20px] border-b-2 border-struct-1 sm:my-2 sm:w-[52px] lg:my-4 lg:w-[84px]"></p>
         <p className="font-nunito text-[12px] sm:text-[14px] lg:text-[16px]">
           Explore alguns dos nossos projetos!
         </p>
