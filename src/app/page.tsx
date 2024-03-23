@@ -1,6 +1,6 @@
 import ContactUs from "~/components/Homepage/ContactUs/page";
+import { Home } from "~/components/Homepage/Home";
 import AboutUs from "../components/Homepage/AboutUs/page";
-import Home from "../components/Homepage/Home/page";
 import Portfolio from "../components/Homepage/Portfolio/page";
 import Services from "../components/Homepage/Services/page";
 
