@@ -39,7 +39,7 @@ ENV NEXT_TELEMETRY_DISABLED 1
 RUN \
     if [ -f yarn.lock ]; then SKIP_ENV_VALIDATION=1 yarn build; \
     elif [ -f package-lock.json ]; then SKIP_ENV_VALIDATION=1 npm run build; \
-    elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && pnpm db:push && pnpm db:seed && SKIP_ENV_VALIDATION=1 pnpm run build; \
+    elif [ -f pnpm-lock.yaml ]; then yarn global add pnpm && SKIP_ENV_VALIDATION=1 pnpm db:push && SKIP_ENV_VALIDATION=1 pnpm db:seed && SKIP_ENV_VALIDATION=1 pnpm run build; \
     else echo "Lockfile not found." && exit 1; \
     fi
 
