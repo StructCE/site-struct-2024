@@ -8,6 +8,7 @@ export default function AdminProjectCard({ project }: { project: Project }) {
       <CldImage
         width="460"
         height="250"
+        crop="fill"
         src={project.logoPublicId}
         alt="Imagem do Projeto"
         className="rounded-[8px]"

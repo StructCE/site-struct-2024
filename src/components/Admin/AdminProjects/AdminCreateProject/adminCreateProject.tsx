@@ -8,7 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from 'react-hook-form';
 import { api } from "~/trpc/react";
 import toast from "react-hot-toast";
-
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   name: z.string({
@@ -36,6 +36,7 @@ const formSchema = z.object({
 type Form = z.infer<typeof formSchema>;
 
 export default function CreateProject() {
+  const router = useRouter();
   const createProject = api.project.createProject.useMutation({
     onSuccess: () => {
       toast.success("Projeto criado", {
@@ -44,6 +45,8 @@ export default function CreateProject() {
           background: "#F8F8FF",
         },
       });
+      reset();
+      router.refresh();
     },
     onError: () => {
       toast.error("Erro", {
@@ -54,7 +57,7 @@ export default function CreateProject() {
       });
     }
   });
-  const { handleSubmit, register, setValue} = useForm<Form>({
+  const { handleSubmit, register, setValue, reset} = useForm<Form>({
     defaultValues: {
       name: "",
       description: "",

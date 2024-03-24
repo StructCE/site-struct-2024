@@ -21,6 +21,7 @@ import {
 import { Input } from "~/components/ui/input";
 import { Checkbox } from "~/components/ui/checkbox";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 
 type projectWithMembers = {
@@ -67,6 +68,7 @@ const formSchema = z.object({
 type Form = z.infer<typeof formSchema>;
 
 export default function EditProject({projectWithMembers}: {projectWithMembers: projectWithMembers}) {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const updateProject = api.project.updateProject.useMutation({
     onSuccess: () => {
@@ -77,6 +79,7 @@ export default function EditProject({projectWithMembers}: {projectWithMembers: p
         },
       });
       setOpen(false);
+      router.refresh();
     },
     onError: () => {
       toast.error("Erro", {
@@ -117,7 +120,7 @@ export default function EditProject({projectWithMembers}: {projectWithMembers: p
       <AlertDialogContent className="bg-fundo-3 border-none w-[500px] flex flex-col items-center">
         <AlertDialogTitle>Editando dados de <span className="text-struct-1"> {projectWithMembers?.name} </span></AlertDialogTitle>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="m-5 h-fit flex flex-col gap-5 items-center justify-start">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="px-10 w-full h-fit flex flex-col gap-5 items-center justify-start">
             <FormField
               control={form.control}
               name="name"

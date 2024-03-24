@@ -13,6 +13,7 @@ import {
 } from "~/components/ui/alert-dialog";
 import toast from "react-hot-toast";
 import { MdDelete } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 type Member = {
   id: string;
@@ -22,6 +23,7 @@ type Member = {
 };
 
 export default function RemoveMember( { member }: { member: Member}) {
+  const router = useRouter();
   const removeMember = api.member.removeMember.useMutation({
     onSuccess: () => {
       toast.success("Membro removido", {
@@ -30,6 +32,7 @@ export default function RemoveMember( { member }: { member: Member}) {
           background: "#F8F8FF",
         },
       });
+      router.refresh();
     },
     onError: () => {
       toast.error("Erro", {

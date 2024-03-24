@@ -23,7 +23,7 @@ export default async function AdminMembersPage() {
               </p>
               <div className="flex h-fit w-full flex-wrap items-center justify-center">
                 {directorshipWithMember.members.map((member) => {
-                  return <AdminMemberCard member={member} key={member.name} />;
+                  return <AdminMemberCard member={member} key={member.id} />;
                 })}
               </div>
             </div>

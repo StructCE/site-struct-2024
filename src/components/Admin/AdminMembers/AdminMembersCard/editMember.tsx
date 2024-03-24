@@ -21,6 +21,7 @@ import {
 } from "~/components/ui/form";
 import toast from "react-hot-toast";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 type Member = {
   id: string;
@@ -44,6 +45,7 @@ const formSchema = z.object({
 type Form = z.infer<typeof formSchema>;
 
 export default function EditMember( { member }: { member: Member}) {
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const updateMember = api.member.updateMember.useMutation({
     onSuccess: () => {
@@ -54,6 +56,7 @@ export default function EditMember( { member }: { member: Member}) {
         },
       });
       setOpen(false);
+      router.refresh();
     },
     onError: () => {
       toast.error("Erro", {
@@ -91,7 +94,7 @@ export default function EditMember( { member }: { member: Member}) {
       <AlertDialogContent className="bg-fundo-3 border-none w-[500px] flex flex-col items-center">
         <AlertDialogTitle>Editando dados de <span className="text-struct-1"> {member.name} </span></AlertDialogTitle>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="m-5 h-fit flex flex-col gap-5 items-center justify-start">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="px-10 w-full h-fit flex flex-col gap-5 items-center justify-start">
             <FormField
               control={form.control}
               name="name"

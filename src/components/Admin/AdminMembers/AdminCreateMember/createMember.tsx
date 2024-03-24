@@ -11,6 +11,7 @@ import {
   SelectValue,
 } from "~/components/ui/select";
 import toast from "react-hot-toast";
+import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
   name: z.string().min(1, {
@@ -44,7 +45,8 @@ const formSchema = z.object({
 type Form = z.infer<typeof formSchema>;
 
 export default function CreateMember() {
-  const { handleSubmit, control, register, setValue } = useForm<Form>({
+  const router = useRouter();
+  const { handleSubmit, control, register, setValue, reset } = useForm<Form>({
     defaultValues: {
       name: "",
       logoPublicId: "", 
@@ -78,6 +80,8 @@ export default function CreateMember() {
           background: "#F8F8FF",
         },
       });
+      reset();
+      router.refresh();
     },
     onError: () => {
       toast.error("Erro", {
@@ -104,8 +108,8 @@ export default function CreateMember() {
         <span className="text-struct-3">{" }"}</span>
       </h2>
       <form className="w-3/4 sm:w-1/2 lg:w-1/3 flex flex-col gap-7 " onSubmit={handleSubmit(onSubmit)}>
-        <input placeholder="Name" {...register("name")} className="mt-0 h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70"/>
-        <input placeholder="Imagem (URL da cloudinary)" {...register("logoPublicId")} className="mt-0 h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70"/>
+        <input placeholder="Name" {...register("name")} className="mt-0 h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7 rounded-[8px]"/>
+        <input placeholder="Imagem (URL da cloudinary)" {...register("logoPublicId")} className="mt-0 h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7 rounded-[8px]"/>
         <p className="font-nunito font-bold text-[20px]">Diretorias</p>
         {directorshipsFields.map( ( directorshipField, index ) => (
           <>
@@ -117,7 +121,7 @@ export default function CreateMember() {
           </>
           }
           <Select {...register(`directorships.${index}.directorship`)} onValueChange={(value) => setValue(`directorships.${index}.directorship`, value)}>
-            <SelectTrigger className="mt-0 w-full h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70">
+            <SelectTrigger className="mt-0 w-full h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70 rounded-[8px]">
               <SelectValue placeholder={`Nome da diretoria ${index+1}`} />
             </SelectTrigger>
             <SelectContent>
@@ -130,7 +134,7 @@ export default function CreateMember() {
             </SelectContent>
           </Select>
           <Select {...register(`directorships.${index}.role`)} onValueChange={(value) => setValue(`directorships.${index}.role`, value)}>
-            <SelectTrigger className="mt-0 w-full h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70">
+            <SelectTrigger className="mt-0 w-full h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70 rounded-[8px]">
               <SelectValue placeholder={`Nome do cargo de diretoria ${index+1}`} />
             </SelectTrigger>
             <SelectContent>
@@ -150,7 +154,7 @@ export default function CreateMember() {
         <div className='w-full relative flex flex-col gap-7 items-center justify-center' key={projectField.id}>
           <button type="button" onClick={() => projectsRemove(index)} className='absolute -left-20 w-[50px] h-10 bg-fundo-3 rounded-[8px]'> - </button>  
           <Select {...register(`projects.${index}.project`)} onValueChange={(value) => setValue(`projects.${index}.project`, value)}>
-            <SelectTrigger className="mt-0 w-full h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70">
+            <SelectTrigger className="mt-0 w-full h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70 rounded-[8px]">
               <SelectValue placeholder={`Nome do projeto ${index+1}`} />
             </SelectTrigger>
             <SelectContent>
@@ -161,7 +165,7 @@ export default function CreateMember() {
             </SelectContent>
           </Select>
           <Select {...register(`projects.${index}.role`)} onValueChange={(value) => setValue(`projects.${index}.role`, value)}>
-            <SelectTrigger className="mt-0 w-full h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70">
+            <SelectTrigger className="mt-0 w-full h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70 rounded-[8px]">
               <SelectValue placeholder={`Nome do cargo de projeto ${index+1}`} />
             </SelectTrigger>
             <SelectContent>

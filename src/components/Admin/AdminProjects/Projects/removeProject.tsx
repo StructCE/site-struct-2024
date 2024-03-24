@@ -12,6 +12,7 @@ import {
 } from "~/components/ui/alert-dialog";
 import toast from "react-hot-toast";
 import { api } from "~/trpc/react";
+import { useRouter } from "next/navigation";
 
 type projectWithMembers = {
   id: string,
@@ -32,6 +33,7 @@ type projectWithMembers = {
 
 
 export default function RemoveProject({ projectWithMembers }: { projectWithMembers: projectWithMembers}) {
+  const router = useRouter();
   const removeProject = api.project.removeProject.useMutation({
     onSuccess: () => {
       toast.success("Projeto removido", {
@@ -40,6 +42,8 @@ export default function RemoveProject({ projectWithMembers }: { projectWithMembe
           background: "#F8F8FF",
         },
       });
+      router.back();
+      router.refresh();
     },
     onError: () => {
       toast.error("Erro", {
