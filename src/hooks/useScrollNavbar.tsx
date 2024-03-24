@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export function useScrolProgress() {
+export function useScrollProgress() {
   const [scrollProgress, setScrollProgress] = useState<number>(0);
   function updateScrollProgress() {
     const scrollValue = window.scrollY;

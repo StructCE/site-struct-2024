@@ -9,11 +9,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "~/components/ui/accordion";
-import { useScrolProgress } from "~/hooks/useScrollNavbar";
+import { useScrollProgress } from "~/hooks/useScrollNavbar";
 
 export default function Navbar() {
   const [navbaropen, setNavbaropen] = useState<boolean>(false);
-  const scrollProgress = useScrolProgress();
+  const scrollProgress = useScrollProgress();
 
   const router = useRouter();
 
