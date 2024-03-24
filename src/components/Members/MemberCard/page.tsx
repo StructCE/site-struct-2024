@@ -1,5 +1,5 @@
 "use client";
-import { CldImage } from "next-cloudinary";
+import CloudinaryImg from "~/components/ui/cloudinaryImage";
 
 type Member = {
   name: string;
@@ -35,7 +35,7 @@ const getColor = (role: string, component: string): string => {
 export default function MemberContainer({ member }: { member: Member }) {
   return (
     <div className="m-12 flex h-[190px] w-[170px] flex-col items-center sm:m-10 sm:my-12">
-      <CldImage
+      <CloudinaryImg
         width="180"
         height="180"
         src={member.logoPublicId}

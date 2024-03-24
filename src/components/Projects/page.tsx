@@ -1,6 +1,6 @@
 "use client";
-import { CldImage } from "next-cloudinary";
 import Link from "next/link";
+import CloudinaryImg from "~/components/ui/cloudinaryImage";
 import MemberContainer from "../Members/MemberCard/page";
 
 type projectWithMembers = {
@@ -43,7 +43,7 @@ export default function ProjectsPage({
             href={projectWithMembers.link ? projectWithMembers.link : ""}
             className="transition ease-in hover:scale-[1.01] hover:shadow-[0_0_40px_10px_rgba(0,0,0,0.2)]"
           >
-            <CldImage
+            <CloudinaryImg
               width="580"
               height="320"
               src={
