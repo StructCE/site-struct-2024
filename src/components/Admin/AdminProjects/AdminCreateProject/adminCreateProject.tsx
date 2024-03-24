@@ -11,17 +11,49 @@ import toast from "react-hot-toast";
 
 
 const formSchema = z.object({
-  name: z.string(),
-  description: z.string(),
-  link: z.string(),
+  name: z.string({
+    required_error: "Nome do projeto é necessário",
+    invalid_type_error: "O nome do projeto deve ser uma string"
+  }).min(1, {
+    message: "O nome do projeto não pode ser vazio"
+  }),
+  description: z.string({
+    required_error: "A descrição do projeto é necessária",
+    invalid_type_error: "A descrição do projeto deve ser uma string"
+  }).min(1, {
+    message: "A descrição do projeto não pode ser vazio"
+  }),
+  link: z.string({
+    required_error: "Link do projeto é necessário",
+    invalid_type_error: "Link do projeto deve ser uma string"
+  }).min(1, {
+    message: "O link do projeto não pode ser vazio"
+  }),
   logoPublicId: z.string(),
   show: z.boolean(),
 })
 
-type Form = z.infer<typeof formSchema>
+type Form = z.infer<typeof formSchema>;
 
 export default function CreateProject() {
-  const createProject = api.project.createProject.useMutation()
+  const createProject = api.project.createProject.useMutation({
+    onSuccess: () => {
+      toast.success("Projeto criado", {
+        style: {
+          color: "#081426",
+          background: "#F8F8FF",
+        },
+      });
+    },
+    onError: () => {
+      toast.error("Erro", {
+        style: {
+          color: "#081426",
+          background: "#F8F8FF",
+        },
+      });
+    }
+  });
   const { handleSubmit, register, setValue} = useForm<Form>({
     defaultValues: {
       name: "",
@@ -35,25 +67,8 @@ export default function CreateProject() {
   function onSubmit(values: Form) {
     const res = {...values,
       logoPublicId: values.logoPublicId !== ""? values.logoPublicId: undefined
-    }
-    try {
-      const project = createProject.mutate(res)
-      toast.success("Projeto criado", {
-        style: {
-          color: "#081426",
-          background: "#F8F8FF",
-        },
-      });
-      return project
-    } catch (error) {
-      toast.error("Erro", {
-        style: {
-          color: "#081426",
-          background: "#F8F8FF",
-        },
-      })
-      return error
-    }
+    };
+    createProject.mutate(res);
   }
   return (
     <form className="w-3/4 sm:w-1/2 lg:w-1/3" onSubmit={handleSubmit(onSubmit)}>
