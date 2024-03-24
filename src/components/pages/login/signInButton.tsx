@@ -7,7 +7,7 @@ export default function SignInButton() {
     <>
       <div className="my-6 flex justify-center">
         <Button
-          onClick={() => signIn("discord")}
+          onClick={() => signIn("google")}
           className="bg-struct-7 p-6 font-oxanium text-xl font-bold text-struct-1 hover:scale-[1.02] hover:bg-struct-7-hover"
         >
           Entrar
