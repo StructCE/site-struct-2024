@@ -9,7 +9,7 @@ export default function Services() {
         id="servicos"
         className="m-0 flex w-full items-center justify-center p-0"
       >
-        <div className="w-full pb-16 pt-8 sm:pb-32 sm:pt-16 lg:pb-64 lg:pt-32">
+        <div className="w-[85%] py-8 sm:py-16 lg:py-32">
           {/* titulo */}
           <motion.div
             initial={{ opacity: "var(--opacity-from)", y: "var(--y-from)" }}
@@ -32,7 +32,7 @@ export default function Services() {
             </div>
           </motion.div>
           {/* caixas */}
-          <div className="my-6 flex flex-wrap justify-center gap-4 font-nunito sm:m-8 sm:gap-6 lg:gap-8">
+          <div className="my-6 flex flex-wrap justify-center gap-4 font-nunito sm:mx-12 sm:my-8 sm:gap-6 lg:gap-8">
             <ServicesCards />
           </div>
         </div>

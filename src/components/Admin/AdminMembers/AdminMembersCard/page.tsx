@@ -1,5 +1,9 @@
 "use client";
-import CloudinaryImg from "~/components/ui/cloudinaryImage";
+import { useSession } from "next-auth/react";
+import { CldImage } from "next-cloudinary";
+import { Toaster } from "react-hot-toast"
+import EditMember from "./editMember";
+import RemoveMember from "./removeMember";
 
 type Member = {
   id: string;
@@ -32,11 +36,11 @@ const getColor = (role: string, component: string): string => {
   if (component === "border") res = borderColors[role];
   return res ?? "";
 };
-
-export default function MemberContainer({ member }: { member: Member }) {
+export default function AdminMemberCard({ member }: { member: Member }) {
+  const { data: session } = useSession();
   return (
-    <div className="m-12 flex h-[190px] w-[170px] flex-col items-center sm:m-10 sm:my-12">
-      <CloudinaryImg
+    <div className="m-12 flex h-[280px] w-[170px] flex-col items-center sm:m-10 sm:my-12 relative">
+      <CldImage
         width="180"
         height="180"
         src={member.logoPublicId}
@@ -59,6 +63,15 @@ export default function MemberContainer({ member }: { member: Member }) {
         >
           {member.role}
         </p>
+        {session?.user? 
+          <div className="absolute w-fit flex justify-center items-center top-36 right-0 gap-2">
+            <Toaster position="bottom-center" reverseOrder={false} />
+            <EditMember member={member}/>
+            <RemoveMember member={member}/>
+          </div>
+          :
+          null
+      }
       </div>
     </div>
   );

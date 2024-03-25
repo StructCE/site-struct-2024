@@ -19,6 +19,7 @@ export function StacksContainer({ children }: React.PropsWithChildren) {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 100 }}
         transition={{ ease: "easeInOut", duration: 1, delay: 4.5 }}
+        viewport={{ once: true }}
         className="flex w-full flex-col items-center"
       >
         <CloudinaryImg
