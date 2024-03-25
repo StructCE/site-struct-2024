@@ -2,26 +2,12 @@
 import Link from "next/link";
 import CloudinaryImg from "~/components/ui/cloudinaryImage";
 import MemberContainer from "../Members/MemberCard/page";
-
-type projectWithMembers = {
-  name: string | undefined;
-  description: string | undefined;
-  link: string | undefined;
-  logoPublicId: string | undefined;
-  members:
-    | {
-        id: string;
-        name: string;
-        logoPublicId: string;
-        role: string;
-      }[]
-    | undefined;
-};
+import { type ProjectWithMembers } from "~/server/api/routers/project";
 
 export default function ProjectsPage({
   projectWithMembers,
 }: {
-  projectWithMembers: projectWithMembers;
+  projectWithMembers: ProjectWithMembers;
 }) {
   return (
     <section className="flex items-center bg-fundo-0 pt-28">

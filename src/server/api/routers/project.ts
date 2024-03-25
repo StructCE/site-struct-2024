@@ -30,21 +30,23 @@ export const projectRouter = createTRPCRouter({
           },
         },
       });
-      const project = {
-        id: projectAndMembers?.id,
-        name: projectAndMembers?.name,
-        description: projectAndMembers?.description,
-        link: projectAndMembers?.link,
-        logoPublicId: projectAndMembers?.logoPublicId,
-        show: projectAndMembers?.show,
-        members: projectAndMembers?.projectMembers.map((projectMember) => ({
-          id: projectMember.member.id,
-          name: projectMember.member.name,
-          logoPublicId: projectMember.member.logoPublicId,
-          role: projectMember.role.name,
-        })),
-      };
-      return project;
+      if (projectAndMembers) {
+        const project = {
+          id: projectAndMembers.id,
+          name: projectAndMembers.name,
+          description: projectAndMembers.description,
+          link: projectAndMembers.link,
+          logoPublicId: projectAndMembers.logoPublicId,
+          show: projectAndMembers.show,
+          members: projectAndMembers.projectMembers.map((projectMember) => ({
+            id: projectMember.member.id,
+            name: projectMember.member.name,
+            logoPublicId: projectMember.member.logoPublicId,
+            role: projectMember.role.name,
+          })),
+        };
+        return project;
+      }
     }),
 
   createProject: protectedProcedure
@@ -126,3 +128,43 @@ export const projectRouter = createTRPCRouter({
     return countProjects;
   }),
 });
+
+type Member = {
+  id: string;
+  name: string;
+  logoPublicId: string;
+  role: string;
+};
+
+type ProjectWithMembers = {
+  id: string;
+  name: string;
+  description: string;
+  link: string;
+  logoPublicId: string;
+  show: boolean;
+  members: Member[];
+};
+
+type MutatedProject = {
+  id: string;
+  name: string;
+  description: string;
+  link: string;
+  show: boolean;
+  logoPublicId: string;
+};
+
+type ProjectMember = {
+  id: string;
+  memberId: string;
+  projectId: string;
+  projectRoleId: string;
+};
+
+export {
+  type Member,
+  type ProjectWithMembers,
+  type MutatedProject,
+  type ProjectMember,
+};
