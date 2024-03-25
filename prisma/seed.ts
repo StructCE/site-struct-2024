@@ -1,6 +1,10 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
+/* eslint-disable @typescript-eslint/no-floating-promises */
+/* eslint-disable @typescript-eslint/restrict-plus-operands */
+/* eslint-disable @typescript-eslint/no-base-to-string */
 import { PrismaClient } from "@prisma/client";
-import { type ZodError, z } from "zod";
-import { type dataSchema, data } from "./seedData";
+import { z, type ZodError } from "zod";
+import { data, type dataSchema } from "./seedData";
 const prisma = new PrismaClient();
 
 const memberDataResSchema = z.object({
