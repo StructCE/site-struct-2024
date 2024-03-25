@@ -132,7 +132,7 @@ export default function WhoWeAreCard({
             {/* Botão */}
             <div className="m-2 mb-4 flex items-center justify-center">
               <Link
-                href="/members"
+                href="/membros"
                 className="mt-3 self-start bg-fundo-3 px-2 py-1 font-oxanium text-[12px] font-bold text-struct-7 transition ease-in-out hover:bg-fundo-1 hover:text-struct-1 hover:shadow-[0_0_5px_1px_rgba(0,0,0,0.1)] active:border-none sm:rounded-md sm:px-4 sm:text-[20px]"
               >
                 conheça nossos membros
