@@ -41,5 +41,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
+# for secure production
 Dockerfile
 start.sh
+.dockerignore
