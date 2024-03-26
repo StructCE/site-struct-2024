@@ -28,18 +28,22 @@ const phoneRegex = new RegExp(
 );
 
 const formEmailSchema = z.object({
-  nome: z.string().min(2, {
+  nome: z.string({ required_error: "Digite seu nome." }).min(2, {
     message: "Nome deve ter pelo menos 2 caracteres.",
   }),
   email: z
-    .string()
+    .string({ required_error: "Digite seu email." })
     .min(1, { message: "Digite seu email." })
     .email("Email inválido."),
-  telefone: z.string().regex(phoneRegex, "Telefone inválido."),
+  telefone: z
+    .string({ required_error: "Digite seu telefone." })
+    .regex(phoneRegex, "Telefone inválido."),
   servico: z.string({
     required_error: "Selecione um tipo de serviço.",
   }),
-  descricao: z.string().min(4),
+  descricao: z
+    .string({ required_error: "Dê uma breve descrição do seu projeto." })
+    .min(4),
 });
 
 type FormEmailValues = z.infer<typeof formEmailSchema>;
@@ -117,6 +121,7 @@ const FormEmail = () => {
                   className="h-6 space-y-0 border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:h-10 sm:px-3 sm:text-sm"
                   {...field}
                   ref={nameRef}
+                  required
                 />
               </FormControl>
             </FormItem>
@@ -135,6 +140,7 @@ const FormEmail = () => {
                   className="mt-0 h-6 space-y-0 border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:mt-1 sm:h-10 sm:px-3 sm:text-sm"
                   {...field}
                   ref={emailRef}
+                  required
                 />
               </FormControl>
             </FormItem>
@@ -155,6 +161,7 @@ const FormEmail = () => {
                   className="mt-0 h-6 space-y-0 border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:mt-1 sm:h-10 sm:px-3 sm:text-sm"
                   {...field}
                   ref={telephoneRef}
+                  required
                 />
               </FormControl>
             </FormItem>
@@ -218,6 +225,7 @@ const FormEmail = () => {
                   className="mt-1 min-h-[40px] resize-none border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none sm:min-h-[80px] sm:px-3 sm:text-sm"
                   {...field}
                   ref={descriptionRef}
+                  required
                 />
               </FormControl>
             </FormItem>
