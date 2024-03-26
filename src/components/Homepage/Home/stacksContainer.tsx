@@ -11,7 +11,7 @@ export function StacksContainer({ children }: React.PropsWithChildren) {
         exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
         transition={{ ease: "easeInOut", duration: 1, delay: 5 }}
         viewport={{ once: true }}
-        className="mt-3 flex w-[280px] flex-wrap justify-around [--opacity-from:0%] [--opacity-to:100%] [--y-from:-75px] [--y-to:0px] sm:mt-6 sm:w-[600px] sm:gap-8 lg:mt-10 lg:w-[750px] lg:gap-14"
+        className="mt-3 flex w-[280px] flex-wrap justify-around [--opacity-from:0%] [--opacity-to:100%] [--y-from:-75px] [--y-to:0px] sm:mt-6 sm:w-[600px] sm:gap-6 lg:mt-10 lg:w-[650px] lg:gap-12"
       >
         {children}
       </motion.div>
