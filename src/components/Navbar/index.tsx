@@ -46,7 +46,7 @@ export default function Navbar() {
             to="servicos"
             spy={true}
             smooth={true}
-            offset={-100}
+            offset={0}
             duration={700}
             onClick={() => router.push("/#servicos")}
           >

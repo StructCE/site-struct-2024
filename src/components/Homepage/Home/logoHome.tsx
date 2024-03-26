@@ -19,7 +19,7 @@ export default function LogoHome() {
             sequence={["", 600, "{struct}"]}
             speed={{ type: "keyStrokeDelayInMs", value: 150 }}
             wrapper="h1"
-            className="bg-gradient-to-b from-slate-50 via-slate-100 to-slate-500 bg-clip-text text-center font-oxanium text-[72px] font-bold leading-[90px] text-transparent selection:text-struct-7 sm:text-[120px] sm:leading-[146px] lg:text-[172px] lg:leading-[210px]"
+            className="bg-gradient-to-b from-slate-50 via-slate-100 to-slate-500 bg-clip-text text-center font-oxanium text-[72px] font-bold leading-[90px] text-transparent selection:text-struct-7 sm:text-[156px] sm:leading-[195px]"
           />
           <TypeAnimation
             cursor={false}

@@ -109,13 +109,7 @@
 
 @media (min-width: 640px) {
   .custom-type-animation-cursor {
-    font-size: 20px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .custom-type-animation-cursor {
-    font-size: 24px;
+    font-size: 22px;
   }
 }
 

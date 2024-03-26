@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
 import CloudinaryImg from "~/components/ui/cloudinaryImage";
-import MemberContainer from "../Members/MemberCard/page";
 import { type ProjectWithMembers } from "~/server/api/routers/project";
+import MemberContainer from "../Members/MemberCard/page";
 
 export default function ProjectsPage({
   projectWithMembers,

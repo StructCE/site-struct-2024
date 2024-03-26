@@ -164,7 +164,7 @@ type ProjectMember = {
 
 export {
   type Member,
-  type ProjectWithMembers,
   type MutatedProject,
   type ProjectMember,
+  type ProjectWithMembers,
 };

@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from "next/cache";
 import { api } from "~/trpc/server";
 import AdminMemberCard from "./AdminMembersCard/page";
 import { unstable_noStore as noStore } from "next/cache";
