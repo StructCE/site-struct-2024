@@ -15,7 +15,7 @@ export function FAQAccordion() {
       exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
       transition={{ ease: "easeInOut", duration: 1, delay: 0.2 }}
       viewport={{ once: true }}
-      className="flex w-[90%] items-center justify-center  [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px]"
+      className="flex w-[90%] items-center justify-center [--opacity-from:1%] [--opacity-to:100%] [--y-from:75px] [--y-to:0px]"
     >
       <Accordion
         type="single"
@@ -23,7 +23,7 @@ export function FAQAccordion() {
         className="flex w-[90%] flex-col gap-3 font-nunito"
       >
         <AccordionItem value="item-1" className="border-none">
-          <AccordionTrigger className="mb-0 flex rounded-xl bg-fundo-1/50 px-6 py-3 text-start text-[20px] font-bold hover:border-struct-7/25 hover:no-underline">
+          <AccordionTrigger className="mb-0 flex rounded-xl bg-fundo-1/50 px-6 py-3 text-start text-[16px] font-bold hover:border-struct-7/25 hover:no-underline sm:text-[20px]">
             Como é o processo de desenvolvimento de um software com a sua
             empresa?
           </AccordionTrigger>
@@ -35,7 +35,7 @@ export function FAQAccordion() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2" className="border-none">
-          <AccordionTrigger className="mb-0 flex rounded-xl bg-fundo-1/50 px-6 py-3 text-start text-[20px] font-bold hover:border-struct-7/25 hover:no-underline">
+          <AccordionTrigger className="mb-0 flex rounded-xl bg-fundo-1/50 px-6 py-3 text-start text-[16px] font-bold hover:border-struct-7/25 hover:no-underline sm:text-[20px]">
             Vocês oferecem manutenção e suporte após o lançamento de um site?
           </AccordionTrigger>
           <AccordionContent className="px-4 py-3 font-semibold">
@@ -44,7 +44,7 @@ export function FAQAccordion() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3" className="border-none">
-          <AccordionTrigger className="mb-0 flex rounded-xl bg-fundo-1/50 px-6 py-3 text-start text-[20px] font-bold hover:border-struct-7/25 hover:no-underline">
+          <AccordionTrigger className="mb-0 flex rounded-xl bg-fundo-1/50 px-6 py-3 text-start text-[16px] font-bold hover:border-struct-7/25 hover:no-underline sm:text-[20px]">
             Como a automação de processos pode beneficiar meu negócio?
           </AccordionTrigger>
           <AccordionContent className="px-4 py-3 font-semibold">
@@ -55,7 +55,7 @@ export function FAQAccordion() {
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-4" className="border-none">
-          <AccordionTrigger className="mb-0 flex rounded-xl bg-fundo-1/50 px-6 py-3 text-start text-[20px] font-bold hover:border-struct-7/25 hover:no-underline">
+          <AccordionTrigger className="mb-0 flex rounded-xl bg-fundo-1/50 px-6 py-3 text-start text-[16px] font-bold hover:border-struct-7/25 hover:no-underline sm:text-[20px]">
             Quanto tempo leva para desenvolver um software?
           </AccordionTrigger>
           <AccordionContent className="px-4 py-3 font-semibold">

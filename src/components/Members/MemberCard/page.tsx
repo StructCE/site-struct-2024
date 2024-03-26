@@ -1,12 +1,6 @@
 "use client";
 import CloudinaryImg from "~/components/ui/cloudinaryImage";
-
-type Member = {
-  id: string;
-  name: string;
-  logoPublicId: string;
-  role: string;
-};
+import { type Member } from "~/server/api/routers/project";
 
 const borderColors: Record<string, string> = {
   Presidente: "border-struct-1",

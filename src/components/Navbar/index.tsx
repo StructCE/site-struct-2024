@@ -63,7 +63,7 @@ export default function Navbar() {
             duration={700}
             onClick={() => router.push("/#portfolio")}
           >
-            Portifólio
+            Portfólio
           </Link>
         </li>
         <li>
