@@ -90,7 +90,7 @@ export default function ServicesCards() {
         initial={{ opacity: "var(--opacity-from)", y: "var(--y-from)" }}
         whileInView={{ opacity: "var(--opacity-to)", y: "var(--y-to)" }}
         exit={{ opacity: "var(--opacity-from)", y: "var(--y-to)" }}
-        transition={{ duration: 1, delay: 0.75 }}
+        transition={{ duration: 1, delay: 0.9 }}
         viewport={{ once: true }}
         className="h-[165px] w-[280px] rounded-lg bg-fundo-2/50 [--opacity-from:1%] [--opacity-to:100%] [--y-from:100px] [--y-to:0px] sm:h-[200px] sm:w-[400px] lg:h-[252px] lg:w-[365px]"
       >
