@@ -1,12 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import {
-  FaFacebookSquare,
-  FaInstagram,
-  FaLinkedin,
-  FaWhatsapp,
-} from "react-icons/fa";
+import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 export default function FindUs() {
   return (
@@ -56,13 +51,6 @@ export default function FindUs() {
                 className="rounded-lg bg-fundo-0 p-[6px] sm:p-3"
               >
                 <FaInstagram className="size-[16px] text-struct-7 transition ease-in-out hover:scale-[1.05] hover:text-struct-1 sm:size-[26px]" />
-              </Link>
-              <Link
-                href="https://wa.me/556190000093"
-                target="_blank"
-                className="rounded-lg bg-fundo-0 p-[6px] sm:p-3"
-              >
-                <FaWhatsapp className="size-[16px] text-struct-7 transition ease-in-out hover:scale-[1.05] hover:text-struct-1 sm:size-[26px]" />
               </Link>
             </div>
           </div>
