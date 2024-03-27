@@ -1,7 +1,7 @@
 "use client";
 import emailjs from "@emailjs/browser";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
 import { z } from "zod";
@@ -49,11 +49,6 @@ const formEmailSchema = z.object({
 type FormEmailValues = z.infer<typeof formEmailSchema>;
 
 const FormEmail = () => {
-  const nameRef = useRef<HTMLInputElement>(null);
-  const emailRef = useRef<HTMLInputElement>(null);
-  const telephoneRef = useRef<HTMLInputElement>(null);
-  const [service, setService] = useState<string>("");
-  const descriptionRef = useRef<HTMLTextAreaElement>(null);
   const form = useForm<FormEmailValues>({
     resolver: zodResolver(formEmailSchema),
     mode: "onChange",
@@ -73,17 +68,16 @@ const FormEmail = () => {
   );
 
   const handleSubmit = async (data: FormEmailValues) => {
-    // e.preventDefault();
     const serviceId = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID ?? "";
     const templateId = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID ?? "";
     try {
       setLoading(true);
       await emailjs.send(serviceId, templateId, {
-        name: nameRef.current?.value,
-        email: emailRef.current?.value,
-        telephone: telephoneRef.current?.value,
-        service: service,
-        description: descriptionRef.current?.value,
+        name: data.nome,
+        email: data.email,
+        telephone: data.telefone,
+        service: data.servico,
+        description: data.descricao,
       });
       toast.success("Orçamento solicitado!", {
         style: {
@@ -120,7 +114,6 @@ const FormEmail = () => {
                   placeholder="Digite seu nome"
                   className="h-6 space-y-0 border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:h-10 sm:px-3 sm:text-sm"
                   {...field}
-                  ref={nameRef}
                   required
                 />
               </FormControl>
@@ -139,7 +132,6 @@ const FormEmail = () => {
                   type="email"
                   className="mt-0 h-6 space-y-0 border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:mt-1 sm:h-10 sm:px-3 sm:text-sm"
                   {...field}
-                  ref={emailRef}
                   required
                 />
               </FormControl>
@@ -160,7 +152,6 @@ const FormEmail = () => {
                   type="tel"
                   className="mt-0 h-6 space-y-0 border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none focus:ring sm:mt-1 sm:h-10 sm:px-3 sm:text-sm"
                   {...field}
-                  ref={telephoneRef}
                   required
                 />
               </FormControl>
@@ -176,7 +167,7 @@ const FormEmail = () => {
                 Serviço
               </FormLabel>
               <Select
-                onValueChange={(value) => form.setValue("servico", value)}
+              onValueChange={(value) => form.setValue("servico", value)}
                 required
               >
                 <FormControl>
@@ -227,7 +218,6 @@ const FormEmail = () => {
                   placeholder="Faça uma breve descrição do seu projeto"
                   className="mt-1 min-h-[40px] resize-none border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7 focus:outline-none sm:min-h-[80px] sm:px-3 sm:text-sm"
                   {...field}
-                  ref={descriptionRef}
                   required
                 />
               </FormControl>
