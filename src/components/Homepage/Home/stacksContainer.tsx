@@ -18,7 +18,7 @@ export function StacksContainer({ children }: React.PropsWithChildren) {
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 100 }}
-        transition={{ ease: "easeInOut", duration: 1, delay: 4.5 }}
+        transition={{ ease: "easeInOut", duration: 1, delay: 5.5 }}
         viewport={{ once: true }}
         className="flex w-full flex-col items-center"
       >
