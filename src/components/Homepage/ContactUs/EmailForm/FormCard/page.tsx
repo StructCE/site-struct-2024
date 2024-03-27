@@ -72,8 +72,8 @@ const FormEmail = () => {
     [],
   );
 
-  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (data: FormEmailValues) => {
+    // e.preventDefault();
     const serviceId = process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID ?? "";
     const templateId = process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID ?? "";
     try {
@@ -106,7 +106,7 @@ const FormEmail = () => {
   return (
     <Form {...form}>
       <Toaster position="bottom-center" reverseOrder={false} />
-      <form onSubmit={handleSubmit} className="font-nunito">
+      <form onSubmit={form.handleSubmit(handleSubmit)} className="font-nunito">
         <FormField
           control={form.control}
           name="nome"
@@ -175,7 +175,10 @@ const FormEmail = () => {
               <FormLabel className="text-[10px] sm:text-base">
                 Serviço
               </FormLabel>
-              <Select onValueChange={(value) => setService(value)} required>
+              <Select
+                onValueChange={(value) => form.setValue("servico", value)}
+                required
+              >
                 <FormControl>
                   <SelectTrigger className="h-6 border-none bg-fundo-2/75 px-2 text-[10px] text-struct-7/80 sm:mt-1 sm:h-10 sm:px-3 sm:text-sm">
                     <SelectValue placeholder="Selecione um tipo de serviço" />
