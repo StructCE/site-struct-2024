@@ -112,7 +112,6 @@ export default function CreateMember() {
         <input placeholder="Imagem (URL da cloudinary)" {...register("logoPublicId")} className="mt-0 h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7 rounded-[8px]"/>
         <p className="font-nunito font-bold text-[20px]">Diretorias</p>
         {directorshipsFields.map( ( directorshipField, index ) => (
-          <>
         <div className='w-full relative flex flex-col gap-7 items-center justify-center' key={directorshipField.id}>
           {index !== 0?
           <button type="button" onClick={() => directorshipsRemove(index)} className='absolute -left-20 w-[50px] h-[50px] bg-fundo-3 rounded-[8px]'> - </button>  
@@ -145,12 +144,10 @@ export default function CreateMember() {
             </SelectContent>
           </Select>
         </div>
-        </>
       ))}
         <button type="button" onClick={() => directorshipsAppend({directorship: "", role: ""})} className='w-[50px] h-[50px] bg-fundo-3 rounded-[8px]'> + </button>  
         <p className="font-nunito font-bold text-[20px]">Projetos</p>
         {projectsFields.map( ( projectField, index ) => (
-          <>
         <div className='w-full relative flex flex-col gap-7 items-center justify-center' key={projectField.id}>
           <button type="button" onClick={() => projectsRemove(index)} className='absolute -left-20 w-[50px] h-10 bg-fundo-3 rounded-[8px]'> - </button>  
           <Select {...register(`projects.${index}.project`)} onValueChange={(value) => setValue(`projects.${index}.project`, value)}>
@@ -175,7 +172,6 @@ export default function CreateMember() {
             </SelectContent>
           </Select>
         </div>
-        </>
       ))}
         <button type="button" onClick={() => projectsAppend({project: "", role: ""})} className='w-[50px] h-[50px] bg-fundo-3 rounded-[8px]'> + </button>  
         <div className='flex w-full items-center justify-center'>
