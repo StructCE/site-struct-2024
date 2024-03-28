@@ -9,7 +9,7 @@ export default function WhatsappLogo() {
       <motion.div
         initial={{ opacity: 0, x: 50 }}
         whileInView={{ opacity: 100, x: 0 }}
-        transition={{ ease: "easeInOut", duration: 1.5, delay: 5 }}
+        transition={{ ease: "easeInOut", duration: 1.5, delay: 6.5 }}
         viewport={{ once: true }}
         className="fixed bottom-[22px] right-3 z-50 max-sm:hidden"
       >
