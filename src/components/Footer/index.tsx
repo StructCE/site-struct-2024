@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { FaFacebookSquare, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {
+  FaFacebookSquare,
+  FaInstagram,
+  FaLinkedin,
+  FaWhatsapp,
+} from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -32,6 +37,12 @@ export default function Footer() {
           </Link>
           <Link href="https://www.instagram.com/structunb/" target="_blank">
             <FaInstagram
+              size={20}
+              className="text-struct-7 transition ease-in-out hover:scale-[1.05] hover:text-struct-1"
+            />
+          </Link>
+          <Link href="https://wa.me/556190000093" target="_blank">
+            <FaWhatsapp
               size={20}
               className="text-struct-7 transition ease-in-out hover:scale-[1.05] hover:text-struct-1"
             />

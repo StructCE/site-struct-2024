@@ -1,5 +1,6 @@
 import ContactUs from "~/components/Homepage/ContactUs/page";
 import { Home } from "~/components/Homepage/Home";
+import WhatsappLogo from "~/components/ui/whatsapp";
 import AboutUs from "../components/Homepage/AboutUs/page";
 import Portfolio from "../components/Homepage/Portfolio/page";
 import Services from "../components/Homepage/Services/page";
@@ -13,6 +14,7 @@ export default function Homepage() {
         <Portfolio />
         <AboutUs />
         <ContactUs />
+        <WhatsappLogo />
       </div>
     </>
   );
