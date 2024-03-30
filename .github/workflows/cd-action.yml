@@ -28,4 +28,4 @@ jobs:
           script: |
             cd docker_compose_struct/site-struct-2024/
             git pull
-            docker compose up -d
+            docker compose restart web
