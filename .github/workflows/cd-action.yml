@@ -21,13 +21,11 @@ jobs:
 
       - name: executing deploy via ssh
         uses: appleboy/ssh-action@v1.0.3
-        env:
-          PATH: ${{secrets.PATH}}
         with:
           host: ${{secrets.HOST}}
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASS}}
           script: |
-            cd $PATH
+            cd docker_compose_struct/site-struct-2024/
             git pull
             docker compose up -d
