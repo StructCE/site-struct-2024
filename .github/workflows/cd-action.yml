@@ -27,8 +27,9 @@ jobs:
           password: ${{secrets.PASS}}
           script: |
             UNSTAGGED_IMAGE_ID=$(docker images --filter=reference=site-struct-2024-web:latest --format "{{.ID}}")
-            cd docker_compose_struct/site-struct-2024/
+            cd docker_compose_struct/
             git pull
+            cd site-struct-2024/
             docker compose build web
             docker compose up -d
             docker rmi $UNSTAGGED_IMAGE_ID
