@@ -14,7 +14,7 @@ export default function WhatsappLogo() {
         className="fixed bottom-[22px] right-3 z-50 max-sm:hidden"
       >
         <Link href="https://wa.me/556190000093" target="_blank">
-          <FaWhatsapp className="text-[#00a859] transition delay-75 ease-in-out hover:text-[#00c307] sm:h-[44px] sm:w-[44px] lg:h-[58px] lg:w-[58px]" />
+          <FaWhatsapp className="text-[#00a859] transition delay-75 ease-in-out hover:text-[#00c307] sm:size-[44px] lg:size-[52px]" />
         </Link>
       </motion.div>
     </>

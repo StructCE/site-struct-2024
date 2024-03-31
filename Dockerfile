@@ -61,6 +61,8 @@ COPY --from=builder /app/next.config.js ./
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/start.sh /app/start.sh
 COPY --from=builder /app/package.json ./package.json
+
+# extra dependencies for seed 
 COPY --from=deps /app/node_modules/zod ./node_modules/zod
 
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
