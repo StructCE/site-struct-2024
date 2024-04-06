@@ -31,13 +31,15 @@ export const projectRouter = createTRPCRouter({
         },
       });
       if (projectAndMembers) {
-        const project = {
-          id: projectAndMembers.id,
-          name: projectAndMembers.name,
-          description: projectAndMembers.description,
-          link: projectAndMembers.link,
-          logoPublicId: projectAndMembers.logoPublicId,
-          show: projectAndMembers.show,
+        const projectWithMembers = {
+          project: {
+            id: projectAndMembers.id,
+            name: projectAndMembers.name,
+            description: projectAndMembers.description,
+            link: projectAndMembers.link,
+            logoPublicId: projectAndMembers.logoPublicId,
+            show: projectAndMembers.show,
+          },
           members: projectAndMembers.projectMembers.map((projectMember) => ({
             id: projectMember.member.id,
             name: projectMember.member.name,
@@ -45,7 +47,7 @@ export const projectRouter = createTRPCRouter({
             role: projectMember.role.name,
           })),
         };
-        return project;
+        return projectWithMembers;
       }
     }),
 
@@ -137,12 +139,14 @@ type Member = {
 };
 
 type ProjectWithMembers = {
-  id: string;
-  name: string;
-  description: string;
-  link: string;
-  logoPublicId: string;
-  show: boolean;
+  project: {
+    id: string;
+    name: string;
+    description: string;
+    link: string;
+    logoPublicId: string;
+    show: boolean;
+  },
   members: Member[];
 };
 
