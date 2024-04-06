@@ -1,4 +1,4 @@
-import AdminMembersPage from "~/components/Admin/AdminMembers/page";
+import AdminMembersPage from "~/components/Admin/AdminMembers/adminMembersPage";
 import CreateMember from "~/components/Admin/AdminMembers/AdminCreateMember/createMember";
 
 export default async function MembrosAdmin() {

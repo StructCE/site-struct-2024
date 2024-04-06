@@ -6,7 +6,6 @@ import { Toaster } from "react-hot-toast";
 
 export default function ProjetosAdmin() {
   return (
-    <>
       <div className="w-full bg-fundo-0 text-struct-7 selection:bg-struct-5">
         <Toaster position="bottom-center" reverseOrder={false} />
         <div className="m-0 flex w-full flex-col items-center justify-center gap-6 pt-40">
@@ -24,6 +23,5 @@ export default function ProjetosAdmin() {
           </div>
         </div>
       </div>
-    </>
   );
 }
