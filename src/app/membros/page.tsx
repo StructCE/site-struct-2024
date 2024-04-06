@@ -1,4 +1,4 @@
-import MembersPage from "~/components/Members/page";
+import MembersPage from "~/components/Members/membersPage";
 
 export default function Members() {
   return (
