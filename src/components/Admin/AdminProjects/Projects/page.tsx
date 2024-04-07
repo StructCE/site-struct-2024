@@ -1,5 +1,5 @@
 "use client";
-import AdminMemberCard from "../../AdminMembers/AdminMembersCard/page";
+import AdminMemberCard from "../../AdminMembers/AdminMemberCard/adminMembersCard";
 import EditProject from "./editProject";
 import RemoveProject from "./removeProject";
 import Link from "next/link";
