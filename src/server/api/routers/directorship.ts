@@ -81,3 +81,20 @@ export const directorshipRouter = createTRPCRouter({
     return countDirectiorshipMembers;
   }),
 });
+
+type Member = {
+  id: string,
+  name: string, 
+  logoPublicId: string,
+  role: string,
+}
+
+type DirectorshipsWithMembers = {
+  name: string, 
+  members: Member[],
+}
+
+export {
+  type Member,
+  type DirectorshipsWithMembers
+}
