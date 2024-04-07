@@ -14,13 +14,7 @@ import {
 import toast from "react-hot-toast";
 import { MdDelete } from "react-icons/md";
 import { useRouter } from "next/navigation";
-
-type Member = {
-  id: string;
-  name: string;
-  logoPublicId: string;
-  role: string;
-};
+import { type Member } from "~/server/api/routers/directorship";
 
 export default function RemoveMember( { member }: { member: Member}) {
   const router = useRouter();
