@@ -24,11 +24,9 @@ export default function CreateMember() {
         <p className="font-nunito font-bold text-[20px]">Diretorias</p>
         {form.directorships.directorshipsFields.map( ( directorshipField, index ) => (
         <div className='w-full relative flex flex-col gap-7 items-center justify-center' key={directorshipField.id}>
-          {index !== 0?
+          {index !== 0 && (
           <button type="button" onClick={() => form.directorships.directorshipsRemove(index)} className='absolute -left-20 w-[50px] h-[50px] bg-fundo-3 rounded-[8px]'> - </button>  
-          :
-          <>
-          </>
+          )
           }
           <Select {...form.register(`directorships.${index}.directorship`)} onValueChange={(value) => form.setValue(`directorships.${index}.directorship`, value)}>
             <SelectTrigger className="mt-0 w-full h-10 border-none bg-fundo-3 px-3 text-sm text-struct-7/70 rounded-[8px]">

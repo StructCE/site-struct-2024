@@ -98,14 +98,10 @@ export const memberRouter = createTRPCRouter({
 
     const res = createMemberSchema.safeParse(data);
     if (res.success) {
-      try {
-        const member = await ctx.db.member.create({
-          data: res.data
-        })
-        return member
-      } catch(error) {
-        return error
-      }
+      const member = await ctx.db.member.create({
+        data: res.data
+      })
+      return member
     }
     return res.error;
   }),
