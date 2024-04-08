@@ -134,7 +134,7 @@ export const projectRouter = createTRPCRouter({
 type Member = {
   id: string;
   name: string;
-  logoPublicId: string;
+  logoPublicId?: string;
   role: string;
 };
 
@@ -144,19 +144,19 @@ type ProjectWithMembers = {
     name: string;
     description: string;
     link: string;
-    logoPublicId: string;
+    logoPublicId?: string;
     show: boolean;
   },
   members: Member[];
 };
 
-type MutatedProject = {
+type Project = {
   id: string;
   name: string;
   description: string;
   link: string;
+  logoPublicId?: string;
   show: boolean;
-  logoPublicId: string;
 };
 
 type ProjectMember = {
@@ -168,7 +168,7 @@ type ProjectMember = {
 
 export {
   type Member,
-  type MutatedProject,
+  type Project,
   type ProjectMember,
   type ProjectWithMembers,
 };

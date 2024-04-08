@@ -1,5 +1,4 @@
-// "use client";
-import AdminPortfolio from "~/components/Admin/AdminProjects/page";
+import AdminPortfolio from "~/components/Admin/AdminProjects/adminPortfolio";
 import CreateProject from "~/components/Admin/AdminProjects/AdminCreateProject/adminCreateProject";
 import { Toaster } from "react-hot-toast";
 

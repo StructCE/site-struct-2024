@@ -1,6 +1,7 @@
 import { api } from "~/trpc/server";
 import MemberCard from "~/components/Members/MemberCard/memberCard";
 import ProjectCard from "~/components/Projects/ProjectCard/projectCard";
+import { permanentRedirect } from "next/navigation";
 
 
 export default async function Projects({ params }: { params: { id: string } }) {
@@ -9,7 +10,7 @@ export default async function Projects({ params }: { params: { id: string } }) {
   });
   return (
     <section className="w-full flex items-center bg-fundo-0 pt-28 text-struct-7 selection:bg-struct-5">
-      {projectWithMembers && (
+      {projectWithMembers? (
         <div className="flex h-fit w-full flex-col items-center justify-center">
             <ProjectCard project={projectWithMembers.project}/>
             <div className="mb-20 mt-14 flex h-fit w-full flex-col items-center justify-center">
@@ -23,7 +24,10 @@ export default async function Projects({ params }: { params: { id: string } }) {
               </div>
             </div>
         </div>
-    )}
+        )
+        :
+        permanentRedirect("/not-found")
+      } 
     </section>
   );
 }

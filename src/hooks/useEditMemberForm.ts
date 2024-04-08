@@ -29,7 +29,7 @@ export function useEditMemberForm({
     id: string, 
     defaultValues: {
       name: string, 
-      logoPublicId: string,
+      logoPublicId?: string,
     }
   }
 ) {

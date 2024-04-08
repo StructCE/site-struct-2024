@@ -85,7 +85,7 @@ export const directorshipRouter = createTRPCRouter({
 type Member = {
   id: string,
   name: string, 
-  logoPublicId: string,
+  logoPublicId?: string,
   role: string,
 }
 

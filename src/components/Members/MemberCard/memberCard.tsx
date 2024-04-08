@@ -3,13 +3,13 @@ import { type Member } from "~/server/api/routers/project";
 import getColor from "../getColor";
 
 
-export default function MemberCard({ member, children }: { member: Member, children: React.ReactNode }) {
+export default function MemberCard({ member, children }: { member: Member, children?: React.ReactNode}) {
   return (
     <div className="m-12 flex h-[190px] w-[170px] flex-col items-center sm:m-10 sm:my-12 relative">
       <CloudinaryImg
         width="180"
         height="180"
-        src={member.logoPublicId}
+        src={member.logoPublicId? member.logoPublicId: ""}
         alt="Foto de Membro"
         crop="fill"
         className={
