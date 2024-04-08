@@ -17,7 +17,9 @@ export default async function AdminPortfolio() {
                 className="flex w-full items-center justify-center text-lg max-lg:flex-col"
               >
                 <ProjectCard project={project} admin={true}/>
-                {nextProject ? <ProjectCard project={nextProject} /> : null}
+                {nextProject &&
+                  <ProjectCard project={nextProject} admin={true}/>
+                 }
               </div>
             );
           }
