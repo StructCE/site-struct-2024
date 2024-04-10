@@ -37,25 +37,25 @@ export default function LogoHome() {
           />
           <StacksContainer>
             <div className="flex items-center gap-1 sm:gap-2">
-              <FaDocker className="delay-[100] h-[20px] w-[20px] text-struct-7 transition ease-in-out hover:text-struct-1 sm:h-[36px] sm:w-[36px] lg:h-[46px] lg:w-[46px]" />
+              <FaDocker className="delay-50 h-[20px] w-[20px] text-struct-7 transition ease-in-out hover:text-struct-1 sm:h-[36px] sm:w-[36px] lg:h-[46px] lg:w-[46px]" />
               <span className="font-oxanium text-[11px] sm:text-[16px] lg:text-[18px]">
                 Docker
               </span>
             </div>
             <div className="flex items-center gap-1 sm:gap-2">
-              <FaReact className="delay-[100] h-[20px] w-[20px] text-struct-7 transition ease-in-out hover:text-struct-1 sm:h-[36px] sm:w-[36px] lg:h-[46px] lg:w-[46px]" />
+              <FaReact className="delay-50 h-[20px] w-[20px] text-struct-7 transition ease-in-out hover:text-struct-1 sm:h-[36px] sm:w-[36px] lg:h-[46px] lg:w-[46px]" />
               <span className="font-oxanium text-[11px] sm:text-[16px] lg:text-[18px]">
                 React
               </span>
             </div>
             <div className="flex items-center gap-1 sm:gap-2">
-              <SiTailwindcss className="delay-[100] h-[20px] w-[20px] text-struct-7 transition ease-in-out hover:text-struct-1 sm:h-[36px] sm:w-[36px] lg:h-[46px] lg:w-[46px]" />
+              <SiTailwindcss className="delay-50 h-[20px] w-[20px] text-struct-7 transition ease-in-out hover:text-struct-1 sm:h-[36px] sm:w-[36px] lg:h-[46px] lg:w-[46px]" />
               <span className="font-oxanium text-[11px] sm:text-[16px] lg:text-[18px]">
                 Tailwind
               </span>
             </div>
             <div className="flex items-center gap-1 sm:gap-2">
-              <SiPrisma className="delay-[100] h-[20px] w-[20px] text-struct-7 transition ease-in-out hover:text-struct-1 sm:h-[36px] sm:w-[36px] lg:h-[46px] lg:w-[46px]" />
+              <SiPrisma className="delay-50 h-[20px] w-[20px] text-struct-7 transition ease-in-out hover:text-struct-1 sm:h-[36px] sm:w-[36px] lg:h-[46px] lg:w-[46px]" />
               <span className="font-oxanium text-[11px] sm:text-[16px] lg:text-[18px]">
                 Prisma
               </span>
