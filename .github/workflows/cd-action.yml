@@ -27,7 +27,7 @@ jobs:
           host: ${{secrets.HOST}}
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASS}}
-          command_timeout: 360s
+          command_timeout: 540s
           script: |
             UNSTAGGED_IMAGE_ID=$(docker images --filter=reference=site-struct-2024-web:latest --format "{{.ID}}")
             cd docker_compose_struct/
