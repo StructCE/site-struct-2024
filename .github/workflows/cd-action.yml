@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - teste-gh-actions
+      - production
     paths-ignore:
       - .gitignore
       - README.md
@@ -29,6 +29,7 @@ jobs:
           password: ${{secrets.PASS}}
           command_timeout: 30s
           script: |
+            UNSTAGGED_IMAGE_ID=$(docker images --filter=reference=site-struct-2024-web:latest --format "{{.ID}}")
             cd docker_compose_struct/
             git pull
             cd site-struct-2024-teste/
@@ -50,5 +51,5 @@ jobs:
             }
 
             execute_with_retry 2 "docker compose build web"
-
             execute_with_retry 2 "docker compose up -d"
+            docker rmi $UNSTAGGED_IMAGE_ID
