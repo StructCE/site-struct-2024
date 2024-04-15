@@ -27,33 +27,28 @@ jobs:
           host: ${{secrets.HOST}}
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASS}}
-          shell: bash
-          run: |
+          timeout: 600
+          script: |
             cd docker_compose_struct/
             git pull
             cd site-struct-2024-teste/
 
             execute_with_retry() {
               local retries=$1
-              local timeout=$2
-              local command=$3
-              local success=false
+              local command=$2
               while [ $retries -gt 0 ]; do
-                if timeout $timeout $command; then
+                if $command; then
                   echo "$command successful!"
-                  success=true
-                  break
+                  return 0
                 else
                   echo "$command failed, retrying..."
                   ((retries--))
                 fi
               done
-              if [ "$success" = false ]; then
-                echo "$command failed after all retries"
-                return 1
-              fi
+              echo "$command failed after all retries"
+              exit 1
             }
 
-            execute_with_retry 1 5m "docker compose build web"
+            execute_with_retry 2 "docker compose build web"
 
-            execute_with_retry 1 5m "docker compose up -d"
+            execute_with_retry 2 "docker compose up -d"
