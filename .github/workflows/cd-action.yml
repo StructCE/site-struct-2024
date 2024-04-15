@@ -32,7 +32,7 @@ jobs:
             UNSTAGGED_IMAGE_ID=$(docker images --filter=reference=site-struct-2024-web:latest --format "{{.ID}}")
             cd docker_compose_struct/
             git pull
-            cd site-struct-2024-teste/
+            cd site-struct-2024/
 
             execute_with_retry() {
               local retries=$1
