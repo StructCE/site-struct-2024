@@ -31,13 +31,13 @@ export default function ProjectPage({
           <div className="flex h-fit w-[1300px] flex-wrap items-center justify-center max-[1440px]:w-[500px] max-[830px]:w-[280px]">
             {projectWithMembers.members.map((member) => {
               return (
-                <MemberCard member={member}>
-                    <div className="absolute w-fit flex justify-center items-center top-36 right-0 gap-2">
-                      <EditMember member={member}/>
-                      <RemoveMember member={member}/>
-                    </div>
+                <MemberCard member={member} key={member.id}>
+                  <div className="absolute right-0 top-36 flex w-fit items-center justify-center gap-2">
+                    <EditMember member={member} />
+                    <RemoveMember member={member} />
+                  </div>
                 </MemberCard>
-              )
+              );
             })}
           </div>
         </div>

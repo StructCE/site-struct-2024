@@ -5,7 +5,6 @@ import MemberCard from "~/components/Members/MemberCard/memberCard";
 import EditMember from "./AdminMemberCard/editMember";
 import RemoveMember from "./AdminMemberCard/removeMember";
 
-
 export default async function AdminMembers() {
   noStore();
   const directorshipsWithMembers =
@@ -28,12 +27,12 @@ export default async function AdminMembers() {
             </p>
             <div className="flex h-fit w-full flex-wrap items-center justify-center">
               {directorshipWithMember.members.map((member) => (
-                <MemberCard member={member}>
-                    <div className="absolute w-fit flex justify-center items-center top-36 right-0 gap-2">
-                      <Toaster position="bottom-center" reverseOrder={false} />
-                      <EditMember member={member}/>
-                      <RemoveMember member={member}/>
-                    </div>
+                <MemberCard member={member} key={member.id}>
+                  <div className="absolute right-0 top-36 flex w-fit items-center justify-center gap-2">
+                    <Toaster position="bottom-center" reverseOrder={false} />
+                    <EditMember member={member} />
+                    <RemoveMember member={member} />
+                  </div>
                 </MemberCard>
               ))}
             </div>
