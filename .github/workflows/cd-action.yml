@@ -27,7 +27,7 @@ jobs:
           host: ${{secrets.HOST}}
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASS}}
-          timeout: 120s
+          command_timeout: 60s
           script: |
             cd docker_compose_struct/
             git pull
