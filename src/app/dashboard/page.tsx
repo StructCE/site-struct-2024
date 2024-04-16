@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SignOutButton from "~/components/pages/auth/dashboard/signOutButton";
+import { SignOutButton } from "~/components/app/dashboard";
 import { getServerAuthSession } from "~/server/auth";
 
 export default async function SignInPage() {

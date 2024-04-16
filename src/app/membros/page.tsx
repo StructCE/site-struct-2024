@@ -1,4 +1,4 @@
-import MembersPage from "~/components/Members/membersPage";
+import { MembersPage } from "~/components/app/membros";
 
 export default function Members() {
   return (

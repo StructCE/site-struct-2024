@@ -1,4 +1,4 @@
-import { AuthProvider } from "~/components/pages/auth/authProvider";
+import { AuthProvider } from "~/components/app/dashboard";
 
 export default async function AuthLayout({
   children,

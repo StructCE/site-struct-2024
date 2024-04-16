@@ -1,6 +1,6 @@
-import ProjectPage from "~/components/Admin/AdminProjects/AdminProject/projectPage";
 import { api } from "~/trpc/server";
 import { permanentRedirect } from "next/navigation";
+import { ProjectPage } from "~/components/app/dashboard/projetosAdm/projeto";
 
 export default async function Projects({ params }: { params: { id: string } }) {
   const projectWithMembers = await api.project.getProjectAndMembers.query({
@@ -8,12 +8,11 @@ export default async function Projects({ params }: { params: { id: string } }) {
   });
   return (
     <div className="w-full bg-fundo-0 text-struct-7 selection:bg-struct-5">
-      {projectWithMembers? (
+      {projectWithMembers ? (
         <ProjectPage projectWithMembers={projectWithMembers} />
-      )
-      :
-      permanentRedirect("/not-found")
-      }
+      ) : (
+        permanentRedirect("/not-found")
+      )}
     </div>
   );
 }

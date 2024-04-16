@@ -1,6 +1,6 @@
-import Footer from "~/components/Footer";
-import Navbar from "~/components/Navbar";
-import { AuthProvider } from "~/components/pages/auth/authProvider";
+import { AuthProvider } from "~/components/app/dashboard";
+import { Footer } from "~/components/app/footer";
+import { Navbar } from "~/components/app/navbar";
 import "~/styles/globals.css";
 import { TRPCReactProvider } from "~/trpc/react";
 
