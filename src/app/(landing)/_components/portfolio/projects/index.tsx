@@ -6,21 +6,17 @@ import {
   ProjectCardDescription,
   ProjectCardTitle,
 } from "./projectCard";
-import { ProjectsContainer } from "./projectsContainer";
 
-export async function Projects({ admin = false }: { admin?: boolean }) {
+export async function Projects() {
   noStore();
   const projectsData = await api.project.getAll.query();
 
   return (
-    <ProjectsContainer>
+    <div className="flex flex-col flex-wrap items-center justify-center lg:w-[1024px] lg:flex-row">
       {projectsData.map((project) => (
         <ProjectCard key={project.id}>
           <ProjectCardBackground
-            href={
-              (admin ? "/dashboard/projetosAdm/projeto/" : "/projetos/") +
-              project.id
-            }
+            href={`/projetos/${project.id}`}
             imgSrc={project.logoPublicId}
           >
             <ProjectCardTitle>{project.name}</ProjectCardTitle>
@@ -28,6 +24,6 @@ export async function Projects({ admin = false }: { admin?: boolean }) {
           </ProjectCardBackground>
         </ProjectCard>
       ))}
-    </ProjectsContainer>
+    </div>
   );
 }

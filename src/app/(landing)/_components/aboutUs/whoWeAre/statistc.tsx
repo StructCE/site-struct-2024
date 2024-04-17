@@ -2,14 +2,14 @@
 import { motion } from "framer-motion";
 import { useSpringValue } from "~/hooks/useSpringValue";
 
-export function CompanyInformationStatistic({
-  statistic,
+export function Statistic({
+  number,
   description,
 }: {
-  statistic: number;
+  number: number;
   description: string;
 }) {
-  const { ref, springValue } = useSpringValue(statistic);
+  const { ref, springValue } = useSpringValue(number);
 
   return (
     <p className="flex w-[64px] flex-col text-center sm:w-[130px]">

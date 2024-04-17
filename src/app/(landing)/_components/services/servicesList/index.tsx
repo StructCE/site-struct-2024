@@ -5,7 +5,6 @@ import {
   ServiceCardHeaderIcon,
   ServiceCardHeaderTitle,
 } from "./servicesCard";
-import { ServicesListContainer } from "./servicesListContainer";
 import { Cog, Cpu, Lightbulb, ScreenShare, Smartphone } from "lucide-react";
 
 export const servicesData = [
@@ -48,7 +47,7 @@ export const servicesData = [
 
 export function ServicesList() {
   return (
-    <ServicesListContainer>
+    <div className="my-6 flex flex-wrap justify-center gap-4 font-nunito sm:mx-12 sm:my-8 sm:gap-6 lg:gap-8">
       {servicesData.map((service) => (
         <ServiceCard key={service.id}>
           <ServiceCardHeader>
@@ -58,6 +57,6 @@ export function ServicesList() {
           <ServiceCardDescription>{service.description}</ServiceCardDescription>
         </ServiceCard>
       ))}
-    </ServicesListContainer>
+    </div>
   );
 }
