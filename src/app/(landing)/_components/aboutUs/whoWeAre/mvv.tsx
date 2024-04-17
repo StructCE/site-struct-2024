@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 function MVVTitle() {
   return (
     <h4 className="mb-2 mt-3 flex justify-center font-oxanium text-[20px] font-bold text-struct-2 sm:mt-4 sm:text-[24px]">
@@ -86,6 +88,17 @@ function Values() {
   );
 }
 
+function MeetOurTeamButton() {
+  return (
+    <Link
+      href="/membros"
+      className="mx-2 mb-4 mt-3 flex items-center justify-center self-start bg-fundo-3 px-2 py-1 font-oxanium text-[12px] font-bold text-struct-7 transition ease-in-out hover:bg-fundo-1 hover:text-struct-1 hover:shadow-[0_0_5px_1px_rgba(0,0,0,0.1)] active:border-none sm:rounded-md sm:px-4 sm:text-[20px]"
+    >
+      conheça nossos membros
+    </Link>
+  );
+}
+
 export function MVV() {
   return (
     <MVVContainer>
@@ -97,6 +110,7 @@ export function MVV() {
         </div>
         <Values />
       </MVVContent>
+      <MeetOurTeamButton />
     </MVVContainer>
   );
 }
