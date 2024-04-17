@@ -5,7 +5,7 @@ import {
   Portfolio,
   Services,
   WhatsappLogo,
-} from "~/components/app/landing";
+} from "./_components";
 
 export default function Homepage() {
   return (

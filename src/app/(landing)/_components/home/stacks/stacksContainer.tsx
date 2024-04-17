@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import CloudinaryImg from "~/components/ui/cloudinaryImage";
+import CloudinaryImg from "~/components/cloudinaryImage";
 
 export function StacksContainer({ children }: React.PropsWithChildren) {
   return (

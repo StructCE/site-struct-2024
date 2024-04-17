@@ -1,6 +1,6 @@
 import { unstable_noStore as noStore } from "next/cache";
 import { api } from "~/trpc/server";
-import { ProjectCard } from "../../landing/portfolio/projectCard";
+import { ProjectCard } from "../../../../app/(landing)/_components/portfolio/projectCard";
 
 export async function AdminPortfolio() {
   noStore();
