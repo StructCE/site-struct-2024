@@ -1,7 +1,7 @@
 import { api } from "~/trpc/server";
 import { unstable_noStore as noStore } from "next/cache";
 import {
-  AnimatedProjectCardContainer,
+  ProjectCard,
   ProjectCardBackground,
   ProjectCardDescription,
   ProjectCardTitle,
@@ -15,7 +15,7 @@ export async function Projects({ admin = false }: { admin?: boolean }) {
   return (
     <ProjectsContainer>
       {projectsData.map((project) => (
-        <AnimatedProjectCardContainer key={project.id}>
+        <ProjectCard key={project.id}>
           <ProjectCardBackground
             href={
               (admin ? "/dashboard/projetosAdm/projeto/" : "/projetos/") +
@@ -26,7 +26,7 @@ export async function Projects({ admin = false }: { admin?: boolean }) {
             <ProjectCardTitle>{project.name}</ProjectCardTitle>
             <ProjectCardDescription>website</ProjectCardDescription>
           </ProjectCardBackground>
-        </AnimatedProjectCardContainer>
+        </ProjectCard>
       ))}
     </ProjectsContainer>
   );

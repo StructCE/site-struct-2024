@@ -49,13 +49,13 @@ export const servicesData = [
 export function ServicesList() {
   return (
     <ServicesListContainer>
-      {servicesData.map((item) => (
-        <ServiceCard key={item.id}>
+      {servicesData.map((service) => (
+        <ServiceCard key={service.id}>
           <ServiceCardHeader>
-            <ServiceCardHeaderIcon>{item.icon}</ServiceCardHeaderIcon>
-            <ServiceCardHeaderTitle>{item.title}</ServiceCardHeaderTitle>
+            <ServiceCardHeaderIcon>{service.icon}</ServiceCardHeaderIcon>
+            <ServiceCardHeaderTitle>{service.title}</ServiceCardHeaderTitle>
           </ServiceCardHeader>
-          <ServiceCardDescription>{item.description}</ServiceCardDescription>
+          <ServiceCardDescription>{service.description}</ServiceCardDescription>
         </ServiceCard>
       ))}
     </ServicesListContainer>

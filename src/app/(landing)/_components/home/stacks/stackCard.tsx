@@ -15,6 +15,7 @@ function StackCardIcon({
   children: React.ReactElement<{ className?: string }>;
 }) {
   const updatedChildren = React.cloneElement(children, {
+    ...children.props,
     className: cn(
       "h-[20px] w-[20px] text-struct-7 transition delay-75 ease-in-out hover:text-struct-1 sm:h-[36px] sm:w-[36px] lg:h-[46px] lg:w-[46px]",
       children.props.className,

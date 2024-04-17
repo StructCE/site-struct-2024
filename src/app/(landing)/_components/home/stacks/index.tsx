@@ -29,10 +29,10 @@ const stacksData = [
 export function Stacks() {
   return (
     <StacksContainer>
-      {stacksData.map((item) => (
-        <StackCard key={item.id}>
-          <StackCardIcon>{item.icon}</StackCardIcon>
-          <StackCardTitle>{item.name}</StackCardTitle>
+      {stacksData.map((stack) => (
+        <StackCard key={stack.id}>
+          <StackCardIcon>{stack.icon}</StackCardIcon>
+          <StackCardTitle>{stack.name}</StackCardTitle>
         </StackCard>
       ))}
     </StacksContainer>

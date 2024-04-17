@@ -11,19 +11,20 @@ function ServiceCardHeader({ children }: React.PropsWithChildren) {
   );
 }
 
-function ServiceCardHeaderIcon({ children }: React.PropsWithChildren) {
-  if (React.isValidElement(children)) {
-    const enhancedChild = React.cloneElement(children, {
-      ...children.props,
-      className: cn(
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        (children.props.className as string) || "",
-        "mx-1.5 my-1.5 h-[18px] w-[18px] text-struct-7 transition ease-in-out hover:scale-[1.04] hover:text-struct-1 sm:mx-1.5 sm:my-2 sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[11px] lg:mr-2 lg:h-[28px] lg:w-[28px]",
-      ),
-    } as React.HTMLAttributes<HTMLElement> & { className?: string });
-    return <>{enhancedChild}</>;
-  }
-  return null;
+function ServiceCardHeaderIcon({
+  children,
+}: {
+  children: React.ReactElement<{ className?: string }>;
+}) {
+  const updatedChildren = React.cloneElement(children, {
+    ...children.props,
+    className: cn(
+      "mx-1.5 my-1.5 h-[18px] w-[18px] text-struct-7 transition ease-in-out hover:scale-[1.04] hover:text-struct-1 sm:mx-1.5 sm:my-2 sm:h-[24px] sm:w-[24px] lg:mx-1.5 lg:my-[11px] lg:mr-2 lg:h-[28px] lg:w-[28px]",
+      children.props.className,
+    ),
+  });
+
+  return updatedChildren;
 }
 
 function ServiceCardHeaderTitle({ children }: { children: string }) {
