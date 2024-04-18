@@ -7,7 +7,7 @@ export default function NotFound() {
 
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center gap-4 bg-fundo-0 font-oxanium font-bold text-struct-7">
-      <h2 className="text-6xl">404 | Not Found</h2>
+      <h1 className="text-6xl">404 | Not Found</h1>
       <p className="font-nunito text-xl font-normal">
         A página que você está procurando não existe.
       </p>
