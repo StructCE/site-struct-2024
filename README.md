@@ -1,4 +1,4 @@
-# Tecnologias
+## Tecnologias
 
 - [T3 App](https://create.t3.gg/en/introduction)
 - [Next.js](https://nextjs.org)
@@ -9,7 +9,7 @@
 
 ---
 
-# Bibliotecas
+## Bibliotecas
 
 - [shadcn](https://ui.shadcn.com/docs) -> components
 - [lucide](https://lucide.dev/icons/) -> icons
@@ -22,7 +22,7 @@
 
 ---
 
-# Banco de Dados
+## Banco de Dados
 
 Estamos usando mysql para banco de dados, o qual necessita de um container Docker para rodar. Assim, vamos instalar primeiramente o Docker:
 
@@ -46,7 +46,7 @@ Por fim, empurre o esquema do seu prisma para o banco de dados rodando no contai
 pnpm db:push
 ```
 
-## Seed
+### Seed
 
 Para rodar a seed, certifique-se de que todas as depêndencias estão instaladas rondado o comando:
 
@@ -61,3 +61,15 @@ pnpm db:seed
 ```
 
 Verifique as saídas no terminal, pois avisará caso ocorra algum erro na população do banco de dados.
+
+## Organização
+
+- `~/app/` -> onde está a aplicação, ou seja, as páginas de fato
+- `~/app/page/\_components/` -> onde estão os componentes específicos dessa página, chamada "page"
+- `~/components/app/` -> componentes que serão reutilizados em diversas páginas ou utilizados no RootLayout da aplicação
+- `~/components/ui/` -> componentes do shadcn
+- `~/hooks/` -> onde ficarão os custom hooks da aplicação
+- `~/lib/` -> onde ficarão funções utilitárias ou auxiliares, para serem utilizadas em diversos locais do repositório
+- `~/server/` -> aqui fica o backend
+- `~/server/api/routers/` -> onde ficam as rotas do tRPC. Cada rota com suas devidas procedures
+- `~/server/api/root.ts` -> aqui ocorre a exportação, para a aplicação, das rotas criadas em `~/server/api/routers/`
