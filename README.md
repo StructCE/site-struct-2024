@@ -1,3 +1,17 @@
+## Organização
+
+- `~/app/` -> onde está a aplicação, ou seja, as páginas de fato
+- `~/app/page/\_components/` -> onde estão os componentes específicos dessa página, chamada "page"
+- `~/components/app/` -> componentes que serão reutilizados em diversas páginas ou utilizados no RootLayout da aplicação
+- `~/components/ui/` -> componentes do shadcn
+- `~/hooks/` -> onde ficarão os custom hooks da aplicação
+- `~/lib/` -> onde ficarão funções utilitárias ou auxiliares, para serem utilizadas em diversos locais do repositório
+- `~/server/` -> aqui fica o backend
+- `~/server/api/routers/` -> onde ficam as rotas do tRPC. Cada rota com suas devidas procedures
+- `~/server/api/root.ts` -> aqui ocorre a exportação, para a aplicação, das rotas criadas em `~/server/api/routers/`
+- `~/middleware.tsx` -> middleware que verifica a autenticação do usuário (para rotas privadas)
+- `/.env` -> arquivo que contém as variáveis de ambiente do repositório. Digite `cp .env.example .env` no terminal, para gerar este arquivo, e depois o preencha com os devidos valores das variáveis
+
 ## Tecnologias
 
 - [T3 App](https://create.t3.gg/en/introduction)
@@ -61,15 +75,3 @@ pnpm db:seed
 ```
 
 Verifique as saídas no terminal, pois avisará caso ocorra algum erro na população do banco de dados.
-
-## Organização
-
-- `~/app/` -> onde está a aplicação, ou seja, as páginas de fato
-- `~/app/page/\_components/` -> onde estão os componentes específicos dessa página, chamada "page"
-- `~/components/app/` -> componentes que serão reutilizados em diversas páginas ou utilizados no RootLayout da aplicação
-- `~/components/ui/` -> componentes do shadcn
-- `~/hooks/` -> onde ficarão os custom hooks da aplicação
-- `~/lib/` -> onde ficarão funções utilitárias ou auxiliares, para serem utilizadas em diversos locais do repositório
-- `~/server/` -> aqui fica o backend
-- `~/server/api/routers/` -> onde ficam as rotas do tRPC. Cada rota com suas devidas procedures
-- `~/server/api/root.ts` -> aqui ocorre a exportação, para a aplicação, das rotas criadas em `~/server/api/routers/`
