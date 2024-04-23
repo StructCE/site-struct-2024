@@ -1,7 +1,7 @@
 import { api } from "~/trpc/server";
 import { permanentRedirect } from "next/navigation";
-import { ProjectCard } from "~/components/app/projetos";
-import { MemberCard } from "~/components/app/membros";
+import { ProjectCard } from "./_components";
+import { MemberCard } from "~/app/membros/_components";
 
 export default async function Projects({ params }: { params: { id: string } }) {
   const projectWithMembers = await api.project.getProjectAndMembers.query({

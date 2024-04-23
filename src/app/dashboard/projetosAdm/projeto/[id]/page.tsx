@@ -1,6 +1,6 @@
 import { api } from "~/trpc/server";
 import { permanentRedirect } from "next/navigation";
-import { ProjectPage } from "~/components/app/dashboard/projetosAdm/projeto";
+import { ProjectPage } from "./_components";
 
 export default async function Projects({ params }: { params: { id: string } }) {
   const projectWithMembers = await api.project.getProjectAndMembers.query({

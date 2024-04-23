@@ -1,4 +1,4 @@
-import { AuthProvider } from "~/components/app/dashboard";
+import { AuthProvider } from "~/components/app/authProvider";
 import { Footer } from "~/components/app/footer";
 import { Navbar } from "~/components/app/navbar";
 import "~/styles/globals.css";

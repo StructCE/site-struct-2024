@@ -1,7 +1,4 @@
-import {
-  AdminMembers,
-  CreateMember,
-} from "~/components/app/dashboard/membrosAdm";
+import { AdminMembers, CreateMember } from "./_components";
 
 export default async function MembrosAdmin() {
   return (

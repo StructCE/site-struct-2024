@@ -1,8 +1,5 @@
 import { Toaster } from "react-hot-toast";
-import {
-  AdminPortfolio,
-  CreateProject,
-} from "~/components/app/dashboard/projetosAdm";
+import { AdminPortfolio, CreateProject } from "./_components";
 
 export default function ProjetosAdmin() {
   return (

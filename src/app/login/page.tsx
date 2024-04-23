@@ -1,5 +1,5 @@
 import { permanentRedirect } from "next/navigation";
-import { SignInButton } from "~/components/app/login";
+import { SignInButton } from "./_components";
 import { getServerAuthSession } from "~/server/auth";
 
 export default async function SignInPage() {
