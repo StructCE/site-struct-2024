@@ -22,14 +22,20 @@ export async function AdminPortfolio() {
                 className="flex w-full items-center justify-center text-lg max-lg:flex-col"
               >
                 <ProjectCard>
-                  <ProjectCardBackground href={`/projetos/${project.id}`}>
+                  <ProjectCardBackground
+                    href={`/projetos/${project.id}`}
+                    imgSrc={project.logoPublicId}
+                  >
                     <ProjectCardTitle>{project.name}</ProjectCardTitle>
                     <ProjectCardDescription>Website</ProjectCardDescription>
                   </ProjectCardBackground>
                 </ProjectCard>
                 {nextProject && (
                   <ProjectCard>
-                    <ProjectCardBackground href={`/projetos/${nextProject.id}`}>
+                    <ProjectCardBackground
+                      href={`/projetos/${nextProject.id}`}
+                      imgSrc={nextProject.logoPublicId}
+                    >
                       <ProjectCardTitle>{nextProject.name}</ProjectCardTitle>
                       <ProjectCardDescription>Website</ProjectCardDescription>
                     </ProjectCardBackground>

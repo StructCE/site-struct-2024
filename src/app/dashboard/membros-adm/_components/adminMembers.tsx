@@ -1,8 +1,8 @@
 import { unstable_noStore as noStore } from "next/cache";
 import { api } from "~/trpc/server";
 import { Toaster } from "react-hot-toast";
-import { MemberCard } from "~/components/app/membros";
 import { EditMember, RemoveMember } from "./adminMemberCard";
+import { MemberCard } from "~/app/membros/_components";
 
 export async function AdminMembers() {
   noStore();
