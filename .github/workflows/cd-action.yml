@@ -29,73 +29,74 @@ jobs:
           password: ${{secrets.PASS}}
           script: |
             BRANCH_NAME=${{ github.head_ref }}
-            UNSTAGGED_IMAGE_ID=$(docker images --filter=reference=site-struct-2024-web:latest --format "{{.ID}}")
-            cd docker_compose_struct/
-            git pull
-            cd site-struct-2024/
+            echo BRANCH_NAME
+            # UNSTAGGED_IMAGE_ID=$(docker images --filter=reference=site-struct-2024-web:latest --format "{{.ID}}")
+            # cd docker_compose_struct/
+            # git pull
+            # cd site-struct-2024/
 
-            execute_with_retry() {
-              local retries=$1
-              local timeout_duration=$2
-              local command=$3
-              while [ $retries -gt 0 ]; do
-                if timeout $timeout_duration $command; then
-                  echo "==============================================="
-                  echo "$command successful!"
-                  echo "==============================================="
-                  return 0
-                else
-                  echo "==============================================="
-                  echo "$command failed or timed out, retrying..."
-                  echo "==============================================="
-                  ((retries--))
-                fi
-              done
-              echo "==============================================="
-              echo "$command failed or timed out after all retries"
-              echo "==============================================="
-              exit 1
-            }
+            # execute_with_retry() {
+            #   local retries=$1
+            #   local timeout_duration=$2
+            #   local command=$3
+            #   while [ $retries -gt 0 ]; do
+            #     if timeout $timeout_duration $command; then
+            #       echo "==============================================="
+            #       echo "$command successful!"
+            #       echo "==============================================="
+            #       return 0
+            #     else
+            #       echo "==============================================="
+            #       echo "$command failed or timed out, retrying..."
+            #       echo "==============================================="
+            #       ((retries--))
+            #     fi
+            #   done
+            #   echo "==============================================="
+            #   echo "$command failed or timed out after all retries"
+            #   echo "==============================================="
+            #   exit 1
+            # }
 
-            execute_with_retry 2 "360s" "BRANCH_NAME=$BRANCH_NAME docker compose build web"
-            execute_with_retry 2 "180s" "docker compose up -d"
-            docker rmi $UNSTAGGED_IMAGE_ID
+            # execute_with_retry 2 "360s" "BRANCH_NAME=$BRANCH_NAME docker compose build web"
+            # execute_with_retry 2 "180s" "docker compose up -d"
+            # docker rmi $UNSTAGGED_IMAGE_ID
 
-      - name: executing redeploy via ssh
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{secrets.HOST}}
-          username: ${{secrets.USERNAME}}
-          password: ${{secrets.PASS}}
-          script: |
-            UNSTAGGED_IMAGE_ID=$(docker images --filter=reference=site-struct-2024-web:latest --format "{{.ID}}")
-            cd docker_compose_struct/
-            git pull
-            cd site-struct-2024/
+      # - name: executing redeploy via ssh
+      #   uses: appleboy/ssh-action@v1.0.3
+      #   with:
+      #     host: ${{secrets.HOST}}
+      #     username: ${{secrets.USERNAME}}
+      #     password: ${{secrets.PASS}}
+      #     script: |
+      #       UNSTAGGED_IMAGE_ID=$(docker images --filter=reference=site-struct-2024-web:latest --format "{{.ID}}")
+      #       cd docker_compose_struct/
+      #       git pull
+      #       cd site-struct-2024/
 
-            execute_with_retry() {
-              local retries=$1
-              local timeout_duration=$2
-              local command=$3
-              while [ $retries -gt 0 ]; do
-                if timeout $timeout_duration $command; then
-                  echo "==============================================="
-                  echo "$command successful!"
-                  echo "==============================================="
-                  return 0
-                else
-                  echo "==============================================="
-                  echo "$command failed or timed out, retrying..."
-                  echo "==============================================="
-                  ((retries--))
-                fi
-              done
-              echo "==============================================="
-              echo "$command failed or timed out after all retries"
-              echo "==============================================="
-              exit 1
-            }
+      #       execute_with_retry() {
+      #         local retries=$1
+      #         local timeout_duration=$2
+      #         local command=$3
+      #         while [ $retries -gt 0 ]; do
+      #           if timeout $timeout_duration $command; then
+      #             echo "==============================================="
+      #             echo "$command successful!"
+      #             echo "==============================================="
+      #             return 0
+      #           else
+      #             echo "==============================================="
+      #             echo "$command failed or timed out, retrying..."
+      #             echo "==============================================="
+      #             ((retries--))
+      #           fi
+      #         done
+      #         echo "==============================================="
+      #         echo "$command failed or timed out after all retries"
+      #         echo "==============================================="
+      #         exit 1
+      #       }
 
-            execute_with_retry 2 "360s" "docker compose build web"
-            execute_with_retry 2 "180s" "docker compose up -d"
-            docker rmi $UNSTAGGED_IMAGE_ID
+      #       execute_with_retry 2 "360s" "docker compose build web"
+      #       execute_with_retry 2 "180s" "docker compose up -d"
+      #       docker rmi $UNSTAGGED_IMAGE_ID
