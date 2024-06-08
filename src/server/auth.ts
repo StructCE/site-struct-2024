@@ -9,7 +9,6 @@ import GoogleProvider from "next-auth/providers/google";
 import { env } from "~/env";
 import { db } from "~/server/db";
 
-
 declare module "next-auth" {
   interface Session extends DefaultSession {
     user: {
@@ -32,10 +31,9 @@ declare module "next-auth" {
  */
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    signIn: ({user}) => {
-     if (user.email?.endsWith("@struct.unb.br"))
-      return true
-    return false
+    signIn: ({ user }) => {
+      if (user.email?.endsWith("@struct.unb.br")) return true;
+      return false;
     },
     session: ({ session, user }) => ({
       ...session,
@@ -60,8 +58,8 @@ export const authOptions: NextAuthOptions = {
      *
      * @see https://next-auth.js.org/providers/github
      */
-  ]
-}
+  ],
+};
 
 /**
  * Wrapper for `getServerSession` so that you don't need to import the `authOptions` in every file.
