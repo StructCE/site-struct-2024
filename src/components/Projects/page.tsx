@@ -51,7 +51,8 @@ export default function ProjectsPage({
           </p>
           <div className="flex h-fit w-[1300px] flex-wrap items-center justify-center max-[1440px]:w-[500px] max-[830px]:w-[280px]">
             {projectWithMembers.members?.map((member) => {
-              return <MemberContainer key={member.name} member={member} />;
+              if (member)
+                return <MemberContainer key={member.name} member={member} />;
             })}
           </div>
         </div>

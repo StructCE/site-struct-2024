@@ -5,32 +5,15 @@ import RemoveProject from "./removeProject";
 import Link from "next/link";
 import { CldImage } from "next-cloudinary";
 import { Toaster } from "react-hot-toast";
-
-
-type projectWithMembers = {
-  id: string,
-  name: string;
-  description: string;
-  link: string;
-  logoPublicId: string;
-  show: boolean
-  members:
-    | {
-        id: string;
-        name: string;
-        logoPublicId: string;
-        role: string;
-      }[]
-;
-} | undefined;
-
+import type { ProjectWithMembers } from "~/server/api/routers/project";
+import { permanentRedirect } from "next/navigation";
 
 export default function ProjectsPage({
   projectWithMembers,
 }: {
-  projectWithMembers: projectWithMembers;
+  projectWithMembers: ProjectWithMembers | undefined;
 }) {
- 
+  if (!projectWithMembers) permanentRedirect("/");
   return (
     <section className="flex items-center bg-fundo-0 pt-28">
       <Toaster position="bottom-center" reverseOrder={false} />
@@ -77,7 +60,8 @@ export default function ProjectsPage({
           </p>
           <div className="flex h-fit w-[1300px] flex-wrap items-center justify-center max-[1440px]:w-[500px] max-[830px]:w-[280px]">
             {projectWithMembers?.members?.map((member) => {
-              return <AdminMemberCard key={member.name} member={member} />;
+              if (member)
+                return <AdminMemberCard key={member.name} member={member} />;
             })}
           </div>
         </div>

@@ -180,7 +180,7 @@ type ProjectWithMembers = {
   link: string;
   logoPublicId: string;
   show: boolean;
-  members: Member[];
+  members: (Member | undefined)[];
 };
 
 type MutatedProject = {
