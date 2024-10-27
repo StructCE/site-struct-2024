@@ -27,29 +27,14 @@ jobs:
           host: ${{secrets.HOST}}
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASS}}
-          command_timeout: 540s
+          # command_timeout: 540s
           script: |
             UNSTAGGED_IMAGE_ID=$(docker images --filter=reference=site-struct-2024-web:latest --format "{{.ID}}")
             cd docker_compose_struct/
             git pull
             cd site-struct-2024/
-
-            execute_with_retry() {
-              local retries=$1
-              local command=$2
-              while [ $retries -gt 0 ]; do
-                if $command; then
-                  echo "$command successful!"
-                  return 0
-                else
-                  echo "$command failed, retrying..."
-                  ((retries--))
-                fi
-              done
-              echo "$command failed after all retries"
-              exit 1
-            }
-
+            docker stop $(docker ps -aq)
             execute_with_retry 2 "docker compose build web"
             execute_with_retry 2 "docker compose up -d"
+            docker start $(docker ps -aq)
             docker rmi $UNSTAGGED_IMAGE_ID
