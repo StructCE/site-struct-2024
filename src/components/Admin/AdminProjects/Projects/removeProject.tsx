@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,26 +13,13 @@ import {
 import toast from "react-hot-toast";
 import { api } from "~/trpc/react";
 import { useRouter } from "next/navigation";
+import type { ProjectWithMembers } from "~/server/api/routers/project";
 
-type projectWithMembers = {
-  id: string,
-  name: string;
-  description: string;
-  link: string;
-  logoPublicId: string;
-  show: boolean
-  members:
-    | {
-        id: string;
-        name: string;
-        logoPublicId: string;
-        role: string;
-      }[]
-;
-} | undefined;
-
-
-export default function RemoveProject({ projectWithMembers }: { projectWithMembers: projectWithMembers}) {
+export default function RemoveProject({
+  projectWithMembers,
+}: {
+  projectWithMembers: ProjectWithMembers;
+}) {
   const router = useRouter();
   const removeProject = api.project.removeProject.useMutation({
     onSuccess: () => {
@@ -52,26 +39,36 @@ export default function RemoveProject({ projectWithMembers }: { projectWithMembe
           background: "#F8F8FF",
         },
       });
-    }
+    },
   });
   return (
     <AlertDialog>
       <AlertDialogTrigger className="h-14 rounded-md border-[3px] border-red-600 bg-fundo-0 px-6 font-oxanium text-[24px] font-bold text-struct-7 transition ease-in-out hover:bg-fundo-2">
         Remover Projeto
       </AlertDialogTrigger>
-      <AlertDialogContent className="bg-fundo-3 border-none">
+      <AlertDialogContent className="border-none bg-fundo-3">
         <AlertDialogHeader>
           <AlertDialogTitle>Tem certeza?</AlertDialogTitle>
           <AlertDialogDescription>
-            Essa ação irá deletar todos os dados deste projeto. 
-            Peça autorização antes de executar esta ação.
+            Essa ação irá deletar todos os dados deste projeto. Peça autorização
+            antes de executar esta ação.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel className="text-black hover:scale-[1.02]">Cancelar</AlertDialogCancel>
-          <AlertDialogAction className="hover:scale-[1.02]" onClick={() => {if (projectWithMembers?.id) removeProject.mutate({id: projectWithMembers?.id})}}>Remover Projeto</AlertDialogAction>
+          <AlertDialogCancel className="text-black hover:scale-[1.02]">
+            Cancelar
+          </AlertDialogCancel>
+          <AlertDialogAction
+            className="hover:scale-[1.02]"
+            onClick={() => {
+              if (projectWithMembers?.id)
+                removeProject.mutate({ id: projectWithMembers?.id });
+            }}
+          >
+            Remover Projeto
+          </AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
     </AlertDialog>
-  )
+  );
 }
