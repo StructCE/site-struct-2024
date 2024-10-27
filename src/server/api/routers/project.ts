@@ -45,7 +45,23 @@ export const projectRouter = createTRPCRouter({
             role: projectMember.role.name,
           })),
         };
-        return project;
+        const managerPos = project.members.findIndex(
+          (member) => member.role === "Gerente",
+        );
+        const managerData = project.members[managerPos];
+        const projectOwnerPos = project.members.findIndex(
+          (member) => member.role === "Project Owner",
+        );
+        const projectOwnerData = project.members[projectOwnerPos];
+
+        const devs = project.members.filter(
+          (member) =>
+            member.role !== "Gerente" && member.role !== "Project Owner",
+        );
+        return {
+          ...project,
+          members: [managerData, projectOwnerData, ...devs],
+        };
       }
     }),
 
@@ -57,13 +73,34 @@ export const projectRouter = createTRPCRouter({
         link: z.string(),
         logoPublicId: z.string().optional(),
         show: z.boolean().default(false),
+        members: z.array(
+          z.object({
+            memberId: z.string(),
+            projectRoleId: z.string(),
+          }),
+        ),
       }),
     )
     .mutation(async ({ ctx, input }) => {
-      const project = await ctx.db.project.create({
-        data: input,
+      const { members, ...project } = input;
+      const createdProject = await ctx.db.project.create({
+        data: project,
       });
-      return project;
+
+      await Promise.all(
+        members.map(async (member) => {
+          const createdMember = await ctx.db.projectMember.create({
+            data: {
+              memberId: member.memberId,
+              projectRoleId: member.projectRoleId,
+              projectId: createdProject.id,
+            },
+          });
+          return createdMember;
+        }),
+      );
+
+      return createdProject;
     }),
 
   removeProject: protectedProcedure

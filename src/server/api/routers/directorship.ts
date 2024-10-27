@@ -35,14 +35,32 @@ export const directorshipRouter = createTRPCRouter({
         })),
       }));
 
-      const presidenceIndex = res.findIndex((element) => element.name === "Presidência")
-      const presidence = res[presidenceIndex]
-      if (presidence){
-        const beforePresidence = res.slice(0, presidenceIndex)
-        const afterPresidence = res.slice(presidenceIndex + 1)
-        res = [presidence, ...beforePresidence, ...afterPresidence]
-      }
+    const presidenceIndex = res.findIndex(
+      (element) => element.name === "Presidência",
+    );
+    const presidence = res[presidenceIndex];
+    if (presidence) {
+      const beforePresidence = res.slice(0, presidenceIndex);
+      const afterPresidence = res.slice(presidenceIndex + 1);
+      res = [presidence, ...beforePresidence, ...afterPresidence];
+    }
 
+    res = res.map((directorship) => {
+      const directorIndex = directorship.members.findIndex(
+        (member) => member.role === "Diretor",
+      );
+      const director = directorship.members[directorIndex];
+      if (director) {
+        const beforeDirector = directorship.members.slice(0, directorIndex);
+        const afterDirector = directorship.members.slice(directorIndex + 1);
+        const serializedDirectorship = {
+          ...directorship,
+          members: [director, ...beforeDirector, ...afterDirector],
+        };
+        return serializedDirectorship;
+      }
+      return directorship;
+    });
     return res;
   }),
 
